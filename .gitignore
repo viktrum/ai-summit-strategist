@@ -1,0 +1,24 @@
+# Environment files
+.env
+.env.*
+.env.local
+
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+.next/
+.netlify/
+
+# Claude
+.claude/
+
+# Backups
+backups_before_migration/
+
+# Logs
+logs/
+*.log

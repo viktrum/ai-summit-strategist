@@ -1,0 +1,4292 @@
+[
+  {
+    "id": 1,
+    "name": "Ministry of Electronics and Information Technology",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/meity.webp",
+    "alt_text": "Ministry of Electronics and Information Technology"
+  },
+  {
+    "id": 2,
+    "name": "Ministry of Information & Broadcastings",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ministry_of_information_broadcastings.webp",
+    "alt_text": "Ministry of Information &amp; Broadcastings"
+  },
+  {
+    "id": 3,
+    "name": "Ministry of Education",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/education.webp",
+    "alt_text": "Ministry of Education"
+  },
+  {
+    "id": 4,
+    "name": "Ministry of Panchayati Raj",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/panchayati_raj.webp",
+    "alt_text": "Ministry of Panchayati Raj"
+  },
+  {
+    "id": 5,
+    "name": "Ministry of Power",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/power.webp",
+    "alt_text": "Ministry of Power"
+  },
+  {
+    "id": 6,
+    "name": "Ministry of Skill Development and Entrepreneurship",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/skill-developement.webp",
+    "alt_text": "Ministry of Skill Development and Entrepreneurship"
+  },
+  {
+    "id": 7,
+    "name": "Ministry of Steel",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/steel.webp",
+    "alt_text": "Ministry of Steel"
+  },
+  {
+    "id": 8,
+    "name": "Department of Food and Public Distribution, Ministry of Consumer Affairs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ministry_of_consumer_affairs.webp",
+    "alt_text": "Department of Food and Public Distribution, Ministry of Consumer Affairs"
+  },
+  {
+    "id": 9,
+    "name": "Ministry of Rural Development",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rural.webp",
+    "alt_text": "Ministry of Rural Development"
+  },
+  {
+    "id": 10,
+    "name": "Ministry of Agriculture",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ministry_of_agriculture.webp",
+    "alt_text": "Ministry of Agriculture"
+  },
+  {
+    "id": 11,
+    "name": "Ministry of Tribal Affairs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tribal.webp",
+    "alt_text": "Ministry of Tribal Affairs"
+  },
+  {
+    "id": 12,
+    "name": "Ministry of Ayush",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ministry_of_ayush.webp",
+    "alt_text": "Ministry of Ayush"
+  },
+  {
+    "id": 13,
+    "name": "Ministry of Heavy Industries(Engineering Projects India Ltd)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/heavy.webp",
+    "alt_text": "Ministry of Heavy Industries(Engineering Projects India Ltd)"
+  },
+  {
+    "id": 14,
+    "name": "Ministry of Earth Sciences(Indian Instiutute of Tropical Sciences)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ministry_of_earth.webp",
+    "alt_text": "Ministry of Earth Sciences(Indian Instiutute of Tropical Sciences)"
+  },
+  {
+    "id": 15,
+    "name": "Ministry of Health and Family affairs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/health-welfare.webp",
+    "alt_text": "Ministry of Health and Family affairs"
+  },
+  {
+    "id": 16,
+    "name": "Government of Gujarat (Department of Science and Technology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/science_and_technology.webp",
+    "alt_text": "Government of Gujarat (Department of Science and Technology)"
+  },
+  {
+    "id": 17,
+    "name": "Government of Karnataka (Department of Electronics, IT and Biotechnology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/karnataka.webp",
+    "alt_text": "Government of Karnataka (Department of Electronics, IT and Biotechnology)"
+  },
+  {
+    "id": 18,
+    "name": "Government of Uttar Pradesh",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/govt_of_up.webp",
+    "alt_text": "Government of Uttar Pradesh"
+  },
+  {
+    "id": 19,
+    "name": "Government of Bihar (Department of Information Technology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/government-of-bihar.webp",
+    "alt_text": "Government of Bihar (Department of Information Technology)"
+  },
+  {
+    "id": 20,
+    "name": "Government of Rajasthan (Department of IT & Communications)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/doitc.webp",
+    "alt_text": "Government of Rajasthan (Department of IT &amp; Communications)"
+  },
+  {
+    "id": 21,
+    "name": "Government of Odisha (Odisha Computer Applications Centre)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ocac.webp",
+    "alt_text": "Government of Odisha (Odisha Computer Applications Centre)"
+  },
+  {
+    "id": 22,
+    "name": "Government of Maharashtra",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gom.webp",
+    "alt_text": "Government of Maharashtra"
+  },
+  {
+    "id": 23,
+    "name": "Government of Punjab (Information & Communication Tech Corp Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/punjab_infotech.webp",
+    "alt_text": "Government of Punjab (Information &amp; Communication Tech Corp Ltd.)"
+  },
+  {
+    "id": 24,
+    "name": "Government of Tamil Nadu",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/government_of_tamil_nadu.webp",
+    "alt_text": "Government of Tamil Nadu"
+  },
+  {
+    "id": 25,
+    "name": "Government of Kerala (State IT Mission)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kerala.webp",
+    "alt_text": "Government of Kerala (State IT Mission)"
+  },
+  {
+    "id": 26,
+    "name": "Government of Madhya Pradesh (State Electronics Development Corporation)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mpsedc.webp",
+    "alt_text": "Government of Madhya Pradesh (State Electronics Development Corporation)"
+  },
+  {
+    "id": 27,
+    "name": "Government of Assam (Department of IT)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/assam.webp",
+    "alt_text": "Government of Assam (Department of IT)"
+  },
+  {
+    "id": 28,
+    "name": "Government of Andhra Pradesh (Real Time Governance Society under ITE&C Department)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/real_time_governance.webp",
+    "alt_text": "Government of Andhra Pradesh (Real Time Governance Society under ITE&amp;C Department)"
+  },
+  {
+    "id": 29,
+    "name": "Government of Uttarakhand (Department of Information Technology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/govt_of_uttarakhand.webp",
+    "alt_text": "Government of Uttarakhand (Department of Information Technology)"
+  },
+  {
+    "id": 30,
+    "name": "Government of Goa (Department of IT & Electronics)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/goa.webp",
+    "alt_text": "Government of Goa (Department of IT &amp; Electronics)"
+  },
+  {
+    "id": 31,
+    "name": "Government of Meghalaya (Department of IT and Communications)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/it_c_department.webp",
+    "alt_text": "Government of Meghalaya (Department of IT and Communications)"
+  },
+  {
+    "id": 32,
+    "name": "Government of Telangana (T-Hub Foundation)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/t_hub.webp",
+    "alt_text": "Government of Telangana (T-Hub Foundation)"
+  },
+  {
+    "id": 33,
+    "name": "Government of Manipur (Department of Information Technology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dit_manipur.webp",
+    "alt_text": "Government of Manipur (Department of Information Technology)"
+  },
+  {
+    "id": 34,
+    "name": "Government of Chhattisgarh (State Industrial Development Corporation)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/csidc.webp",
+    "alt_text": "Government of Chhattisgarh (State Industrial Development Corporation)"
+  },
+  {
+    "id": 35,
+    "name": "Government of Tripura (Directorate of IT)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tripura.webp",
+    "alt_text": "Government of Tripura (Directorate of IT)"
+  },
+  {
+    "id": 36,
+    "name": "Central Bureau of Communication (MIB)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cbc.webp",
+    "alt_text": "Central Bureau of Communication (MIB)"
+  },
+  {
+    "id": 37,
+    "name": "Digital India Bhashini Division",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bhashini.webp",
+    "alt_text": "Digital India Bhashini Division"
+  },
+  {
+    "id": 38,
+    "name": "Indian Navy",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/navy.webp",
+    "alt_text": "Indian Navy"
+  },
+  {
+    "id": 39,
+    "name": "Unique Identification Authority of India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aadhaar.webp",
+    "alt_text": "Unique Identification Authority of India"
+  },
+  {
+    "id": 40,
+    "name": "Karmayogi Bharat (Department of Personnel and Training)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/karmyogi_bharat_.webp",
+    "alt_text": "Karmayogi Bharat (Department of Personnel and Training)"
+  },
+  {
+    "id": 41,
+    "name": "Indian Army",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/indian_army.webp",
+    "alt_text": "Indian Army"
+  },
+  {
+    "id": 42,
+    "name": "Department of Technical education, Govt of NCT of Delhi",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nct_delhi.webp",
+    "alt_text": "Department of Technical education, Govt of NCT of Delhi"
+  },
+  {
+    "id": 43,
+    "name": "DRDO",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/drdo.webp",
+    "alt_text": "DRDO"
+  },
+  {
+    "id": 44,
+    "name": "Anusandhan National Research Foundation (ANRF)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/anrf.webp",
+    "alt_text": "Anusandhan National Research Foundation (ANRF)"
+  },
+  {
+    "id": 45,
+    "name": "Centre for Railway Information Systems (CRIS)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cris.webp",
+    "alt_text": "Centre for Railway Information Systems (CRIS)"
+  },
+  {
+    "id": 46,
+    "name": "Centre for Development of Telematics (C-DOT)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/c_dot.webp",
+    "alt_text": "Centre for Development of Telematics (C-DOT)"
+  },
+  {
+    "id": 47,
+    "name": "Indian Institute Of Tropical Meteorology",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/meteorology.webp",
+    "alt_text": "Indian Institute Of Tropical Meteorology"
+  },
+  {
+    "id": 48,
+    "name": "National Health Authority",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/national_health_authority.webp",
+    "alt_text": "National Health Authority"
+  },
+  {
+    "id": 49,
+    "name": "Business France",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/business_france.webp",
+    "alt_text": "Business France"
+  },
+  {
+    "id": 50,
+    "name": "Africa AI Village (Qhala Trust)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/africa_ai.webp",
+    "alt_text": "Africa AI Village (Qhala Trust)"
+  },
+  {
+    "id": 51,
+    "name": "British High Commission India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bhc.webp",
+    "alt_text": "British High Commission India"
+  },
+  {
+    "id": 52,
+    "name": "INDO GERMAN CHAMBER OF COMMERCE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/indo_german_chamber.webp",
+    "alt_text": "INDO GERMAN CHAMBER OF COMMERCE"
+  },
+  {
+    "id": 53,
+    "name": "Italian Trade Agency",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/ITA.webp",
+    "alt_text": "Italian Trade Agency"
+  },
+  {
+    "id": 54,
+    "name": "Embassy of Switzerland",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/embassy_of_switzerland.webp",
+    "alt_text": "Embassy of Switzerland"
+  },
+  {
+    "id": 55,
+    "name": "Government of Japan",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/japan_gov.webp",
+    "alt_text": "Government of Japan"
+  },
+  {
+    "id": 56,
+    "name": "Embassy of the Kingdom of the Netherlands in India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/embassy-of-neither.webp",
+    "alt_text": "Embassy of the Kingdom of the Netherlands in India"
+  },
+  {
+    "id": 57,
+    "name": "AKIS TECH. LIMITED (Russian Pavilion - Russoft)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/akis.webp",
+    "alt_text": "AKIS TECH. LIMITED (Russian Pavilion - Russoft)"
+  },
+  {
+    "id": 58,
+    "name": "WFP India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wfp.webp",
+    "alt_text": "WFP India"
+  },
+  {
+    "id": 59,
+    "name": "Australian Government",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/au_gov.webp",
+    "alt_text": "Australian Government"
+  },
+  {
+    "id": 60,
+    "name": "National Payments Corporation of India (NPCI)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ncpi.webp",
+    "alt_text": "National Payments Corporation of India (NPCI)"
+  },
+  {
+    "id": 61,
+    "name": "State Bank of India, Mumbai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sbi.webp",
+    "alt_text": "State Bank of India, Mumbai"
+  },
+  {
+    "id": 62,
+    "name": "Bharat Electronics Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bharat_electronics_ltd.webp",
+    "alt_text": "Bharat Electronics Ltd"
+  },
+  {
+    "id": 63,
+    "name": "Delhi Metro Corporation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/metro.webp",
+    "alt_text": "Delhi Metro Corporation"
+  },
+  {
+    "id": 64,
+    "name": "ALIMCO (Artificial Limbs Manufacturing Corporation Of India)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/alimco.webp",
+    "alt_text": "ALIMCO (Artificial Limbs Manufacturing Corporation Of India)"
+  },
+  {
+    "id": 65,
+    "name": "Biotechnology Industry Research Assistance Council",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/grand_challenges_india.webp",
+    "alt_text": "Biotechnology Industry Research Assistance Council"
+  },
+  {
+    "id": 66,
+    "name": "ESC ( Electronic Software Export Promotion Council )",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/esc.webp",
+    "alt_text": "ESC ( Electronic Software Export Promotion Council )"
+  },
+  {
+    "id": 67,
+    "name": "Jio Intelligence",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/jio_intelligence.webp",
+    "alt_text": "Jio Intelligence"
+  },
+  {
+    "id": 68,
+    "name": "Tata Group",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tata_group.webp",
+    "alt_text": "Tata Group"
+  },
+  {
+    "id": 69,
+    "name": "Google India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/google_india.webp",
+    "alt_text": "Google India"
+  },
+  {
+    "id": 70,
+    "name": "Tata Consultancy Services Limited (Tata AI Innovation Pavilion)",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/tcs-consultancy-1.webp",
+    "alt_text": "Tata Consultancy Services Limited (Tata AI Innovation Pavilion)"
+  },
+  {
+    "id": 71,
+    "name": "AWS/Amazon",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aws.webp",
+    "alt_text": "AWS/Amazon"
+  },
+  {
+    "id": 72,
+    "name": "NVIDIA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nvidia.webp",
+    "alt_text": "NVIDIA"
+  },
+  {
+    "id": 73,
+    "name": "Airtel",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/airtel.webp",
+    "alt_text": "Airtel"
+  },
+  {
+    "id": 74,
+    "name": "Larsen & Toubro Vyoma",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/l_t.webp",
+    "alt_text": "Larsen &amp; Toubro Vyoma"
+  },
+  {
+    "id": 75,
+    "name": "Meta",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/facebook_india_online_services_pvt_ltd_meta_.webp",
+    "alt_text": "Meta"
+  },
+  {
+    "id": 76,
+    "name": "Qualcomm India Pvt. Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/qualcomm.webp",
+    "alt_text": "Qualcomm India Pvt. Limited"
+  },
+  {
+    "id": 77,
+    "name": "Infosys",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/infosys.webp",
+    "alt_text": "Infosys"
+  },
+  {
+    "id": 78,
+    "name": "Vertiv",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vertiv.webp",
+    "alt_text": "Vertiv"
+  },
+  {
+    "id": 79,
+    "name": "Schneider Electric",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/schneider.webp",
+    "alt_text": "Schneider Electric"
+  },
+  {
+    "id": 80,
+    "name": "HP India Sales Pvt. Ltd.",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/hp.webp",
+    "alt_text": "HP India Sales Pvt. Ltd."
+  },
+  {
+    "id": 81,
+    "name": "Dell technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dell.webp",
+    "alt_text": "Dell technologies"
+  },
+  {
+    "id": 82,
+    "name": "Deloitte Touche Tohmatsu India LLP (DTTILLP)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/deloitte.webp",
+    "alt_text": "Deloitte Touche Tohmatsu India LLP (DTTILLP)"
+  },
+  {
+    "id": 83,
+    "name": "Ernst & Young LLP (EY)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/emst.webp",
+    "alt_text": "Ernst &amp; Young LLP (EY)"
+  },
+  {
+    "id": 84,
+    "name": "Netweb Technologies India Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/netweb.webp",
+    "alt_text": "Netweb Technologies India Ltd."
+  },
+  {
+    "id": 85,
+    "name": "Open AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/openai.webp",
+    "alt_text": "Open AI"
+  },
+  {
+    "id": 86,
+    "name": "Asus",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/asus.webp",
+    "alt_text": "Asus"
+  },
+  {
+    "id": 87,
+    "name": "HCLSoftware",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hcl.webp",
+    "alt_text": "HCLSoftware"
+  },
+  {
+    "id": 88,
+    "name": "Cognizant Technology Solutions",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cognizant.webp",
+    "alt_text": "Cognizant Technology Solutions"
+  },
+  {
+    "id": 89,
+    "name": "Lenovo",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/lenovo.webp",
+    "alt_text": "Lenovo"
+  },
+  {
+    "id": 90,
+    "name": "Intellect Design Arena",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intellect.webp",
+    "alt_text": "Intellect Design Arena"
+  },
+  {
+    "id": 91,
+    "name": "Gnani.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gnani.webp",
+    "alt_text": "Gnani.ai"
+  },
+  {
+    "id": 92,
+    "name": "Intel",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intel.webp",
+    "alt_text": "Intel"
+  },
+  {
+    "id": 93,
+    "name": "VVDN Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vvdn.webp",
+    "alt_text": "VVDN Technologies"
+  },
+  {
+    "id": 94,
+    "name": "Redington Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/redington.webp",
+    "alt_text": "Redington Limited"
+  },
+  {
+    "id": 95,
+    "name": "NIDP Developers Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nidp_developers_private_limited.webp",
+    "alt_text": "NIDP Developers Private Limited"
+  },
+  {
+    "id": 96,
+    "name": "Yotta Data Services",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/Yotta-Data-Services.webp",
+    "alt_text": "Yotta Data Services"
+  },
+  {
+    "id": 97,
+    "name": "ServiceNow Software Development India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/servicenow.webp",
+    "alt_text": "ServiceNow Software Development India Pvt. Ltd."
+  },
+  {
+    "id": 98,
+    "name": "George P Johnson Event Marketing Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gpj.webp",
+    "alt_text": "George P Johnson Event Marketing Private Limited"
+  },
+  {
+    "id": 99,
+    "name": "Kyndryl Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kyyndryl.webp",
+    "alt_text": "Kyndryl Solutions Pvt. Ltd."
+  },
+  {
+    "id": 100,
+    "name": "Prisma AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prisma_ai.webp",
+    "alt_text": "Prisma AI"
+  },
+  {
+    "id": 101,
+    "name": "Salesforce",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/salesforce.webp",
+    "alt_text": "Salesforce"
+  },
+  {
+    "id": 102,
+    "name": "Constl (Spaceworld)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/spaceworld.webp",
+    "alt_text": "Constl (Spaceworld)"
+  },
+  {
+    "id": 103,
+    "name": "The International Solar Alliance (ISA)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/isa.webp",
+    "alt_text": "The International Solar Alliance (ISA)"
+  },
+  {
+    "id": 104,
+    "name": "Fortinet",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/fortinet.webp",
+    "alt_text": "Fortinet"
+  },
+  {
+    "id": 105,
+    "name": "Linkedin",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/linkedin.webp",
+    "alt_text": "Linkedin"
+  },
+  {
+    "id": 106,
+    "name": "Microsoft",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/microsoft.webp",
+    "alt_text": "Microsoft"
+  },
+  {
+    "id": 107,
+    "name": "Open AI (Lounge)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/open_ai_lounge_.webp",
+    "alt_text": "Open AI (Lounge)"
+  },
+  {
+    "id": 108,
+    "name": "Wipro Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wipro.webp",
+    "alt_text": "Wipro Limited"
+  },
+  {
+    "id": 109,
+    "name": "Mastercard",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mastercard.webp",
+    "alt_text": "Mastercard"
+  },
+  {
+    "id": 110,
+    "name": "Cloudflare India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cloudflare_india_private_limited_.webp",
+    "alt_text": "Cloudflare India Pvt. Ltd."
+  },
+  {
+    "id": 111,
+    "name": "Rec Limited(Rural Electrification Corp. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rec.webp",
+    "alt_text": "Rec Limited(Rural Electrification Corp. Ltd.)"
+  },
+  {
+    "id": 112,
+    "name": "Blockchain For Impact",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/blockchain_for_impact.webp",
+    "alt_text": "Blockchain For Impact"
+  },
+  {
+    "id": 113,
+    "name": "Neysa Networks Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neysa.webp",
+    "alt_text": "Neysa Networks Pvt. Ltd."
+  },
+  {
+    "id": 114,
+    "name": "AMD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/amd.webp",
+    "alt_text": "AMD"
+  },
+  {
+    "id": 115,
+    "name": "Sarvam AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sarvam.webp",
+    "alt_text": "Sarvam AI"
+  },
+  {
+    "id": 116,
+    "name": "DDN",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ddn.webp",
+    "alt_text": "DDN"
+  },
+  {
+    "id": 117,
+    "name": "Electronics Corporation Of Tamil Nadu Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/electronics_corporation_of_tamil_nadu_limited.webp",
+    "alt_text": "Electronics Corporation Of Tamil Nadu Limited"
+  },
+  {
+    "id": 118,
+    "name": "SIFY",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sify.webp",
+    "alt_text": "SIFY"
+  },
+  {
+    "id": 119,
+    "name": "Power Grid Corporation of India Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/power_grid_corporation_of_india_limited.webp",
+    "alt_text": "Power Grid Corporation of India Limited"
+  },
+  {
+    "id": 120,
+    "name": "Lexlegis.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/lex.webp",
+    "alt_text": "Lexlegis.ai"
+  },
+  {
+    "id": 121,
+    "name": "M/S Eye Vision Audio Visual",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eyevision.webp",
+    "alt_text": "M/S Eye Vision Audio Visual"
+  },
+  {
+    "id": 122,
+    "name": "Tech Mahindra",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tech_mahindra.webp",
+    "alt_text": "Tech Mahindra"
+  },
+  {
+    "id": 123,
+    "name": "Apnatime Tech Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Apnatime Tech Private Limited"
+  },
+  {
+    "id": 124,
+    "name": "Bluemachines(Apna.com)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bluemachines.webp",
+    "alt_text": "Bluemachines(Apna.com)"
+  },
+  {
+    "id": 125,
+    "name": "CSR BOX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/crsbox.webp",
+    "alt_text": "CSR BOX"
+  },
+  {
+    "id": 126,
+    "name": "AdaniConnex",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/adani.webp",
+    "alt_text": "AdaniConnex"
+  },
+  {
+    "id": 127,
+    "name": "CoRover Private Limted",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/co_rover.webp",
+    "alt_text": "CoRover Private Limted"
+  },
+  {
+    "id": 128,
+    "name": "HPE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hpe.webp",
+    "alt_text": "HPE"
+  },
+  {
+    "id": 129,
+    "name": "Zoho",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zoho.webp",
+    "alt_text": "Zoho"
+  },
+  {
+    "id": 130,
+    "name": "Cisco Commerce Cisco Systems",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cisco.webp",
+    "alt_text": "Cisco Commerce Cisco Systems"
+  },
+  {
+    "id": 131,
+    "name": "Red Hat India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/redhat.webp",
+    "alt_text": "Red Hat India Pvt. Ltd."
+  },
+  {
+    "id": 132,
+    "name": "Adobe",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/adobe.webp",
+    "alt_text": "Adobe"
+  },
+  {
+    "id": 133,
+    "name": "IBM",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ibm.webp",
+    "alt_text": "IBM"
+  },
+  {
+    "id": 134,
+    "name": "Plivo",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/plivo.webp",
+    "alt_text": "Plivo"
+  },
+  {
+    "id": 135,
+    "name": "NeevCloud",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neevcloud.webp",
+    "alt_text": "NeevCloud"
+  },
+  {
+    "id": 136,
+    "name": "Eros Innovation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eros.webp",
+    "alt_text": "Eros Innovation"
+  },
+  {
+    "id": 137,
+    "name": "Immerso Innovation Venture Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Immerso Innovation Venture Private Limited"
+  },
+  {
+    "id": 138,
+    "name": "Government of Republic of Serbia",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/serbia.webp",
+    "alt_text": "Government of Republic of Serbia"
+  },
+  {
+    "id": 139,
+    "name": "Arista Networks",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/arista.webp",
+    "alt_text": "Arista Networks"
+  },
+  {
+    "id": 140,
+    "name": "Razorpay",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/razorpay.webp",
+    "alt_text": "Razorpay"
+  },
+  {
+    "id": 141,
+    "name": "Extramarks Education India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/extramarks_education_india_private_limited.webp",
+    "alt_text": "Extramarks Education India Pvt. Ltd."
+  },
+  {
+    "id": 142,
+    "name": "I-Hub For Robotics And Autonomous Systems",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/i_hub_for_robotics_and_autonomous_systems.webp",
+    "alt_text": "I-Hub For Robotics And Autonomous Systems"
+  },
+  {
+    "id": 143,
+    "name": "Accenture",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/accenture.webp",
+    "alt_text": "Accenture"
+  },
+  {
+    "id": 144,
+    "name": "ESET",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eset.webp",
+    "alt_text": "ESET"
+  },
+  {
+    "id": 145,
+    "name": "Thoughtworks",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/thoughtworks.webp",
+    "alt_text": "Thoughtworks"
+  },
+  {
+    "id": 146,
+    "name": "Iconova Creative Outreach Network Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iconova.webp",
+    "alt_text": "Iconova Creative Outreach Network Pvt. Ltd."
+  },
+  {
+    "id": 147,
+    "name": "Meganet Technologies Global Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/meganet.webp",
+    "alt_text": "Meganet Technologies Global Limited"
+  },
+  {
+    "id": 148,
+    "name": "Supermicro Computer Inc. Taiwan",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/super.webp",
+    "alt_text": "Supermicro Computer Inc. Taiwan"
+  },
+  {
+    "id": 149,
+    "name": "AIOT Foundry Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "AIOT Foundry Private Limited"
+  },
+  {
+    "id": 150,
+    "name": "TCG DIGITAL SOLUTIONS PVT. LTD.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tcg.webp",
+    "alt_text": "TCG DIGITAL SOLUTIONS PVT. LTD."
+  },
+  {
+    "id": 151,
+    "name": "Anant Raj Cloud Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/anant.webp",
+    "alt_text": "Anant Raj Cloud Pvt. Ltd."
+  },
+  {
+    "id": 152,
+    "name": "GitHub",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/git.webp",
+    "alt_text": "GitHub"
+  },
+  {
+    "id": 153,
+    "name": "Lego Group",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/lego.webp",
+    "alt_text": "Lego Group"
+  },
+  {
+    "id": 154,
+    "name": "Railtel Corporation 0f India Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/railtel.webp",
+    "alt_text": "Railtel Corporation 0f India Limited"
+  },
+  {
+    "id": 155,
+    "name": "ESDS Software Solution Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/esds_software_solution_limited.webp",
+    "alt_text": "ESDS Software Solution Limited"
+  },
+  {
+    "id": 156,
+    "name": "Exotel",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/exotel.webp",
+    "alt_text": "Exotel"
+  },
+  {
+    "id": 157,
+    "name": "Technology Services Industry Association",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/technology_services_industry_association.webp",
+    "alt_text": "Technology Services Industry Association"
+  },
+  {
+    "id": 158,
+    "name": "Turiya Semiconductors Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/turiyam.webp",
+    "alt_text": "Turiya Semiconductors Pvt. Ltd."
+  },
+  {
+    "id": 159,
+    "name": "Simplismart",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/simplismart.webp",
+    "alt_text": "Simplismart"
+  },
+  {
+    "id": 160,
+    "name": "Velankani Information Systems Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/velankani.webp",
+    "alt_text": "Velankani Information Systems Ltd."
+  },
+  {
+    "id": 161,
+    "name": "Ansys Software Pvt. Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ansys.webp",
+    "alt_text": "Ansys Software Pvt. Ltd"
+  },
+  {
+    "id": 162,
+    "name": "Axis My India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/axis-my-india.webp",
+    "alt_text": "Axis My India"
+  },
+  {
+    "id": 163,
+    "name": "Corning Technologies India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/corning.webp",
+    "alt_text": "Corning Technologies India Pvt. Ltd."
+  },
+  {
+    "id": 164,
+    "name": "Paytm",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/paytm.webp",
+    "alt_text": "Paytm"
+  },
+  {
+    "id": 165,
+    "name": "Vast Data",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vast_data.webp",
+    "alt_text": "Vast Data"
+  },
+  {
+    "id": 166,
+    "name": "Xlscout Xlpat India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/xlsout.webp",
+    "alt_text": "Xlscout Xlpat India Pvt. Ltd."
+  },
+  {
+    "id": 167,
+    "name": "iStreet Network Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/istreet.webp",
+    "alt_text": "iStreet Network Ltd"
+  },
+  {
+    "id": 168,
+    "name": "Apogean Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/apogean.webp",
+    "alt_text": "Apogean Technologies Pvt. Ltd."
+  },
+  {
+    "id": 169,
+    "name": "Hackerearth Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hackerearth.webp",
+    "alt_text": "Hackerearth Technologies Pvt. Ltd."
+  },
+  {
+    "id": 170,
+    "name": "Mio AI | Merrito",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/mio.webp",
+    "alt_text": "Mio AI | Merrito"
+  },
+  {
+    "id": 171,
+    "name": "Repro India Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/repro.webp",
+    "alt_text": "Repro India Pvt Ltd"
+  },
+  {
+    "id": 172,
+    "name": "Enterprise Estonia",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eas.webp",
+    "alt_text": "Enterprise Estonia"
+  },
+  {
+    "id": 173,
+    "name": "PRAMA India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prama_india_private_limited.webp",
+    "alt_text": "PRAMA India Pvt. Ltd."
+  },
+  {
+    "id": 174,
+    "name": "Gautam Solar Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gautam_solar.webp",
+    "alt_text": "Gautam Solar Pvt. Ltd."
+  },
+  {
+    "id": 175,
+    "name": "Josh Talks",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/Josh.webp",
+    "alt_text": "Josh Talks"
+  },
+  {
+    "id": 176,
+    "name": "ParadigmIT Technology Services Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/paradigmit.webp",
+    "alt_text": "ParadigmIT Technology Services Pvt. Ltd."
+  },
+  {
+    "id": 177,
+    "name": "WEKA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/weka.webp",
+    "alt_text": "WEKA"
+  },
+  {
+    "id": 178,
+    "name": "Nasscom",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nasscom.webp",
+    "alt_text": "Nasscom"
+  },
+  {
+    "id": 179,
+    "name": "Neo4j",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neo4j.webp",
+    "alt_text": "Neo4j"
+  },
+  {
+    "id": 180,
+    "name": "People Prime",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/people_prime.webp",
+    "alt_text": "People Prime"
+  },
+  {
+    "id": 181,
+    "name": "Zypl Holding Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zypl_holding_ltd.webp",
+    "alt_text": "Zypl Holding Ltd"
+  },
+  {
+    "id": 182,
+    "name": "CommScope Inc",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tag_enterprises_commscope_inc_.webp",
+    "alt_text": "CommScope Inc"
+  },
+  {
+    "id": 183,
+    "name": "dDriven",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/d_driven.webp",
+    "alt_text": "dDriven"
+  },
+  {
+    "id": 184,
+    "name": "DevRev.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/devrev.webp",
+    "alt_text": "DevRev.ai"
+  },
+  {
+    "id": 185,
+    "name": "Neutrinos",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neutrinos.webp",
+    "alt_text": "Neutrinos"
+  },
+  {
+    "id": 186,
+    "name": "11ZA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/11za.webp",
+    "alt_text": "11ZA"
+  },
+  {
+    "id": 187,
+    "name": "Beyond Codes",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/beyond_codes.webp",
+    "alt_text": "Beyond Codes"
+  },
+  {
+    "id": 188,
+    "name": "Bosch",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bosch.webp",
+    "alt_text": "Bosch"
+  },
+  {
+    "id": 189,
+    "name": "Brandworks Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/brandwork.webp",
+    "alt_text": "Brandworks Technologies"
+  },
+  {
+    "id": 190,
+    "name": "BUSINESSNEXT",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bnext.webp",
+    "alt_text": "BUSINESSNEXT"
+  },
+  {
+    "id": 191,
+    "name": "Civic Data Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/civil_datalab_private_limited.webp",
+    "alt_text": "Civic Data Labs"
+  },
+  {
+    "id": 192,
+    "name": "Cyfuture India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cyfuture.webp",
+    "alt_text": "Cyfuture India Pvt. Ltd."
+  },
+  {
+    "id": 193,
+    "name": "FuturixAI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/futurixai.webp",
+    "alt_text": "FuturixAI"
+  },
+  {
+    "id": 194,
+    "name": "Genpact India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/genpact.webp",
+    "alt_text": "Genpact India Private Limited"
+  },
+  {
+    "id": 195,
+    "name": "Haptik",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/haptik.webp",
+    "alt_text": "Haptik"
+  },
+  {
+    "id": 196,
+    "name": "Hughes Systique Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hughes_systique_private_limited.webp",
+    "alt_text": "Hughes Systique Pvt. Ltd."
+  },
+  {
+    "id": 197,
+    "name": "I2K2 Networks Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/i2k2.webp",
+    "alt_text": "I2K2 Networks Private Limited"
+  },
+  {
+    "id": 198,
+    "name": "IIT Gandhinagar",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/IIT-gandhinagar.webp",
+    "alt_text": "IIT Gandhinagar"
+  },
+  {
+    "id": 199,
+    "name": "Indus IntelliRisk and IntelliSense Services Pvt. Ltd.",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/iiris.webp",
+    "alt_text": "Indus IntelliRisk and IntelliSense Services Pvt. Ltd."
+  },
+  {
+    "id": 200,
+    "name": "Integra Micro Systems",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/integra_micro_systems.webp",
+    "alt_text": "Integra Micro Systems"
+  },
+  {
+    "id": 201,
+    "name": "Intensity Global Technologies Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intensity_global_technologies_limited.webp",
+    "alt_text": "Intensity Global Technologies Limited"
+  },
+  {
+    "id": 202,
+    "name": "Kavion",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/n_kor.webp",
+    "alt_text": "Kavion"
+  },
+  {
+    "id": 203,
+    "name": "NTT DATA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ntt_global_data_centers_cloud_infrastructure_.webp",
+    "alt_text": "NTT DATA"
+  },
+  {
+    "id": 204,
+    "name": "Pienomial Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pienomial.webp",
+    "alt_text": "Pienomial Technologies Pvt. Ltd."
+  },
+  {
+    "id": 205,
+    "name": "Siemens Technology & Services Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/siemens_technology.webp",
+    "alt_text": "Siemens Technology &amp; Services Pvt. Ltd."
+  },
+  {
+    "id": 206,
+    "name": "SquadStack.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/squadrun_solutions_private_limited_squadstack_ai_.webp",
+    "alt_text": "SquadStack.ai"
+  },
+  {
+    "id": 207,
+    "name": "Tanna TechBiz AI Hardware Solution",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tanna_techbiz.webp",
+    "alt_text": "Tanna TechBiz AI Hardware Solution"
+  },
+  {
+    "id": 208,
+    "name": "Turing Enterprises (Rainphase Technologies)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/turing.webp",
+    "alt_text": "Turing Enterprises (Rainphase Technologies)"
+  },
+  {
+    "id": 209,
+    "name": "Waisl Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/waisl.webp",
+    "alt_text": "Waisl Limited"
+  },
+  {
+    "id": 210,
+    "name": "AI Ventures",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/_ai_ventures.webp",
+    "alt_text": "AI Ventures"
+  },
+  {
+    "id": 211,
+    "name": "Aiwo Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aiwo.webp",
+    "alt_text": "Aiwo Limited"
+  },
+  {
+    "id": 212,
+    "name": "Cubastion Consulting Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cubastion.webp",
+    "alt_text": "Cubastion Consulting Private Limited"
+  },
+  {
+    "id": 213,
+    "name": "Cybersecurity NexT Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cybernxxt.webp",
+    "alt_text": "Cybersecurity NexT Pvt. Ltd."
+  },
+  {
+    "id": 214,
+    "name": "Cygnet Infotech Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cygnet.webp",
+    "alt_text": "Cygnet Infotech Pvt. Ltd."
+  },
+  {
+    "id": 215,
+    "name": "E-Solutions IT Services Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/e_solutions.webp",
+    "alt_text": "E-Solutions IT Services Pvt. Ltd."
+  },
+  {
+    "id": 216,
+    "name": "ElevenLabs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eleven.webp",
+    "alt_text": "ElevenLabs"
+  },
+  {
+    "id": 217,
+    "name": "Fairvaluation (Unlock Future Fintech Pvt. ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/unlock_future_fintech_private_limited.webp",
+    "alt_text": "Fairvaluation (Unlock Future Fintech Pvt. ltd.)"
+  },
+  {
+    "id": 218,
+    "name": "Fore Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/fore.webp",
+    "alt_text": "Fore Solutions Pvt. Ltd."
+  },
+  {
+    "id": 219,
+    "name": "Kestone Integrated Marketing Services",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kestone.webp",
+    "alt_text": "Kestone Integrated Marketing Services"
+  },
+  {
+    "id": 220,
+    "name": "Posidex technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/posidex_technologies_private_limited.webp",
+    "alt_text": "Posidex technologies"
+  },
+  {
+    "id": 221,
+    "name": "Resecurity",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/indreni_resecurity.webp",
+    "alt_text": "Resecurity"
+  },
+  {
+    "id": 222,
+    "name": "SAS Institute India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sas.webp",
+    "alt_text": "SAS Institute India Pvt. Ltd."
+  },
+  {
+    "id": 223,
+    "name": "SECUAI SOLUTIONS PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/secuai.webp",
+    "alt_text": "SECUAI SOLUTIONS PRIVATE LIMITED"
+  },
+  {
+    "id": 224,
+    "name": "VIRSA.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/virsa_ai.webp",
+    "alt_text": "VIRSA.AI"
+  },
+  {
+    "id": 225,
+    "name": "Rodic Consultants Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rodic.webp",
+    "alt_text": "Rodic Consultants Pvt. Ltd."
+  },
+  {
+    "id": 226,
+    "name": "Acxiom Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/acxiom_technologies.webp",
+    "alt_text": "Acxiom Technologies"
+  },
+  {
+    "id": 227,
+    "name": "Apisod Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/apisod_.webp",
+    "alt_text": "Apisod Technologies Private Limited"
+  },
+  {
+    "id": 228,
+    "name": "Avirasoft Digital Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/avirasoft_digital_technologies_private_limited.webp",
+    "alt_text": "Avirasoft Digital Technologies Pvt. Ltd."
+  },
+  {
+    "id": 229,
+    "name": "CloudPe",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cloudpe.webp",
+    "alt_text": "CloudPe"
+  },
+  {
+    "id": 230,
+    "name": "EDU VANTAGE Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eduvantage.webp",
+    "alt_text": "EDU VANTAGE Pvt. Ltd."
+  },
+  {
+    "id": 231,
+    "name": "Eka Care",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/eka.webp",
+    "alt_text": "Eka Care"
+  },
+  {
+    "id": 232,
+    "name": "Ishan Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ishan_technologies.webp",
+    "alt_text": "Ishan Technologies"
+  },
+  {
+    "id": 233,
+    "name": "Kgraph AI Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kgraph_ai_solutions_private_limited.webp",
+    "alt_text": "Kgraph AI Solutions Pvt. Ltd."
+  },
+  {
+    "id": 234,
+    "name": "MapZot.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mapzot.webp",
+    "alt_text": "MapZot.AI"
+  },
+  {
+    "id": 235,
+    "name": "Nugen Intelligence",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nugen.webp",
+    "alt_text": "Nugen Intelligence"
+  },
+  {
+    "id": 236,
+    "name": "Piramal Foundation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/piramal_foundation.webp",
+    "alt_text": "Piramal Foundation"
+  },
+  {
+    "id": 237,
+    "name": "SmoothAi Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/smooth_ai_private_limited.webp",
+    "alt_text": "SmoothAi Pvt. Ltd."
+  },
+  {
+    "id": 238,
+    "name": "2B Innovations Technology Services Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/2b.webp",
+    "alt_text": "2B Innovations Technology Services Pvt. Ltd."
+  },
+  {
+    "id": 239,
+    "name": "AI Ready School",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ai_ready.webp",
+    "alt_text": "AI Ready School"
+  },
+  {
+    "id": 240,
+    "name": "Aarna Tech Consultants Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aarna_tech.webp",
+    "alt_text": "Aarna Tech Consultants Pvt. Ltd."
+  },
+  {
+    "id": 241,
+    "name": "AeonX Digital",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aeonx_digital.webp",
+    "alt_text": "AeonX Digital"
+  },
+  {
+    "id": 242,
+    "name": "Airawat Research Foundation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/airawat_research_foundation.webp",
+    "alt_text": "Airawat Research Foundation"
+  },
+  {
+    "id": 243,
+    "name": "AISECT",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aisect.webp",
+    "alt_text": "AISECT"
+  },
+  {
+    "id": 244,
+    "name": "Amnet Digital Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/amnet_digital_private_limited.webp",
+    "alt_text": "Amnet Digital Pvt. Ltd."
+  },
+  {
+    "id": 245,
+    "name": "Antier Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/antier_solutions_private_limited.webp",
+    "alt_text": "Antier Solutions Pvt. Ltd."
+  },
+  {
+    "id": 246,
+    "name": "Apolitical Group Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/apolitical.webp",
+    "alt_text": "Apolitical Group Limited"
+  },
+  {
+    "id": 247,
+    "name": "Ariams Consulting Inc",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ariams_consulting_inc.webp",
+    "alt_text": "Ariams Consulting Inc"
+  },
+  {
+    "id": 248,
+    "name": "Atman Cloud Consultants Pvt Lmt",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/atman.webp",
+    "alt_text": "Atman Cloud Consultants Pvt Lmt"
+  },
+  {
+    "id": 249,
+    "name": "Avesta Labs LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/avesta.webp",
+    "alt_text": "Avesta Labs LLP"
+  },
+  {
+    "id": 250,
+    "name": "AVPN Asia",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/avpn.webp",
+    "alt_text": "AVPN Asia"
+  },
+  {
+    "id": 251,
+    "name": "Axis Bank Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/axis.webp",
+    "alt_text": "Axis Bank Limited"
+  },
+  {
+    "id": 252,
+    "name": "Bourntec Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bourntec.webp",
+    "alt_text": "Bourntec Solutions Pvt. Ltd."
+  },
+  {
+    "id": 253,
+    "name": "CBS INFORMATION SYSYEMS INC",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cbs.webp",
+    "alt_text": "CBS INFORMATION SYSYEMS INC"
+  },
+  {
+    "id": 254,
+    "name": "Chat360.io (Sumanel Technology Ventures Pvt. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/chat_360.webp",
+    "alt_text": "Chat360.io (Sumanel Technology Ventures Pvt. Ltd.)"
+  },
+  {
+    "id": 255,
+    "name": "Chemours",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/chemours.webp",
+    "alt_text": "Chemours"
+  },
+  {
+    "id": 256,
+    "name": "Clean Water Generator Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/clean_water.webp",
+    "alt_text": "Clean Water Generator Private Limited"
+  },
+  {
+    "id": 257,
+    "name": "Codespire Solutions India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/codespire.webp",
+    "alt_text": "Codespire Solutions India Pvt. Ltd."
+  },
+  {
+    "id": 258,
+    "name": "Concret.io",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/concret.webp",
+    "alt_text": "Concret.io"
+  },
+  {
+    "id": 259,
+    "name": "Digital Health Associates Pvt. Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/digital_health_associates_.webp",
+    "alt_text": "Digital Health Associates Pvt. Ltd"
+  },
+  {
+    "id": 260,
+    "name": "iMerit Technology",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/imerit.webp",
+    "alt_text": "iMerit Technology"
+  },
+  {
+    "id": 261,
+    "name": "Innefu Labs Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/innefu.webp",
+    "alt_text": "Innefu Labs Limited"
+  },
+  {
+    "id": 262,
+    "name": "Invincible Ocean",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/invincible_ocean.webp",
+    "alt_text": "Invincible Ocean"
+  },
+  {
+    "id": 263,
+    "name": "Meesho",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/meesho.webp",
+    "alt_text": "Meesho"
+  },
+  {
+    "id": 264,
+    "name": "Netsutra",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/netsutra.webp",
+    "alt_text": "Netsutra"
+  },
+  {
+    "id": 265,
+    "name": "OPC HUB India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/opc_hub_india.webp",
+    "alt_text": "OPC HUB India"
+  },
+  {
+    "id": 266,
+    "name": "Pitch my Venture (IGHC Limited )",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pitch_my_venture_ighc_limited_.webp",
+    "alt_text": "Pitch my Venture (IGHC Limited )"
+  },
+  {
+    "id": 267,
+    "name": "PreDusk Technology Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/predusk_technology_private_limited_.webp",
+    "alt_text": "PreDusk Technology Pvt. Ltd."
+  },
+  {
+    "id": 268,
+    "name": "R Process",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rprocess.webp",
+    "alt_text": "R Process"
+  },
+  {
+    "id": 269,
+    "name": "Relu AI Systems Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/relu_ai_systems_private_limited.webp",
+    "alt_text": "Relu AI Systems Pvt. Ltd."
+  },
+  {
+    "id": 270,
+    "name": "Ripik technology Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ripik.webp",
+    "alt_text": "Ripik technology Pvt. Ltd."
+  },
+  {
+    "id": 271,
+    "name": "Rootle Voconv Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rootle.webp",
+    "alt_text": "Rootle Voconv Private Limited"
+  },
+  {
+    "id": 272,
+    "name": "Smallest AI (Awaaz Labs Pvt. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/awaaz_labs_private_limited.webp",
+    "alt_text": "Smallest AI (Awaaz Labs Pvt. Ltd.)"
+  },
+  {
+    "id": 273,
+    "name": "SpectraONE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/spectra_one.webp",
+    "alt_text": "SpectraONE"
+  },
+  {
+    "id": 274,
+    "name": "SST India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sst.webp",
+    "alt_text": "SST India"
+  },
+  {
+    "id": 275,
+    "name": "Taiyo.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/taiyo.webp",
+    "alt_text": "Taiyo.AI"
+  },
+  {
+    "id": 276,
+    "name": "The STEM Practice Company",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/stem.webp",
+    "alt_text": "The STEM Practice Company"
+  },
+  {
+    "id": 277,
+    "name": "Transline Technologies Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/transline.webp",
+    "alt_text": "Transline Technologies Limited"
+  },
+  {
+    "id": 278,
+    "name": "Transport Corporation of India Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tci.webp",
+    "alt_text": "Transport Corporation of India Limited"
+  },
+  {
+    "id": 279,
+    "name": "Trestle Labs Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/trestle.webp",
+    "alt_text": "Trestle Labs Private Limited"
+  },
+  {
+    "id": 280,
+    "name": "United Tyrekrafts Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/united_tyrekrafts_private_limited.webp",
+    "alt_text": "United Tyrekrafts Pvt. Ltd."
+  },
+  {
+    "id": 281,
+    "name": "Utho Platforms Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/utho.webp",
+    "alt_text": "Utho Platforms Private Limited"
+  },
+  {
+    "id": 282,
+    "name": "W3villa Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/w3_villa.webp",
+    "alt_text": "W3villa Technologies Pvt Ltd"
+  },
+  {
+    "id": 283,
+    "name": "Whiz Meeting India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/whiz.webp",
+    "alt_text": "Whiz Meeting India Private Limited"
+  },
+  {
+    "id": 284,
+    "name": "WIPLON - Webspiders Interweb Pvt. Ltd.",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/WIPL.webp",
+    "alt_text": "WIPLON - Webspiders Interweb Pvt. Ltd."
+  },
+  {
+    "id": 285,
+    "name": "Yo Doozy! Media Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yo_doozy_media_private_limited.webp",
+    "alt_text": "Yo Doozy! Media Private Limited"
+  },
+  {
+    "id": 286,
+    "name": "Bharat1.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bharat1_ai.webp",
+    "alt_text": "Bharat1.ai"
+  },
+  {
+    "id": 287,
+    "name": "Dayananda Sagar University",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dsu.webp",
+    "alt_text": "Dayananda Sagar University"
+  },
+  {
+    "id": 288,
+    "name": "Dr. A.P.J Abdul Kalam Technical University Lucknow",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/apj.webp",
+    "alt_text": "Dr. A.P.J Abdul Kalam Technical University Lucknow"
+  },
+  {
+    "id": 289,
+    "name": "Accenture LearnVantage",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/accenture.webp",
+    "alt_text": "Accenture LearnVantage"
+  },
+  {
+    "id": 290,
+    "name": "Galgotias University",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/galgotias.webp",
+    "alt_text": "Galgotias University"
+  },
+  {
+    "id": 291,
+    "name": "ERA EDUCATION TRUST",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/era.webp",
+    "alt_text": "ERA EDUCATION TRUST"
+  },
+  {
+    "id": 292,
+    "name": "Amity University",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/amity.webp",
+    "alt_text": "Amity University"
+  },
+  {
+    "id": 293,
+    "name": "Ritnand Balved Education Foundation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rbef.webp",
+    "alt_text": "Ritnand Balved Education Foundation"
+  },
+  {
+    "id": 294,
+    "name": "ARTPARK",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/artpark.webp",
+    "alt_text": "ARTPARK"
+  },
+  {
+    "id": 295,
+    "name": "International Institute Of Information(Bangalore)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iiit_bangalore.webp",
+    "alt_text": "International Institute Of Information(Bangalore)"
+  },
+  {
+    "id": 296,
+    "name": "IILM University",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iilm.webp",
+    "alt_text": "IILM University"
+  },
+  {
+    "id": 297,
+    "name": "Meerut Institute of Emgineering & Technology",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/meerut.webp",
+    "alt_text": "Meerut Institute of Emgineering &amp; Technology"
+  },
+  {
+    "id": 298,
+    "name": "Scaler School of technology",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/scaler_school_of_technology.webp",
+    "alt_text": "Scaler School of technology"
+  },
+  {
+    "id": 299,
+    "name": "BITS Pilani, Hyderabad",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bits.webp",
+    "alt_text": "BITS Pilani, Hyderabad"
+  },
+  {
+    "id": 300,
+    "name": "Lovely Professional University, Punjab",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/lpu.webp",
+    "alt_text": "Lovely Professional University, Punjab"
+  },
+  {
+    "id": 301,
+    "name": "Vivekananda Global University, Jaipur",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vivekananda_global_university_jaipur.webp",
+    "alt_text": "Vivekananda Global University, Jaipur"
+  },
+  {
+    "id": 302,
+    "name": "Indian Institute of Technology Madras",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/insitute-of-tec-madras.webp",
+    "alt_text": "Indian Institute of Technology Madras"
+  },
+  {
+    "id": 303,
+    "name": "IIT Bombay (Indian Institute of Technology Bombay)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iit_bombay.webp",
+    "alt_text": "IIT Bombay (Indian Institute of Technology Bombay)"
+  },
+  {
+    "id": 304,
+    "name": "The Cutting Edge Group",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cutting_edge.webp",
+    "alt_text": "The Cutting Edge Group"
+  },
+  {
+    "id": 305,
+    "name": "IIT Kharagpur (AI4ICPS I Hub Foundation)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iit_kharagpur_.webp",
+    "alt_text": "IIT Kharagpur (AI4ICPS I Hub Foundation)"
+  },
+  {
+    "id": 306,
+    "name": "The LNM Institute of Information Technology, Jaipur",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/lnmiit.webp",
+    "alt_text": "The LNM Institute of Information Technology, Jaipur"
+  },
+  {
+    "id": 307,
+    "name": "Hindustan Institute of Technology and Science",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hindustan.webp",
+    "alt_text": "Hindustan Institute of Technology and Science"
+  },
+  {
+    "id": 308,
+    "name": "Institute of Chartered Accountant of India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/the_institute_of_chartered_accountants_of_india.webp",
+    "alt_text": "Institute of Chartered Accountant of India"
+  },
+  {
+    "id": 309,
+    "name": "Centre for Journalism Innovation and Development (CJID)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cjid.webp",
+    "alt_text": "Centre for Journalism Innovation and Development (CJID)"
+  },
+  {
+    "id": 310,
+    "name": "Nigeria AI Collective",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nigeria_ai_collective.webp",
+    "alt_text": "Nigeria AI Collective"
+  },
+  {
+    "id": 311,
+    "name": "Planetskool",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/planetskool.webp",
+    "alt_text": "Planetskool"
+  },
+  {
+    "id": 312,
+    "name": "Vishwakarma University (Institute of Technology)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vishwakarma_institute.webp",
+    "alt_text": "Vishwakarma University (Institute of Technology)"
+  },
+  {
+    "id": 313,
+    "name": "Evvolv.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/evvolv.webp",
+    "alt_text": "Evvolv.ai"
+  },
+  {
+    "id": 314,
+    "name": "Evvolv Transformations Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Evvolv Transformations Private Limited"
+  },
+  {
+    "id": 315,
+    "name": "MobilePe Fintech Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mobilepe.webp",
+    "alt_text": "MobilePe Fintech Private Limited"
+  },
+  {
+    "id": 316,
+    "name": "Proximal Cloud (Proximal Cloud Private Limited)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/proximal.webp",
+    "alt_text": "Proximal Cloud (Proximal Cloud Private Limited)"
+  },
+  {
+    "id": 317,
+    "name": "Mirror Security Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mirroe-security.webp",
+    "alt_text": "Mirror Security Pvt. Ltd."
+  },
+  {
+    "id": 318,
+    "name": "Benchmark ESG Pvt Limited India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bemnchmark.webp",
+    "alt_text": "Benchmark ESG Pvt Limited India"
+  },
+  {
+    "id": 319,
+    "name": "TrueFan AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/truefan_ai.webp",
+    "alt_text": "TrueFan AI"
+  },
+  {
+    "id": 320,
+    "name": "YuVerse",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yuverse_credit_avenue_.webp",
+    "alt_text": "YuVerse"
+  },
+  {
+    "id": 321,
+    "name": "Soket Labs Technology and Research Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/soket.webp",
+    "alt_text": "Soket Labs Technology and Research Pvt. Ltd."
+  },
+  {
+    "id": 322,
+    "name": "Aventisia Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aventisia.webp",
+    "alt_text": "Aventisia Technologies Private Limited"
+  },
+  {
+    "id": 323,
+    "name": "Scikiq Data Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/scikiq.webp",
+    "alt_text": "Scikiq Data Pvt. Ltd."
+  },
+  {
+    "id": 324,
+    "name": "ShellKode",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/shellkode.webp",
+    "alt_text": "ShellKode"
+  },
+  {
+    "id": 325,
+    "name": "ZingHR (CNERGYIS INFOTECH INDIA Pvt. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zing_hr.webp",
+    "alt_text": "ZingHR (CNERGYIS INFOTECH INDIA Pvt. Ltd.)"
+  },
+  {
+    "id": 326,
+    "name": "Rapifuzz Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rapi.webp",
+    "alt_text": "Rapifuzz Pvt. Ltd."
+  },
+  {
+    "id": 327,
+    "name": "Refroid Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/refroid.webp",
+    "alt_text": "Refroid Technologies Private Limited"
+  },
+  {
+    "id": 328,
+    "name": "Sambanova Systems India Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sambanova.webp",
+    "alt_text": "Sambanova Systems India Pvt. Ltd."
+  },
+  {
+    "id": 329,
+    "name": "Shodh.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/shodh.webp",
+    "alt_text": "Shodh.ai"
+  },
+  {
+    "id": 330,
+    "name": "Rooman Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rooman.webp",
+    "alt_text": "Rooman Technologies Pvt. Ltd."
+  },
+  {
+    "id": 331,
+    "name": "Virtual Height IT Services Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/virtual_height.webp",
+    "alt_text": "Virtual Height IT Services Pvt. Ltd."
+  },
+  {
+    "id": 332,
+    "name": "Angelbot AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/anglebot-ai.webp",
+    "alt_text": "Angelbot AI Pvt. Ltd."
+  },
+  {
+    "id": 333,
+    "name": "Avinyaa EdTech (Kreativespace)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/avinyaa_edtech_kreativespace_.webp",
+    "alt_text": "Avinyaa EdTech (Kreativespace)"
+  },
+  {
+    "id": 334,
+    "name": "Biz-Tech Analytics",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/biz.webp",
+    "alt_text": "Biz-Tech Analytics"
+  },
+  {
+    "id": 335,
+    "name": "Froncort.AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/frontcort.webp",
+    "alt_text": "Froncort.AI Pvt. Ltd."
+  },
+  {
+    "id": 336,
+    "name": "Gazelle Information Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gazelle.webp",
+    "alt_text": "Gazelle Information Technologies"
+  },
+  {
+    "id": 337,
+    "name": "Hanunnotech (Hanumayamma Innovations and Technologies Pvt. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hanumayamma.webp",
+    "alt_text": "Hanunnotech (Hanumayamma Innovations and Technologies Pvt. Ltd.)"
+  },
+  {
+    "id": 338,
+    "name": "Jio Institute",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/jio_institite.webp",
+    "alt_text": "Jio Institute"
+  },
+  {
+    "id": 339,
+    "name": "Kenpath technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kenpath.webp",
+    "alt_text": "Kenpath technologies Pvt. Ltd."
+  },
+  {
+    "id": 340,
+    "name": "Knight Fintech",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/knight_fintech.webp",
+    "alt_text": "Knight Fintech"
+  },
+  {
+    "id": 341,
+    "name": "LeadupUniverse - E&ICT IIT Kanpur",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/leadupuniverse.webp",
+    "alt_text": "LeadupUniverse - E&amp;ICT IIT Kanpur"
+  },
+  {
+    "id": 342,
+    "name": "Minaions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/minaions.webp",
+    "alt_text": "Minaions Pvt. Ltd."
+  },
+  {
+    "id": 343,
+    "name": "NIMBORA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nimbora.webp",
+    "alt_text": "NIMBORA"
+  },
+  {
+    "id": 344,
+    "name": "Population Council Institute",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pci-logo.webp",
+    "alt_text": "Population Council Institute"
+  },
+  {
+    "id": 345,
+    "name": "Prismberry Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prismberry.webp",
+    "alt_text": "Prismberry Technologies Pvt. Ltd."
+  },
+  {
+    "id": 346,
+    "name": "Protean International DMCC",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/protean.webp",
+    "alt_text": "Protean International DMCC"
+  },
+  {
+    "id": 347,
+    "name": "SapidBlue",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sapid_blue.webp",
+    "alt_text": "SapidBlue"
+  },
+  {
+    "id": 348,
+    "name": "Skorydov Robotics",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/skorydov.webp",
+    "alt_text": "Skorydov Robotics"
+  },
+  {
+    "id": 349,
+    "name": "Sol9X Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sol9x.webp",
+    "alt_text": "Sol9X Pvt. Ltd."
+  },
+  {
+    "id": 350,
+    "name": "Suronex and Zero Forg",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/suronex.webp",
+    "alt_text": "Suronex and Zero Forg"
+  },
+  {
+    "id": 351,
+    "name": "T4G Lab",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/t4glab.webp",
+    "alt_text": "T4G Lab"
+  },
+  {
+    "id": 352,
+    "name": "Vicharak Computers Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vicharak_computers_pvt_ltd.webp",
+    "alt_text": "Vicharak Computers Pvt. Ltd."
+  },
+  {
+    "id": 353,
+    "name": "Aalekh AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aalekh_ai.webp",
+    "alt_text": "Aalekh AI"
+  },
+  {
+    "id": 354,
+    "name": "Acidaes Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Acidaes Solutions Private Limited"
+  },
+  {
+    "id": 355,
+    "name": "ActionSync",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/action.webp",
+    "alt_text": "ActionSync"
+  },
+  {
+    "id": 356,
+    "name": "Acube AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/acubeai.webp",
+    "alt_text": "Acube AI"
+  },
+  {
+    "id": 357,
+    "name": "ADHRITH AI INDIA R&D Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/adhrith.webp",
+    "alt_text": "ADHRITH AI INDIA R&amp;D Pvt Ltd"
+  },
+  {
+    "id": 358,
+    "name": "Aekyam- AI Orchestration Platform",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aekyam.webp",
+    "alt_text": "Aekyam- AI Orchestration Platform"
+  },
+  {
+    "id": 359,
+    "name": "Agnistoka Digital Universe Tech Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/agnistoka_.webp",
+    "alt_text": "Agnistoka Digital Universe Tech Pvt. Ltd."
+  },
+  {
+    "id": 360,
+    "name": "Agniware",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Agniware"
+  },
+  {
+    "id": 361,
+    "name": "AI Planet",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ai_planet.webp",
+    "alt_text": "AI Planet"
+  },
+  {
+    "id": 362,
+    "name": "Ai Unika technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ai_unika.webp",
+    "alt_text": "Ai Unika technologies Private Limited"
+  },
+  {
+    "id": 363,
+    "name": "AIVEda",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aiveda.webp",
+    "alt_text": "AIVEda"
+  },
+  {
+    "id": 364,
+    "name": "Alertis PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/alertis.webp",
+    "alt_text": "Alertis PVT LTD"
+  },
+  {
+    "id": 365,
+    "name": "Altiv.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/altiv_ai.webp",
+    "alt_text": "Altiv.AI"
+  },
+  {
+    "id": 366,
+    "name": "amara info sec",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/amara.webp",
+    "alt_text": "amara info sec"
+  },
+  {
+    "id": 367,
+    "name": "Aminuteman technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aminuteman.webp",
+    "alt_text": "Aminuteman technologies"
+  },
+  {
+    "id": 368,
+    "name": "Antino",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/antino.webp",
+    "alt_text": "Antino"
+  },
+  {
+    "id": 369,
+    "name": "Apicon Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Apicon Solutions Private Limited"
+  },
+  {
+    "id": 370,
+    "name": "Apisdor Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/apisdor.webp",
+    "alt_text": "Apisdor Technologies Pvt Ltd"
+  },
+  {
+    "id": 371,
+    "name": "Appzlogic Mobility Solutions Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/appzlogic.webp",
+    "alt_text": "Appzlogic Mobility Solutions Pvt Ltd"
+  },
+  {
+    "id": 372,
+    "name": "ARMS 4 AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/arms_4_ai.webp",
+    "alt_text": "ARMS 4 AI"
+  },
+  {
+    "id": 373,
+    "name": "ArthaVedh Consulting Pvt Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/arthavedh.webp",
+    "alt_text": "ArthaVedh Consulting Pvt Limited"
+  },
+  {
+    "id": 374,
+    "name": "Ashaa Technology Solutions Pvt. Ltd. (Ashaa.AI)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ashaa.webp",
+    "alt_text": "Ashaa Technology Solutions Pvt. Ltd. (Ashaa.AI)"
+  },
+  {
+    "id": 375,
+    "name": "Assessli",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/assessli.webp",
+    "alt_text": "Assessli"
+  },
+  {
+    "id": 376,
+    "name": "AthenaAgent",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/athenaagent.webp",
+    "alt_text": "AthenaAgent"
+  },
+  {
+    "id": 377,
+    "name": "Atinav Idea Lab Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/atinav.webp",
+    "alt_text": "Atinav Idea Lab Pvt Ltd"
+  },
+  {
+    "id": 378,
+    "name": "Atomo Innovation Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/atomo.webp",
+    "alt_text": "Atomo Innovation Pvt. Ltd."
+  },
+  {
+    "id": 379,
+    "name": "Atsuya Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/atsuya.webp",
+    "alt_text": "Atsuya Technologies Pvt Ltd"
+  },
+  {
+    "id": 380,
+    "name": "AutoBIQ",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/autobiq.webp",
+    "alt_text": "AutoBIQ"
+  },
+  {
+    "id": 381,
+    "name": "Autogradex Assessments Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/autogradex.webp",
+    "alt_text": "Autogradex Assessments Private Limited"
+  },
+  {
+    "id": 382,
+    "name": "AutonomOps AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/autonomops_ai.webp",
+    "alt_text": "AutonomOps AI"
+  },
+  {
+    "id": 383,
+    "name": "Avalon Tech Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/avalon.webp",
+    "alt_text": "Avalon Tech Labs"
+  },
+  {
+    "id": 384,
+    "name": "Aviara Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/aviara_labs.webp",
+    "alt_text": "Aviara Labs"
+  },
+  {
+    "id": 385,
+    "name": "AXL Infotech Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/axl.webp",
+    "alt_text": "AXL Infotech Pvt. Ltd."
+  },
+  {
+    "id": 386,
+    "name": "BHARATADEX PLATFORM PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bharatadex.webp",
+    "alt_text": "BHARATADEX PLATFORM PRIVATE LIMITED"
+  },
+  {
+    "id": 387,
+    "name": "BigOHealth",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bigohealth.webp",
+    "alt_text": "BigOHealth"
+  },
+  {
+    "id": 388,
+    "name": "Birchlogic",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/birchlogic.webp",
+    "alt_text": "Birchlogic"
+  },
+  {
+    "id": 389,
+    "name": "Blackcoat Legaltech Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Blackcoat Legaltech Private Limited"
+  },
+  {
+    "id": 390,
+    "name": "Boaient Technology Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/boaient.webp",
+    "alt_text": "Boaient Technology Solutions Private Limited"
+  },
+  {
+    "id": 391,
+    "name": "Bolna AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bolna_ai.webp",
+    "alt_text": "Bolna AI"
+  },
+  {
+    "id": 392,
+    "name": "Brahmaa.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/brahmaa_ai.webp",
+    "alt_text": "Brahmaa.ai"
+  },
+  {
+    "id": 393,
+    "name": "Brenin Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/brenin.webp",
+    "alt_text": "Brenin Technologies Pvt. Ltd."
+  },
+  {
+    "id": 394,
+    "name": "Brix AI Technology LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/brix.webp",
+    "alt_text": "Brix AI Technology LLP"
+  },
+  {
+    "id": 395,
+    "name": "Buddy Mentor",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/buddy_mentor.webp",
+    "alt_text": "Buddy Mentor"
+  },
+  {
+    "id": 396,
+    "name": "BUWCH LIFESTYLES AND MANAGEMENT PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/buwch.webp",
+    "alt_text": "BUWCH LIFESTYLES AND MANAGEMENT PRIVATE LIMITED"
+  },
+  {
+    "id": 397,
+    "name": "BuzzClan India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/buzzclan_india.webp",
+    "alt_text": "BuzzClan India"
+  },
+  {
+    "id": 398,
+    "name": "Carer Healthcare AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/carer.webp",
+    "alt_text": "Carer Healthcare AI Pvt. Ltd."
+  },
+  {
+    "id": 399,
+    "name": "Carnot Research Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/carnot.webp",
+    "alt_text": "Carnot Research Pvt Ltd"
+  },
+  {
+    "id": 400,
+    "name": "CarryYourAI Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/carryyourai.webp",
+    "alt_text": "CarryYourAI Technologies Private Limited"
+  },
+  {
+    "id": 401,
+    "name": "Carver Agents",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/carver_agents.webp",
+    "alt_text": "Carver Agents"
+  },
+  {
+    "id": 402,
+    "name": "Cgreen",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cgreen.webp",
+    "alt_text": "Cgreen"
+  },
+  {
+    "id": 403,
+    "name": "Chakravue Ai Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Chakravue Ai Private Limited"
+  },
+  {
+    "id": 404,
+    "name": "Chimple",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/chimple_learning.webp",
+    "alt_text": "Chimple"
+  },
+  {
+    "id": 405,
+    "name": "CIVET Global Technology Services Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/civet.webp",
+    "alt_text": "CIVET Global Technology Services Private Limited"
+  },
+  {
+    "id": 406,
+    "name": "ClarityX Analytics Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/clarityx.webp",
+    "alt_text": "ClarityX Analytics Private Limited"
+  },
+  {
+    "id": 407,
+    "name": "ClassMap",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/classmap.webp",
+    "alt_text": "ClassMap"
+  },
+  {
+    "id": 408,
+    "name": "CodeAstra",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/codeastra.webp",
+    "alt_text": "CodeAstra"
+  },
+  {
+    "id": 409,
+    "name": "Codefork Technologies pvt ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Codefork Technologies pvt ltd"
+  },
+  {
+    "id": 410,
+    "name": "Codemate AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/codemate.webp",
+    "alt_text": "Codemate AI"
+  },
+  {
+    "id": 411,
+    "name": "CODETANTRA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/codetantra.webp",
+    "alt_text": "CODETANTRA"
+  },
+  {
+    "id": 412,
+    "name": "Combat Robotics India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/combat_robotics.webp",
+    "alt_text": "Combat Robotics India Private Limited"
+  },
+  {
+    "id": 413,
+    "name": "Computer Shiksha",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/computer_shiksha.webp",
+    "alt_text": "Computer Shiksha"
+  },
+  {
+    "id": 414,
+    "name": "Consint Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/consint.webp",
+    "alt_text": "Consint Solutions Private Limited"
+  },
+  {
+    "id": 415,
+    "name": "Coppermax Technologies LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/coppermax.webp",
+    "alt_text": "Coppermax Technologies LLP"
+  },
+  {
+    "id": 416,
+    "name": "CORAA AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/coraa.webp",
+    "alt_text": "CORAA AI"
+  },
+  {
+    "id": 417,
+    "name": "Coral Innovations Pvt. Ltd. (Bharat Smart Services)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/bharat_smart_services.webp",
+    "alt_text": "Coral Innovations Pvt. Ltd. (Bharat Smart Services)"
+  },
+  {
+    "id": 418,
+    "name": "CraftifAI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/craftifai.webp",
+    "alt_text": "CraftifAI"
+  },
+  {
+    "id": 419,
+    "name": "Curate Data Analytics LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/curate.webp",
+    "alt_text": "Curate Data Analytics LLP"
+  },
+  {
+    "id": 420,
+    "name": "CURLSEK AI TECHNOLOGIES PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/curlsek_ai.webp",
+    "alt_text": "CURLSEK AI TECHNOLOGIES PRIVATE LIMITED"
+  },
+  {
+    "id": 421,
+    "name": "Curvo AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/curvo.webp",
+    "alt_text": "Curvo AI"
+  },
+  {
+    "id": 422,
+    "name": "CyberMitra.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cybermitra.webp",
+    "alt_text": "CyberMitra.ai"
+  },
+  {
+    "id": 423,
+    "name": "CyberUltron Consulting Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cyberultron.webp",
+    "alt_text": "CyberUltron Consulting Private Limited"
+  },
+  {
+    "id": 424,
+    "name": "CYRAN AI Solutions Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/cyran.webp",
+    "alt_text": "CYRAN AI Solutions Pvt Ltd"
+  },
+  {
+    "id": 425,
+    "name": "Daakia Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/daakia.webp",
+    "alt_text": "Daakia Pvt. Ltd."
+  },
+  {
+    "id": 426,
+    "name": "Dashverse India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dashverse.webp",
+    "alt_text": "Dashverse India Private Limited"
+  },
+  {
+    "id": 427,
+    "name": "Data Science Wizards Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/data_science_wizards_pvt_ltd.webp",
+    "alt_text": "Data Science Wizards Pvt Ltd"
+  },
+  {
+    "id": 428,
+    "name": "DATASAMUDRA",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/datasamudra.webp",
+    "alt_text": "DATASAMUDRA"
+  },
+  {
+    "id": 429,
+    "name": "Daten & Wissen Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/daten_wisse.webp",
+    "alt_text": "Daten &amp; Wissen Pvt. Ltd."
+  },
+  {
+    "id": 430,
+    "name": "Deepchecks",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/deepchecks.webp",
+    "alt_text": "Deepchecks"
+  },
+  {
+    "id": 431,
+    "name": "Deepmindz Innovations",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/deepmindz.webp",
+    "alt_text": "Deepmindz Innovations"
+  },
+  {
+    "id": 432,
+    "name": "Delta4 Infotech Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/delta4.webp",
+    "alt_text": "Delta4 Infotech Pvt Ltd"
+  },
+  {
+    "id": 433,
+    "name": "DesiCrew Solutions",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/desicrew.webp",
+    "alt_text": "DesiCrew Solutions"
+  },
+  {
+    "id": 434,
+    "name": "DeskTrack",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/desktrack.webp",
+    "alt_text": "DeskTrack"
+  },
+  {
+    "id": 435,
+    "name": "Devick Biz Solutions Pvt. Ltd. (OneNDF)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/onendf.webp",
+    "alt_text": "Devick Biz Solutions Pvt. Ltd. (OneNDF)"
+  },
+  {
+    "id": 436,
+    "name": "DGTLmart Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dgtlmart.webp",
+    "alt_text": "DGTLmart Technologies Pvt. Ltd."
+  },
+  {
+    "id": 437,
+    "name": "Dotnitron Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dotnitron.webp",
+    "alt_text": "Dotnitron Technologies"
+  },
+  {
+    "id": 438,
+    "name": "DSeT Consulting Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/dset.webp",
+    "alt_text": "DSeT Consulting Pvt. Ltd."
+  },
+  {
+    "id": 439,
+    "name": "DueDraft.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/duedraft.webp",
+    "alt_text": "DueDraft.ai"
+  },
+  {
+    "id": 440,
+    "name": "EASE MY AI PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/easemyai.webp",
+    "alt_text": "EASE MY AI PVT LTD"
+  },
+  {
+    "id": 441,
+    "name": "EdgeFleet.Ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/edgefleet_ai.webp",
+    "alt_text": "EdgeFleet.Ai"
+  },
+  {
+    "id": 442,
+    "name": "Ednectar",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ednectar.webp",
+    "alt_text": "Ednectar"
+  },
+  {
+    "id": 443,
+    "name": "EDREVEL",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/edrevel.webp",
+    "alt_text": "EDREVEL"
+  },
+  {
+    "id": 444,
+    "name": "Edufusion Ventures Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/edufusion.webp",
+    "alt_text": "Edufusion Ventures Pvt Ltd"
+  },
+  {
+    "id": 445,
+    "name": "Edza AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/edza_ai.webp",
+    "alt_text": "Edza AI"
+  },
+  {
+    "id": 446,
+    "name": "Ekam Internet LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ekam_.webp",
+    "alt_text": "Ekam Internet LLP"
+  },
+  {
+    "id": 447,
+    "name": "Ello.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Ello.AI"
+  },
+  {
+    "id": 448,
+    "name": "Elluminati Ventures Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/elluminati.webp",
+    "alt_text": "Elluminati Ventures Pvt Ltd"
+  },
+  {
+    "id": 449,
+    "name": "Embedr",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/embedr.webp",
+    "alt_text": "Embedr"
+  },
+  {
+    "id": 450,
+    "name": "EmergX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/emergx.webp",
+    "alt_text": "EmergX"
+  },
+  {
+    "id": 451,
+    "name": "Empaithy",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/empaithy.webp",
+    "alt_text": "Empaithy"
+  },
+  {
+    "id": 452,
+    "name": "EmpathIQ Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/empathiq.webp",
+    "alt_text": "EmpathIQ Technologies Pvt Ltd"
+  },
+  {
+    "id": 453,
+    "name": "EmvoAI Labs Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "EmvoAI Labs Private Limited"
+  },
+  {
+    "id": 454,
+    "name": "Endee Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/endee_labs.webp",
+    "alt_text": "Endee Labs"
+  },
+  {
+    "id": 455,
+    "name": "enestock private limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/enestock.webp",
+    "alt_text": "enestock private limited"
+  },
+  {
+    "id": 456,
+    "name": "EnxtAI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/enxtai.webp",
+    "alt_text": "EnxtAI"
+  },
+  {
+    "id": 457,
+    "name": "Esniff Devices Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/esniff_.webp",
+    "alt_text": "Esniff Devices Pvt. Ltd."
+  },
+  {
+    "id": 458,
+    "name": "Ethana.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ethana_ai.webp",
+    "alt_text": "Ethana.ai"
+  },
+  {
+    "id": 459,
+    "name": "Evigway Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/evigway.webp",
+    "alt_text": "Evigway Technologies Pvt. Ltd."
+  },
+  {
+    "id": 460,
+    "name": "Exosphere",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/exosphere.webp",
+    "alt_text": "Exosphere"
+  },
+  {
+    "id": 461,
+    "name": "Farmoid Robotech Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/farmoid.webp",
+    "alt_text": "Farmoid Robotech Pvt. Ltd."
+  },
+  {
+    "id": 462,
+    "name": "Fashdeck AI Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/fashdesk.webp",
+    "alt_text": "Fashdeck AI Private Limited"
+  },
+  {
+    "id": 463,
+    "name": "Felamity Technologies LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/felamity.webp",
+    "alt_text": "Felamity Technologies LLP"
+  },
+  {
+    "id": 464,
+    "name": "FinStackk",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/finstackk.webp",
+    "alt_text": "FinStackk"
+  },
+  {
+    "id": 465,
+    "name": "Fitnastic Health pvt ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/fitnastic.webp",
+    "alt_text": "Fitnastic Health pvt ltd"
+  },
+  {
+    "id": 466,
+    "name": "Foreclose AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/foreclose.webp",
+    "alt_text": "Foreclose AI"
+  },
+  {
+    "id": 467,
+    "name": "FriendsLearn Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/friendslearn.webp",
+    "alt_text": "FriendsLearn Pvt Ltd"
+  },
+  {
+    "id": 468,
+    "name": "Fuski Ventures Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/fuski.webp",
+    "alt_text": "Fuski Ventures Private Limited"
+  },
+  {
+    "id": 469,
+    "name": "Getgabs LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/getgabs_llp.webp",
+    "alt_text": "Getgabs LLP"
+  },
+  {
+    "id": 470,
+    "name": "Gignaati ( Smartians AI Private Limited)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gignaati.webp",
+    "alt_text": "Gignaati ( Smartians AI Private Limited)"
+  },
+  {
+    "id": 471,
+    "name": "Girikon.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/girikon.webp",
+    "alt_text": "Girikon.AI"
+  },
+  {
+    "id": 472,
+    "name": "Glad Systems and Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Glad Systems and Technologies Pvt. Ltd."
+  },
+  {
+    "id": 473,
+    "name": "GMEET ELECTRONICS PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gmeet.webp",
+    "alt_text": "GMEET ELECTRONICS PRIVATE LIMITED"
+  },
+  {
+    "id": 474,
+    "name": "Gradelab",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gradelab.webp",
+    "alt_text": "Gradelab"
+  },
+  {
+    "id": 475,
+    "name": "GRAG AI FACTORY",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gargai.webp",
+    "alt_text": "GRAG AI FACTORY"
+  },
+  {
+    "id": 476,
+    "name": "GramIQ",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gramiq.webp",
+    "alt_text": "GramIQ"
+  },
+  {
+    "id": 477,
+    "name": "Grovio AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/grovio.webp",
+    "alt_text": "Grovio AI"
+  },
+  {
+    "id": 478,
+    "name": "GrowQR Agentic AI (GrowQR Private Limited)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/growqr.webp",
+    "alt_text": "GrowQR Agentic AI (GrowQR Private Limited)"
+  },
+  {
+    "id": 479,
+    "name": "Growth Jockey Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/growth_jockey.webp",
+    "alt_text": "Growth Jockey Pvt. Ltd."
+  },
+  {
+    "id": 480,
+    "name": "GTMvantage Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gtm.webp",
+    "alt_text": "GTMvantage Technologies Private Limited"
+  },
+  {
+    "id": 481,
+    "name": "gts.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gts_ai.webp",
+    "alt_text": "gts.ai"
+  },
+  {
+    "id": 482,
+    "name": "Gupshup Technology India Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gupshup.webp",
+    "alt_text": "Gupshup Technology India Pvt Ltd"
+  },
+  {
+    "id": 483,
+    "name": "Hack2skill",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/h2s.webp",
+    "alt_text": "Hack2skill"
+  },
+  {
+    "id": 484,
+    "name": "Hanu AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hanu.webp",
+    "alt_text": "Hanu AI Pvt. Ltd."
+  },
+  {
+    "id": 485,
+    "name": "HattaKatta Tech",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hattakatta.webp",
+    "alt_text": "HattaKatta Tech"
+  },
+  {
+    "id": 486,
+    "name": "HawkAItrack Technologies LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hawkai.webp",
+    "alt_text": "HawkAItrack Technologies LLP"
+  },
+  {
+    "id": 487,
+    "name": "Health Gennie",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/health_gennie.webp",
+    "alt_text": "Health Gennie"
+  },
+  {
+    "id": 488,
+    "name": "hoolo.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hoolo.webp",
+    "alt_text": "hoolo.ai"
+  },
+  {
+    "id": 489,
+    "name": "Hunar.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hunar_ai.webp",
+    "alt_text": "Hunar.AI"
+  },
+  {
+    "id": 490,
+    "name": "Hyprbots Systems Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/hyprbots.webp",
+    "alt_text": "Hyprbots Systems Pvt. Ltd."
+  },
+  {
+    "id": 491,
+    "name": "I HUB RESEARCH AND ROBOTICS PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "I HUB RESEARCH AND ROBOTICS PRIVATE LIMITED"
+  },
+  {
+    "id": 492,
+    "name": "Idea Jewellery Ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Idea Jewellery Ai"
+  },
+  {
+    "id": 493,
+    "name": "IKTARA Data Sciences",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iktara.webp",
+    "alt_text": "IKTARA Data Sciences"
+  },
+  {
+    "id": 494,
+    "name": "INDIAN INSTITUTE OF TECHNOLOGY JAMMU",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/iit_jammu.webp",
+    "alt_text": "INDIAN INSTITUTE OF TECHNOLOGY JAMMU"
+  },
+  {
+    "id": 495,
+    "name": "Indus AI Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/indusai.webp",
+    "alt_text": "Indus AI Private Limited"
+  },
+  {
+    "id": 496,
+    "name": "Infinite Uptime India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/infinitw_uptime.webp",
+    "alt_text": "Infinite Uptime India Private Limited"
+  },
+  {
+    "id": 497,
+    "name": "Inflynx Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/inflynx_technologies_pvt_ltd_.webp",
+    "alt_text": "Inflynx Technologies Pvt. Ltd."
+  },
+  {
+    "id": 498,
+    "name": "Infutrix",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/infutrix.webp",
+    "alt_text": "Infutrix"
+  },
+  {
+    "id": 499,
+    "name": "Insigteye.Ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/insigteye.webp",
+    "alt_text": "Insigteye.Ai"
+  },
+  {
+    "id": 500,
+    "name": "Integrated 9AI Business Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/9ai.webp",
+    "alt_text": "Integrated 9AI Business Solutions Pvt. Ltd."
+  },
+  {
+    "id": 501,
+    "name": "Intelekt AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intelekt_ai.webp",
+    "alt_text": "Intelekt AI"
+  },
+  {
+    "id": 502,
+    "name": "INTELIQUANT AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/inteliquant.webp",
+    "alt_text": "INTELIQUANT AI Pvt. Ltd."
+  },
+  {
+    "id": 503,
+    "name": "Intellexia Tech Private Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intellexia.webp",
+    "alt_text": "Intellexia Tech Private Ltd"
+  },
+  {
+    "id": 504,
+    "name": "Intellicloud Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intellicloud.webp",
+    "alt_text": "Intellicloud Solutions Private Limited"
+  },
+  {
+    "id": 505,
+    "name": "intute-ai technologies opc pvt ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/intute_ai.webp",
+    "alt_text": "intute-ai technologies opc pvt ltd"
+  },
+  {
+    "id": 506,
+    "name": "Inweon IT Innovations Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/inweon.webp",
+    "alt_text": "Inweon IT Innovations Pvt. Ltd."
+  },
+  {
+    "id": 507,
+    "name": "IVC Ventures International Innovation Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "IVC Ventures International Innovation Pvt Ltd"
+  },
+  {
+    "id": 508,
+    "name": "Izzki Tech Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/izzki_tech.webp",
+    "alt_text": "Izzki Tech Solutions Pvt. Ltd."
+  },
+  {
+    "id": 509,
+    "name": "Jivi AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/jivi.webp",
+    "alt_text": "Jivi AI"
+  },
+  {
+    "id": 510,
+    "name": "Kalvium",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kalvium.webp",
+    "alt_text": "Kalvium"
+  },
+  {
+    "id": 511,
+    "name": "karemind Iscripts private limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/karemind.webp",
+    "alt_text": "karemind Iscripts private limited"
+  },
+  {
+    "id": 512,
+    "name": "KARKAAI TECHNOLOGIES PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/karkaai.webp",
+    "alt_text": "KARKAAI TECHNOLOGIES PRIVATE LIMITED"
+  },
+  {
+    "id": 513,
+    "name": "Katidhan Tech Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/katidhan.webp",
+    "alt_text": "Katidhan Tech Pvt Ltd"
+  },
+  {
+    "id": 514,
+    "name": "Kenome (Brand of Qarbona Solutions Pvt. Ltd.)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kenome.webp",
+    "alt_text": "Kenome (Brand of Qarbona Solutions Pvt. Ltd.)"
+  },
+  {
+    "id": 515,
+    "name": "KIREAP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kireap.webp",
+    "alt_text": "KIREAP"
+  },
+  {
+    "id": 516,
+    "name": "Kokumi Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kokumi.webp",
+    "alt_text": "Kokumi Technologies Private Limited"
+  },
+  {
+    "id": 517,
+    "name": "Koonj AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/koonjai.webp",
+    "alt_text": "Koonj AI"
+  },
+  {
+    "id": 518,
+    "name": "Kritdhi AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Kritdhi AI"
+  },
+  {
+    "id": 519,
+    "name": "Kriyam.ai (GEOGO)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kriyam_ai_.webp",
+    "alt_text": "Kriyam.ai (GEOGO)"
+  },
+  {
+    "id": 520,
+    "name": "Kubar Protocol Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/kubar.webp",
+    "alt_text": "Kubar Protocol Pvt. Ltd."
+  },
+  {
+    "id": 521,
+    "name": "Ledsak Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ledsak.webp",
+    "alt_text": "Ledsak Technologies Private Limited"
+  },
+  {
+    "id": 522,
+    "name": "LetsAI Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/letsai.webp",
+    "alt_text": "LetsAI Solutions Pvt. Ltd."
+  },
+  {
+    "id": 523,
+    "name": "Leverage",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/leverage.webp",
+    "alt_text": "Leverage"
+  },
+  {
+    "id": 524,
+    "name": "Macgence AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/macgence_ai.webp",
+    "alt_text": "Macgence AI"
+  },
+  {
+    "id": 525,
+    "name": "MadScientist",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/madscientist.webp",
+    "alt_text": "MadScientist"
+  },
+  {
+    "id": 526,
+    "name": "Manavritti Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/manavritti.webp",
+    "alt_text": "Manavritti Solutions Private Limited"
+  },
+  {
+    "id": 527,
+    "name": "Manentia AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/manentia_ai.webp",
+    "alt_text": "Manentia AI"
+  },
+  {
+    "id": 528,
+    "name": "Manodayam Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/manodayam.webp",
+    "alt_text": "Manodayam Pvt. Ltd."
+  },
+  {
+    "id": 529,
+    "name": "Manthana.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/manthana_ai.webp",
+    "alt_text": "Manthana.AI"
+  },
+  {
+    "id": 530,
+    "name": "ManufApp",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/manufapp.webp",
+    "alt_text": "ManufApp"
+  },
+  {
+    "id": 531,
+    "name": "MarcViews Networks Inc.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/marcviews.webp",
+    "alt_text": "MarcViews Networks Inc."
+  },
+  {
+    "id": 532,
+    "name": "Mark II",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mark_ii.webp",
+    "alt_text": "Mark II"
+  },
+  {
+    "id": 533,
+    "name": "Medha Robotics Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Medha Robotics Private Limited"
+  },
+  {
+    "id": 534,
+    "name": "Medvolt Tech Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/medvolt.webp",
+    "alt_text": "Medvolt Tech Private Limited"
+  },
+  {
+    "id": 535,
+    "name": "Mega Impacts",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mega_impacts.webp",
+    "alt_text": "Mega Impacts"
+  },
+  {
+    "id": 536,
+    "name": "Meta Igentico LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/igentico.webp",
+    "alt_text": "Meta Igentico LLP"
+  },
+  {
+    "id": 537,
+    "name": "Miimansa AI Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/miimansa.webp",
+    "alt_text": "Miimansa AI Pvt. Ltd."
+  },
+  {
+    "id": 538,
+    "name": "Mimasa Ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mimasa_ai.webp",
+    "alt_text": "Mimasa Ai"
+  },
+  {
+    "id": 539,
+    "name": "MIND WEBS VENTURES",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mind_webs_ventures.webp",
+    "alt_text": "MIND WEBS VENTURES"
+  },
+  {
+    "id": 540,
+    "name": "Mindweave Transformers Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Mindweave Transformers Private Limited"
+  },
+  {
+    "id": 541,
+    "name": "Mine2",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mine2.webp",
+    "alt_text": "Mine2"
+  },
+  {
+    "id": 542,
+    "name": "Mira AI Think Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Mira AI Think Pvt. Ltd."
+  },
+  {
+    "id": 543,
+    "name": "Miraista",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/miraista.webp",
+    "alt_text": "Miraista"
+  },
+  {
+    "id": 544,
+    "name": "Modern village future innovations",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Modern village future innovations"
+  },
+  {
+    "id": 545,
+    "name": "Molecule AI Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/molecule.webp",
+    "alt_text": "Molecule AI Private Limited"
+  },
+  {
+    "id": 546,
+    "name": "Monkhub Innovations Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/monkhub.webp",
+    "alt_text": "Monkhub Innovations Private Limited"
+  },
+  {
+    "id": 547,
+    "name": "Movibase Platform Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Movibase Platform Private Limited"
+  },
+  {
+    "id": 548,
+    "name": "MPYG Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mpyg.webp",
+    "alt_text": "MPYG Technologies Private Limited"
+  },
+  {
+    "id": 549,
+    "name": "Mulltiply Tech India Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mulltiply.webp",
+    "alt_text": "Mulltiply Tech India Private Limited"
+  },
+  {
+    "id": 550,
+    "name": "MyGST Refund",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/mygst.webp",
+    "alt_text": "MyGST Refund"
+  },
+  {
+    "id": 551,
+    "name": "MySelllerCentral",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/MySelllerCentral.webp",
+    "alt_text": "MySelllerCentral"
+  },
+  {
+    "id": 552,
+    "name": "NavigatingX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/navigatingx.webp",
+    "alt_text": "NavigatingX"
+  },
+  {
+    "id": 553,
+    "name": "Navx Advisors LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/navx.webp",
+    "alt_text": "Navx Advisors LLP"
+  },
+  {
+    "id": 554,
+    "name": "NeenOpal Intelligent Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neenopal.webp",
+    "alt_text": "NeenOpal Intelligent Solutions Private Limited"
+  },
+  {
+    "id": 555,
+    "name": "Neosapien",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neosapien.webp",
+    "alt_text": "Neosapien"
+  },
+  {
+    "id": 556,
+    "name": "Neural Defend",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neural_defend.webp",
+    "alt_text": "Neural Defend"
+  },
+  {
+    "id": 557,
+    "name": "NeuralEDGE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neuraledge.webp",
+    "alt_text": "NeuralEDGE"
+  },
+  {
+    "id": 558,
+    "name": "NeuralFactoryAI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neuralfactoryai.webp",
+    "alt_text": "NeuralFactoryAI"
+  },
+  {
+    "id": 559,
+    "name": "Neurema",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Neurema"
+  },
+  {
+    "id": 560,
+    "name": "neurIOT Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/neuriot.webp",
+    "alt_text": "neurIOT Labs"
+  },
+  {
+    "id": 561,
+    "name": "Newronai Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/newron.webp",
+    "alt_text": "Newronai Technologies Pvt Ltd"
+  },
+  {
+    "id": 562,
+    "name": "Nexoratrading Ventures Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Nexoratrading Ventures Pvt Ltd"
+  },
+  {
+    "id": 563,
+    "name": "NexusVoid AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nexusvoid_ai.webp",
+    "alt_text": "NexusVoid AI"
+  },
+  {
+    "id": 564,
+    "name": "Niral Networks",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/niral_networks.webp",
+    "alt_text": "Niral Networks"
+  },
+  {
+    "id": 565,
+    "name": "Northstarz AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/northstarz_ai.webp",
+    "alt_text": "Northstarz AI"
+  },
+  {
+    "id": 566,
+    "name": "NOVELIO TECHNOLOGIES PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "NOVELIO TECHNOLOGIES PVT LTD"
+  },
+  {
+    "id": 567,
+    "name": "NOVELIO TECHNOLOGIES PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "NOVELIO TECHNOLOGIES PVT LTD"
+  },
+  {
+    "id": 568,
+    "name": "Noveum.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/noveum.webp",
+    "alt_text": "Noveum.ai"
+  },
+  {
+    "id": 569,
+    "name": "Novyte Materials",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/novyte_materials.webp",
+    "alt_text": "Novyte Materials"
+  },
+  {
+    "id": 570,
+    "name": "Now Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Now Technologies Pvt. Ltd."
+  },
+  {
+    "id": 571,
+    "name": "Nxgsecure Solutions Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/nxgsecure.webp",
+    "alt_text": "Nxgsecure Solutions Pvt Ltd"
+  },
+  {
+    "id": 572,
+    "name": "Olbrain Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/olbrain.webp",
+    "alt_text": "Olbrain Labs"
+  },
+  {
+    "id": 573,
+    "name": "Omelo - AI for Animal Health",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/omelo.webp",
+    "alt_text": "Omelo - AI for Animal Health"
+  },
+  {
+    "id": 574,
+    "name": "OmniCard",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/omnicard.webp",
+    "alt_text": "OmniCard"
+  },
+  {
+    "id": 575,
+    "name": "Onelogica",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/onelogica.webp",
+    "alt_text": "Onelogica"
+  },
+  {
+    "id": 576,
+    "name": "OnFinance AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/onfinance_ai.webp",
+    "alt_text": "OnFinance AI"
+  },
+  {
+    "id": 577,
+    "name": "Opsight AI Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/opsight.webp",
+    "alt_text": "Opsight AI Private Limited"
+  },
+  {
+    "id": 578,
+    "name": "Optywise AI Solutions",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/optywise_ai_solutions.webp",
+    "alt_text": "Optywise AI Solutions"
+  },
+  {
+    "id": 579,
+    "name": "Orange Virtual Global Solutions Pvt. Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/orange_virtual_global_solutions_pvt_ltd.webp",
+    "alt_text": "Orange Virtual Global Solutions Pvt. Ltd"
+  },
+  {
+    "id": 580,
+    "name": "OrcaSheets Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/orcasheets.webp",
+    "alt_text": "OrcaSheets Technologies Pvt Ltd"
+  },
+  {
+    "id": 581,
+    "name": "Osto Cybersecurity",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/osto.webp",
+    "alt_text": "Osto Cybersecurity"
+  },
+  {
+    "id": 582,
+    "name": "Passionfruit",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/passionfruit.webp",
+    "alt_text": "Passionfruit"
+  },
+  {
+    "id": 583,
+    "name": "Pathania Svarix Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pathania_svarix.webp",
+    "alt_text": "Pathania Svarix Private Limited"
+  },
+  {
+    "id": 584,
+    "name": "Peush Bery",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Peush Bery"
+  },
+  {
+    "id": 585,
+    "name": "Pharynx AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pharynx_ai.webp",
+    "alt_text": "Pharynx AI"
+  },
+  {
+    "id": 586,
+    "name": "Phinite.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/phinite.webp",
+    "alt_text": "Phinite.ai"
+  },
+  {
+    "id": 587,
+    "name": "Platione Solutions Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/platione.webp",
+    "alt_text": "Platione Solutions Pvt Ltd"
+  },
+  {
+    "id": 588,
+    "name": "Prajva Plus (First Trained Ai of Ayurveda)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Prajva Plus (First Trained Ai of Ayurveda)"
+  },
+  {
+    "id": 589,
+    "name": "Prajvis",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prajvis.webp",
+    "alt_text": "Prajvis"
+  },
+  {
+    "id": 590,
+    "name": "Predulive Innovations Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/predulive.webp",
+    "alt_text": "Predulive Innovations Pvt. Ltd."
+  },
+  {
+    "id": 591,
+    "name": "Presear Softwares PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/presear.webp",
+    "alt_text": "Presear Softwares PVT LTD"
+  },
+  {
+    "id": 592,
+    "name": "Procol",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/procol.webp",
+    "alt_text": "Procol"
+  },
+  {
+    "id": 593,
+    "name": "Prodloop Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prodloop_.webp",
+    "alt_text": "Prodloop Technologies Private Limited"
+  },
+  {
+    "id": 594,
+    "name": "Project Genesis AI Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Project Genesis AI Labs"
+  },
+  {
+    "id": 595,
+    "name": "Propio",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/propio.webp",
+    "alt_text": "Propio"
+  },
+  {
+    "id": 596,
+    "name": "Prospectoo",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/prospectoo.webp",
+    "alt_text": "Prospectoo"
+  },
+  {
+    "id": 597,
+    "name": "ProvisCommerce.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/proviscommerce_ai.webp",
+    "alt_text": "ProvisCommerce.AI"
+  },
+  {
+    "id": 598,
+    "name": "Proxgy",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/proxgy.webp",
+    "alt_text": "Proxgy"
+  },
+  {
+    "id": 599,
+    "name": "Puch AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/puchai.webp",
+    "alt_text": "Puch AI"
+  },
+  {
+    "id": 600,
+    "name": "PVANALYTICA INNOVATIONS PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pvanalytica.webp",
+    "alt_text": "PVANALYTICA INNOVATIONS PRIVATE LIMITED"
+  },
+  {
+    "id": 601,
+    "name": "qRaptor",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/qraptor.webp",
+    "alt_text": "qRaptor"
+  },
+  {
+    "id": 602,
+    "name": "QuaaPeak Tech Pvt. Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/quaapeak.webp",
+    "alt_text": "QuaaPeak Tech Pvt. Ltd"
+  },
+  {
+    "id": 603,
+    "name": "Quaapton AI Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/quaapton_.webp",
+    "alt_text": "Quaapton AI Solutions Pvt. Ltd."
+  },
+  {
+    "id": 604,
+    "name": "Quanta AI Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/quanta.webp",
+    "alt_text": "Quanta AI Labs"
+  },
+  {
+    "id": 605,
+    "name": "Qubrid AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/qubrid_ai.webp",
+    "alt_text": "Qubrid AI"
+  },
+  {
+    "id": 606,
+    "name": "Querygen",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/querygen.webp",
+    "alt_text": "Querygen"
+  },
+  {
+    "id": 607,
+    "name": "Rasyn Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rasyn_.webp",
+    "alt_text": "Rasyn Technologies Private Limited"
+  },
+  {
+    "id": 608,
+    "name": "RationalGO",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rationalgo.webp",
+    "alt_text": "RationalGO"
+  },
+  {
+    "id": 609,
+    "name": "Ravit Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Ravit Technologies Pvt Ltd"
+  },
+  {
+    "id": 610,
+    "name": "REAN CARE FOUNDATION (INDIA)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rean.webp",
+    "alt_text": "REAN CARE FOUNDATION (INDIA)"
+  },
+  {
+    "id": 611,
+    "name": "Reblue Ventures Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/reblue.webp",
+    "alt_text": "Reblue Ventures Pvt Ltd"
+  },
+  {
+    "id": 612,
+    "name": "Recapi AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/recapi_ai.webp",
+    "alt_text": "Recapi AI"
+  },
+  {
+    "id": 613,
+    "name": "Repliant AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/repliant_ai.webp",
+    "alt_text": "Repliant AI"
+  },
+  {
+    "id": 614,
+    "name": "Responsible AI Labs Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/responsible_ai_.webp",
+    "alt_text": "Responsible AI Labs Private Limited"
+  },
+  {
+    "id": 615,
+    "name": "RLAI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/rlai.webp",
+    "alt_text": "RLAI"
+  },
+  {
+    "id": 616,
+    "name": "RoadVision AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/roadvision_ai.webp",
+    "alt_text": "RoadVision AI"
+  },
+  {
+    "id": 617,
+    "name": "S4AI Technologies LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/s4ai.webp",
+    "alt_text": "S4AI Technologies LLP"
+  },
+  {
+    "id": 618,
+    "name": "SagurIT Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sagur.webp",
+    "alt_text": "SagurIT Technologies Private Limited"
+  },
+  {
+    "id": 619,
+    "name": "Satyananda Technologies Pvt ltd (ambaram.ai)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ambaram.webp",
+    "alt_text": "Satyananda Technologies Pvt ltd (ambaram.ai)"
+  },
+  {
+    "id": 620,
+    "name": "scanO",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/scano.webp",
+    "alt_text": "scanO"
+  },
+  {
+    "id": 621,
+    "name": "SDLC Corp",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sdlc_corp.webp",
+    "alt_text": "SDLC Corp"
+  },
+  {
+    "id": 622,
+    "name": "Secondbrain.AI Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/second_brain.webp",
+    "alt_text": "Secondbrain.AI Pvt Ltd"
+  },
+  {
+    "id": 623,
+    "name": "SEORCE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/seorce.webp",
+    "alt_text": "SEORCE"
+  },
+  {
+    "id": 624,
+    "name": "SetMyCart",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/setmycart.webp",
+    "alt_text": "SetMyCart"
+  },
+  {
+    "id": 625,
+    "name": "SETV Healthcare Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/setv.webp",
+    "alt_text": "SETV Healthcare Technologies Private Limited"
+  },
+  {
+    "id": 626,
+    "name": "SimpliFin.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/simplifin.webp",
+    "alt_text": "SimpliFin.ai"
+  },
+  {
+    "id": 627,
+    "name": "Simplita AI Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/simplita.webp",
+    "alt_text": "Simplita AI Technologies Pvt Ltd"
+  },
+  {
+    "id": 628,
+    "name": "Skoop",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/skoop.webp",
+    "alt_text": "Skoop"
+  },
+  {
+    "id": 629,
+    "name": "SKYE AIR MOBILITY PVT LTD",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/skye_air.webp",
+    "alt_text": "SKYE AIR MOBILITY PVT LTD"
+  },
+  {
+    "id": 630,
+    "name": "Smartters",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/smartters.webp",
+    "alt_text": "Smartters"
+  },
+  {
+    "id": 631,
+    "name": "Solution Buddy",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Solution Buddy"
+  },
+  {
+    "id": 632,
+    "name": "SoulEra",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/soulera.webp",
+    "alt_text": "SoulEra"
+  },
+  {
+    "id": 633,
+    "name": "Spark Connect",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/spark.webp",
+    "alt_text": "Spark Connect"
+  },
+  {
+    "id": 634,
+    "name": "Spharaka Networks Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/spharaka_.webp",
+    "alt_text": "Spharaka Networks Private Limited"
+  },
+  {
+    "id": 635,
+    "name": "Spotless AI Robotics Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/spotless.webp",
+    "alt_text": "Spotless AI Robotics Pvt. Ltd."
+  },
+  {
+    "id": 636,
+    "name": "Sreyas Software Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/sreyas.webp",
+    "alt_text": "Sreyas Software Solutions Pvt. Ltd."
+  },
+  {
+    "id": 637,
+    "name": "STEMBOTIX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/stembotix.webp",
+    "alt_text": "STEMBOTIX"
+  },
+  {
+    "id": 638,
+    "name": "STEMpedia",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/stempedia.webp",
+    "alt_text": "STEMpedia"
+  },
+  {
+    "id": 639,
+    "name": "Syncious Systems Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/syncious.webp",
+    "alt_text": "Syncious Systems Pvt. Ltd."
+  },
+  {
+    "id": 640,
+    "name": "Synergylabs Technology Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/synergylabs.webp",
+    "alt_text": "Synergylabs Technology Private Limited"
+  },
+  {
+    "id": 641,
+    "name": "Tacodi Electronics Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tacodi.webp",
+    "alt_text": "Tacodi Electronics Pvt Ltd"
+  },
+  {
+    "id": 642,
+    "name": "Talentspotify Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/talentspotify.webp",
+    "alt_text": "Talentspotify Pvt. Ltd."
+  },
+  {
+    "id": 643,
+    "name": "TanPrish Dynamics Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tanprish.webp",
+    "alt_text": "TanPrish Dynamics Private Limited"
+  },
+  {
+    "id": 644,
+    "name": "TatvaCare",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tatvacare.webp",
+    "alt_text": "TatvaCare"
+  },
+  {
+    "id": 645,
+    "name": "TaxbotGPT AI Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/taxbot.webp",
+    "alt_text": "TaxbotGPT AI Pvt Ltd"
+  },
+  {
+    "id": 646,
+    "name": "TeachBetter.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/teachbetter.webp",
+    "alt_text": "TeachBetter.ai"
+  },
+  {
+    "id": 647,
+    "name": "TechBeacon Solutions Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "TechBeacon Solutions Private Limited"
+  },
+  {
+    "id": 648,
+    "name": "Techshlok Research and Development Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/techshlok.webp",
+    "alt_text": "Techshlok Research and Development Pvt Ltd"
+  },
+  {
+    "id": 649,
+    "name": "Techymed Ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/techymed.webp",
+    "alt_text": "Techymed Ai"
+  },
+  {
+    "id": 650,
+    "name": "Tecnod8.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tecnod8_ai.webp",
+    "alt_text": "Tecnod8.AI"
+  },
+  {
+    "id": 651,
+    "name": "TensorGo Software Pvt Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tensorgo.webp",
+    "alt_text": "TensorGo Software Pvt Ltd."
+  },
+  {
+    "id": 652,
+    "name": "Testaing Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/testaing.webp",
+    "alt_text": "Testaing Solutions Pvt. Ltd."
+  },
+  {
+    "id": 653,
+    "name": "TESTPAN INDIA PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/testpan.webp",
+    "alt_text": "TESTPAN INDIA PRIVATE LIMITED"
+  },
+  {
+    "id": 654,
+    "name": "The Fashion OS - Powered by Lal10",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/the_fashion_os.webp",
+    "alt_text": "The Fashion OS - Powered by Lal10"
+  },
+  {
+    "id": 655,
+    "name": "Thenoah.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/thenoah_ai.webp",
+    "alt_text": "Thenoah.ai"
+  },
+  {
+    "id": 656,
+    "name": "Think Evolve Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/think_evolve_labs.webp",
+    "alt_text": "Think Evolve Labs"
+  },
+  {
+    "id": 657,
+    "name": "THINK MOD AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "THINK MOD AI"
+  },
+  {
+    "id": 658,
+    "name": "Thrico by PulsePlay Digital",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/thrico.webp",
+    "alt_text": "Thrico by PulsePlay Digital"
+  },
+  {
+    "id": 659,
+    "name": "TM2Space Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tm2space.webp",
+    "alt_text": "TM2Space Technologies Pvt Ltd"
+  },
+  {
+    "id": 660,
+    "name": "Tranquil AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tranquil_ai.webp",
+    "alt_text": "Tranquil AI"
+  },
+  {
+    "id": 661,
+    "name": "Transformer Neural Scan Quest Pvt Ltd (TNSQAI)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tnsqai.webp",
+    "alt_text": "Transformer Neural Scan Quest Pvt Ltd (TNSQAI)"
+  },
+  {
+    "id": 662,
+    "name": "Trench Security",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/trench_security.webp",
+    "alt_text": "Trench Security"
+  },
+  {
+    "id": 663,
+    "name": "TripGain",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tripgain.webp",
+    "alt_text": "TripGain"
+  },
+  {
+    "id": 664,
+    "name": "Trismus Healthcare Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/trismus.webp",
+    "alt_text": "Trismus Healthcare Technologies Private Limited"
+  },
+  {
+    "id": 665,
+    "name": "Trndx Technologies LLP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/trndx.webp",
+    "alt_text": "Trndx Technologies LLP"
+  },
+  {
+    "id": 666,
+    "name": "Truverizen Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/truverizen.webp",
+    "alt_text": "Truverizen Technologies Pvt. Ltd."
+  },
+  {
+    "id": 667,
+    "name": "Tryzent Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tryzent.webp",
+    "alt_text": "Tryzent Technologies Private Limited"
+  },
+  {
+    "id": 668,
+    "name": "Tylect Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/tylect.webp",
+    "alt_text": "Tylect Technologies"
+  },
+  {
+    "id": 669,
+    "name": "Ulai (Sashakti Ventures Pvt Ltd)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ulai.webp",
+    "alt_text": "Ulai (Sashakti Ventures Pvt Ltd)"
+  },
+  {
+    "id": 670,
+    "name": "Unbox Industry",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/unbox.webp",
+    "alt_text": "Unbox Industry"
+  },
+  {
+    "id": 671,
+    "name": "Unified AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/unified_ai.webp",
+    "alt_text": "Unified AI"
+  },
+  {
+    "id": 672,
+    "name": "UnleashX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/unleash.webp",
+    "alt_text": "UnleashX"
+  },
+  {
+    "id": 673,
+    "name": "Unpod AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/unpod.webp",
+    "alt_text": "Unpod AI"
+  },
+  {
+    "id": 674,
+    "name": "Vaani Research Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vaani.webp",
+    "alt_text": "Vaani Research Labs"
+  },
+  {
+    "id": 675,
+    "name": "Varahi Technologies Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/varahi_technologies_pvt_ltd.webp",
+    "alt_text": "Varahi Technologies Pvt Ltd"
+  },
+  {
+    "id": 676,
+    "name": "Vasitum Inc.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vasitum.webp",
+    "alt_text": "Vasitum Inc."
+  },
+  {
+    "id": 677,
+    "name": "Veritos Infosolutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/veritos.webp",
+    "alt_text": "Veritos Infosolutions Pvt. Ltd."
+  },
+  {
+    "id": 678,
+    "name": "Vexoo Labs",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vexoo.webp",
+    "alt_text": "Vexoo Labs"
+  },
+  {
+    "id": 679,
+    "name": "Vibencode Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vibencode.webp",
+    "alt_text": "Vibencode Private Limited"
+  },
+  {
+    "id": 680,
+    "name": "Vidh Labs Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vidh_labs.webp",
+    "alt_text": "Vidh Labs Private Limited"
+  },
+  {
+    "id": 681,
+    "name": "Vidla AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Vidla AI"
+  },
+  {
+    "id": 682,
+    "name": "Vikrantum AI Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Vikrantum AI Pvt Ltd"
+  },
+  {
+    "id": 683,
+    "name": "Vision Digital India",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vision_digital_india.webp",
+    "alt_text": "Vision Digital India"
+  },
+  {
+    "id": 684,
+    "name": "Visotonics",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/visotonics.webp",
+    "alt_text": "Visotonics"
+  },
+  {
+    "id": 685,
+    "name": "VITT AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vitt_ai.webp",
+    "alt_text": "VITT AI"
+  },
+  {
+    "id": 686,
+    "name": "VivaMama",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vivamama.webp",
+    "alt_text": "VivaMama"
+  },
+  {
+    "id": 687,
+    "name": "VOICERAcx",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/voicera.webp",
+    "alt_text": "VOICERAcx"
+  },
+  {
+    "id": 688,
+    "name": "Vomyra AI Solutions Pvt Ltd",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/vomyra_ai.webp",
+    "alt_text": "Vomyra AI Solutions Pvt Ltd"
+  },
+  {
+    "id": 689,
+    "name": "Voptimaise Climate Tech Solutions Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/v_optimaise.webp",
+    "alt_text": "Voptimaise Climate Tech Solutions Pvt. Ltd."
+  },
+  {
+    "id": 690,
+    "name": "Voxaura Labs Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/placeholder.webp",
+    "alt_text": "Voxaura Labs Private Limited"
+  },
+  {
+    "id": 691,
+    "name": "Voxot Solutions Pvt. Ltd. (Pragyaa.ai)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/pragyaa_ai.webp",
+    "alt_text": "Voxot Solutions Pvt. Ltd. (Pragyaa.ai)"
+  },
+  {
+    "id": 692,
+    "name": "Wavenet Technologies Private Limited",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wavenet_.webp",
+    "alt_text": "Wavenet Technologies Private Limited"
+  },
+  {
+    "id": 693,
+    "name": "Weam AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/weam_ai.webp",
+    "alt_text": "Weam AI"
+  },
+  {
+    "id": 694,
+    "name": "Webnyay AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/webnyay_ai.webp",
+    "alt_text": "Webnyay AI"
+  },
+  {
+    "id": 695,
+    "name": "WheelsEye",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wheelseye.webp",
+    "alt_text": "WheelsEye"
+  },
+  {
+    "id": 696,
+    "name": "XenReality",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/xenreality.webp",
+    "alt_text": "XenReality"
+  },
+  {
+    "id": 697,
+    "name": "Yarnit",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yarnit.webp",
+    "alt_text": "Yarnit"
+  },
+  {
+    "id": 698,
+    "name": "YellowSense Technologies Pvt. Ltd.",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yellowsense.webp",
+    "alt_text": "YellowSense Technologies Pvt. Ltd."
+  },
+  {
+    "id": 699,
+    "name": "YogiFi by Wellnesys Technologies",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yogifi.webp",
+    "alt_text": "YogiFi by Wellnesys Technologies"
+  },
+  {
+    "id": 700,
+    "name": "Yolearn.ai",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yolearn_ai.webp",
+    "alt_text": "Yolearn.ai"
+  },
+  {
+    "id": 701,
+    "name": "Yugyog",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/yugyog.webp",
+    "alt_text": "Yugyog"
+  },
+  {
+    "id": 702,
+    "name": "ZENERATIVE MINDS PRIVATE LIMITED",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zenerative.webp",
+    "alt_text": "ZENERATIVE MINDS PRIVATE LIMITED"
+  },
+  {
+    "id": 703,
+    "name": "Zephara AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zephara.webp",
+    "alt_text": "Zephara AI"
+  },
+  {
+    "id": 704,
+    "name": "ZipNom",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zipnom.webp",
+    "alt_text": "ZipNom"
+  },
+  {
+    "id": 705,
+    "name": "ZIPP.AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zipp_ai.webp",
+    "alt_text": "ZIPP.AI"
+  },
+  {
+    "id": 706,
+    "name": "ZOOOX",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zooox.webp",
+    "alt_text": "ZOOOX"
+  },
+  {
+    "id": 707,
+    "name": "Zoven AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/zoven_ai.webp",
+    "alt_text": "Zoven AI"
+  },
+  {
+    "id": 708,
+    "name": "Head Held High Foundation/ Jan AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/jan_ai.webp",
+    "alt_text": "Head Held High Foundation/ Jan AI"
+  },
+  {
+    "id": 709,
+    "name": "Centre for Open Societal Systems (COSS) by IIIT-Bangalore (EkStep Foundation)",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ekstep.webp",
+    "alt_text": "Centre for Open Societal Systems (COSS) by IIIT-Bangalore (EkStep Foundation)"
+  },
+  {
+    "id": 710,
+    "name": "Wadhwani AI",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wadhwani.webp",
+    "alt_text": "Wadhwani AI"
+  },
+  {
+    "id": 711,
+    "name": "Wadhwani Foundation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/wadhwani_foundation.webp",
+    "alt_text": "Wadhwani Foundation"
+  },
+  {
+    "id": 712,
+    "name": "Gates Foundation",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/gates_foundation.webp",
+    "alt_text": "Gates Foundation"
+  },
+  {
+    "id": 713,
+    "name": "BharatGen, TIH foundation for IoT & IoE",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/Bharatgen.webp",
+    "alt_text": "BharatGen, TIH foundation for IoT &amp; IoE"
+  },
+  {
+    "id": 714,
+    "name": "International Neurodegenerative Disorders Research Center",
+    "logo_url": "https://aiexpo.s3.ap-south-1.amazonaws.com/Assets/INDRC.webp",
+    "alt_text": "International Neurodegenerative Disorders Research Center"
+  },
+  {
+    "id": 715,
+    "name": "NCPEDP",
+    "logo_url": "https://www.impactexpo.indiaai.gov.in/images/exhibitors/ncpedp.webp",
+    "alt_text": "NCPEDP"
+  }
+]
