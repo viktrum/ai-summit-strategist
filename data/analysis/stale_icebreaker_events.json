@@ -1,0 +1,178 @@
+[
+  {
+    "event_id": "692c0caa8c2fe8ea632616da",
+    "id": 5382,
+    "title": "Reimagining Gender in Technology - Designing Safer Digital Futures and",
+    "old_speakers": "Andrea Wojnar; Arpita Kanjilal; Carolyn Florey; Priyanka Chaturvedi; Rajiv Makhani; Rutuja Pol; Soha",
+    "new_speakers": "Andrea Wojnar, UNFPA; Her Excellency May-Elin Stener, Ambassador of Norway to India, Sri Lanka, Bhut",
+    "icebreaker": "Priyanka Chaturvedi on platform safety—what deepfake risks worry you most in your platform?",
+    "stale_names": [
+      "chaturvedi"
+    ]
+  },
+  {
+    "event_id": "IA102",
+    "id": 5510,
+    "title": "AI for Bharat",
+    "old_speakers": "Mr. Alok Mittal; Mr. Ritesh Malik; Mr. Will Poole; Ms. Anuja Dhawan; Ms. Juhi Bhatnagar; Ms. Tanuja ",
+    "new_speakers": "Mr. Aakrit Vaish, Activate; Mr. Akshay Chaturvedi, Leverage Edu; Mr. Amit Kumar, Google; Mr. Avinash",
+    "icebreaker": "Alok Mittal's been investing in grassroots AI—what context-specific challenge in India are you trying to solve with AI?",
+    "stale_names": [
+      "mittal"
+    ]
+  },
+  {
+    "event_id": "6929e2df3b3e8d7e576aa8b2",
+    "id": 5298,
+    "title": "Competing to Innovate: How Competition Accelerates AI Innovation",
+    "old_speakers": "Amba Kak; Augustine Peter; Kush Amlani; Pallavi Shroff; Shweta Rajpal Kohli",
+    "new_speakers": "Amba Kak, AI Now Institute; Augustine Peter, Competition Commission of India; Kush Amlani, Global Co",
+    "icebreaker": "Pallavi Shroff, what's the antitrust angle most founders misunderstand about AI markets?",
+    "stale_names": [
+      "shroff"
+    ]
+  },
+  {
+    "event_id": "692b42dfe7fd0ee6ae14557f",
+    "id": 5344,
+    "title": "AI for Inclusive Economic Progress: The Public Services AI stack",
+    "old_speakers": "Amir Banifatemi; B. Ravindran; Gabriela Ramos; Joanna Shields; Mark Surman; Stuart J Russel; Wan Sie",
+    "new_speakers": "Alpesh Shah, IEEE Standards; Amir Banifatemi, Cognizant; B. Ravindran, Department of DSAI, IIT Madra",
+    "icebreaker": "With Stuart Russell's AI stack vision, what's the biggest bottleneck you're seeing in public service implementation?",
+    "stale_names": [
+      "russel"
+    ]
+  },
+  {
+    "event_id": "6926c8788f065919c5c1d78f",
+    "id": 5244,
+    "title": "AI for ESG: Responsible Innovation for People, Planet and Progress",
+    "old_speakers": "Dr. Vini Singh; Ms. Ayisha Piotti; Ms. Maya Sherman; Ms. Sarith Felber; Prof Victor Alchanatis; Prof",
+    "new_speakers": "Dr. Manuj Bhardwaj, Dhirubhai Ambani University – School of Law; Ms. Ayisha Piotti, RegHorizon; Ms. ",
+    "icebreaker": "Dr. Vini Singh mentioned climate monitoring—what's the biggest ESG blind spot AI could solve in your sector?",
+    "stale_names": [
+      "singh"
+    ]
+  },
+  {
+    "event_id": "692c6a883ba46df31d1a91ff",
+    "id": 5432,
+    "title": "From Guidelines to Ground: Institutional AI Safety for India and the G",
+    "old_speakers": "Abdullah; Arundhati Banerjee; Dr. Arjun Goswami; Juan Carlos Rojas Arango; Kazim Rizvi; Prof. Sidhar",
+    "new_speakers": "Abdullah, Zephara AI; Arundhati Banerjee, Nvidia; Dr. Arjun Goswami, Cyril Amarchand Mangaldas; Jame",
+    "icebreaker": "Kazim Rizvi, what's the fastest path for startups to build AI safety into their compliance from day one?",
+    "stale_names": [
+      "rizvi"
+    ]
+  },
+  {
+    "event_id": "692c8cefeb13daef2e5474c7",
+    "id": 5450,
+    "title": "AI for National Defence",
+    "old_speakers": "Manoj Jain; Suhas Gopinath",
+    "new_speakers": "Air Vice Marshal Deepak Joshi, HQ IDS; Dr Chandrika Kaushik, DRDO; Maj. Gen. (R) Sandeep Sharma, Arm",
+    "icebreaker": "Ask Manoj Jain: what does 'Secure by Design' actually mean for defense AI adoption at scale?",
+    "stale_names": [
+      "jain"
+    ]
+  },
+  {
+    "event_id": "692be15e055b84fadfd4facd",
+    "id": 5369,
+    "title": "Democratizing AI Resources: Research Pathways to Open, Equitable Acces",
+    "old_speakers": "Mr. AR Ganesh; Mr. Arun Jain; Smt. Neeta Shah; Smt. Sandhya Arun",
+    "new_speakers": "Mr. Arun Jain, Intellect Design Arena Ltd.; Mr. Jaswinder Sodhi, HSBC India; Smt. Sandhya Arun, Wipr",
+    "icebreaker": "AR Ganesh, how are we making multilingual AI actually accessible to non-English communities in India?",
+    "stale_names": [
+      "ganesh"
+    ]
+  },
+  {
+    "event_id": "692b3edd0fdf876fbfd654e9",
+    "id": 5343,
+    "title": "People's AI: Designing a Future Where Everyone Belongs",
+    "old_speakers": "Kirthiga Reddy; Lakshmi Pratury; Madhukar Yarra; Ravishankar Gundlapalli; Rhea Mazumdar Singhal; Yas",
+    "new_speakers": "Lakshmi Pratury, INK Global Foundation; Madhukar Yarra, NextWealth; Ravishankar Gundlapalli, MentorC",
+    "icebreaker": "Kirthiga Reddy's inclusive AI employment models—how are you building diverse talent pipelines right now?",
+    "stale_names": [
+      "reddy"
+    ]
+  },
+  {
+    "event_id": "69187385e67b6cd277565aee",
+    "id": 5195,
+    "title": "AI Compute beyond GPUs",
+    "old_speakers": "Abhishek Biswal; Becky Fraser; Bhawna Agarwal; Jason Oxman; Mark Kuemerle; Sujith Babu",
+    "new_speakers": "Abhishek Biswal, Airtel - Xtelify; Becky Fraser, Qualcomm; Bhawna Agarwal, Hewlett Packard Enterpris",
+    "icebreaker": "Mark Kuemerle, how does compute-efficient design unlock AI for emerging markets without GPU dependency?",
+    "stale_names": [
+      "kuemerle"
+    ]
+  },
+  {
+    "event_id": "evt-4592-20260219-1114",
+    "id": 4592,
+    "title": "Fireside Chat",
+    "old_speakers": "Sunil Bharti Mittal, Founder and Chairman, Bharti Enterprises ; Shantanu Narayen, Chairman and CEO, ",
+    "new_speakers": "Nandan Nilekani, Co-founder and Chairman, Infosys; Dario Amodei, CEO, Anthropic; Rahul Matthan, Part",
+    "icebreaker": "Sunil Bharti Mittal on telecom innovation—how is 5G enabling enterprise AI at scale?",
+    "stale_names": [
+      "mittal"
+    ]
+  },
+  {
+    "event_id": "69284694d31370f8e21cebd8",
+    "id": 5263,
+    "title": "AI for Agriculture: Scaling Intelligence for Food and Climate Resilien",
+    "old_speakers": "Adam Sobey; Dan Travers; Dr. Robert Thompson; Mark Patel; Nalin Agarwal; Prof. David Sandalow; Siddh",
+    "new_speakers": "Abhishek Singh, MEITY and India AI Mission; Devendra Fadnavis, Maharashtra; Devesh Chaturvedi, Minis",
+    "icebreaker": "Uday Khemka's been scaling climate-tech deals—what AI frameworks are energy systems and agriculture actually adopting?",
+    "stale_names": [
+      "khemka"
+    ]
+  },
+  {
+    "event_id": "692ba29660df8d869e221e60",
+    "id": 5357,
+    "title": "The Innovation Beneath AI: The US-India Partnership powering the AI Er",
+    "old_speakers": "Abhishek Singh; Jeff Binder; Tobias Helbig; Tuan Ho; Ujjwal Kumar; Vrushali Gaud",
+    "new_speakers": "Jeff Binder, TokenForm; Prince Dhawan, REC Limited; Tobias Helbig, NXP Semiconductors; Tuan Ho, Xfun",
+    "icebreaker": "Abhishek Singh's take on US-India critical minerals strategy—where do you see the biggest infrastructure gaps?",
+    "stale_names": [
+      "singh"
+    ]
+  },
+  {
+    "event_id": "692c2796531027d32882865f",
+    "id": 5403,
+    "title": "Fireside Chat",
+    "old_speakers": "Archana; Dr. Angela Lusigi; Priyanka Ravala; Rekha Srinivasan; Yosuke Sato",
+    "new_speakers": "Børge Brende, President & CEO, World Economic Forum; Ashwini Vaishnaw, Minister for Railways, Inform",
+    "icebreaker": "Angela Lusigi, where's the biggest opportunity for blended finance in inclusive AI innovation?",
+    "stale_names": [
+      "lusigi"
+    ]
+  },
+  {
+    "event_id": "691721295d05f4811c985204",
+    "id": 5161,
+    "title": "Speaking Everyone's Language: The Key to Inclusive AI Opportunity",
+    "old_speakers": "Chenai Chair; Dr. Fola Adeleke; Dr. Lesley Teo; Mr. Amitabh Nag; Mr. Rikin Gandhi",
+    "new_speakers": "Ankur Vora, Gates Foundation; Chenai Chair, Masakhane African Languages Hub; David Lammy, UK Governm",
+    "icebreaker": "Rikin Gandhi on Masakhane—what language datasets are you prioritizing for your Global South AI ecosystem?",
+    "stale_names": [
+      "gandhi"
+    ]
+  },
+  {
+    "event_id": "691b0876000087ab9236c224",
+    "id": 5210,
+    "title": "Preparing the Future: AI-Driven Strategies for Workforce and Economic ",
+    "old_speakers": "Mr BVR Subramaniyam; Mr Chandrajit Banerjee; Mr Puneet Chandok; Mr Rajeev Memani; Ms Debjani Ghosh; ",
+    "new_speakers": "Mr Chandrajit Banerjee, Confederation of Indian Industry; Mr Puneet Chandok, Confederation of Indian",
+    "icebreaker": "Ms. Debjani Ghosh, how are CII members actually re-skilling workers for AI-era roles?",
+    "stale_names": [
+      "ghosh"
+    ]
+  }
+]

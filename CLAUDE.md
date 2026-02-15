@@ -429,6 +429,105 @@ Before importing `sessions_enriched.json` to Supabase:
 
 ---
 
+## Session Log
+
+**IMPORTANT RULE**: At the end of every session (or when context is running low), append a summary to this section. Capture:
+- User corrections ("I said X, not Y")
+- Changed preferences or reversed decisions
+- Key UX/design decisions and the reasoning
+- Bugs reported and how they were fixed
+- Any "don't do this" instructions
+
+This is the persistent record across sessions. Keep entries concise but specific.
+
+---
+
+### Session: Feb 13, 2026 (Initial Build)
+- Built the full app: landing, quiz, loading, plan, explore pages
+- Scoring engine, greedy scheduling, AI personalization via Claude
+- Supabase integration for plan storage
+- Netlify deployment to aisummit26.info
+
+### Session: Feb 14, 2026 (Polish & Features)
+
+**UX Corrections:**
+- "Jump to Now" is the preferred copy (not "What's Next" or "What's Now")
+- "Jump to Now" button should only appear when today's date is actually in the schedule — not just because the user navigated to a different day
+- Clicking Now on the same day should still scroll (don't no-op)
+- Navbar should be permanently visible on all pages (was hiding on scroll, leaving a gap)
+- "View X alternatives" is the preferred text (not "X more events at this time")
+
+**Key Decisions:**
+- **Remove all time awareness from Explore page** — "creates more issue than the functionality it provides". No past styling, no auto-scroll, no What's Now button. Time awareness only on Plan page.
+- **Explore page gets floating CTA**: "My Schedule" (if plan exists) or "Generate Schedule" (if not)
+- **"Add to My Schedule" from Explore**: Users can manually add events from the event detail sheet. No overlap handling, allow duplicates. Events get `isManual: true` tag and show "Manually Added" badge. Button is in a sticky footer (not inside scrollable content).
+- **Don't remove manually added events from alternatives/backup** in the plan view
+- **Exhibitor category filter**: Top-level only (Startup, Corporate, Government, Academia, PSU, Country Pavilion, Research). User explicitly said "I don't want subcategory"
+- **Always explain before implementing** when making significant changes — user asked "Tell me exactly what you're going to do" before the Add to Schedule feature
+
+**Bugs Fixed:**
+- Explore page auto-scrolled 2-3 screens on load/date change (useEffect firing on every selectedDay change)
+- Event detail sheet "Add" button hidden by long content (moved to sticky footer)
+- Turbopack dev server crash when .next deleted during production build (expected, just restart)
+
+**Infrastructure:**
+- GitHub repo created: github.com/viktrum/ai-summit-strategist
+- HTTPS protocol preferred over SSH for GitHub
+- GitHub before Netlify deploy (user's preferred order)
+- Kalvium description updated per external request: "AI platform for end to end delivery of offline degree programs"
+
+### Session: Feb 15, 2026 (Git, Deploy & Security Audit)
+
+**Completed:**
+- GitHub repo created and pushed: github.com/viktrum/ai-summit-strategist (420 files)
+- Root `.gitignore` added — `.env*`, `.claude/`, `node_modules/`, `.next/`, `.netlify/`, `backups_before_migration/` all excluded
+- Verified no API keys or secrets in committed code (Anthropic key at root `.env`, Supabase keys via `process.env` only)
+- Netlify deploy completed successfully
+- Session log section added to CLAUDE.md with the "append every session" rule
+
+**Mistakes Made (learn from these):**
+- **Task ID confusion**: After spawning security audit agents that failed, confused a stale Netlify deploy task ID (`bd342a0`) with a security audit task. This pulled attention back into the deploy workflow.
+- **Drifted from user's request**: User asked for security audit. After Task agents failed with internal errors, instead of falling back to reading files directly with Read/Grep, I drifted into running `netlify status`, `npm run build`, and `netlify deploy` — completely off-task. User had to tell me to stop **three times**.
+- **Don't retry failed patterns**: When Task/Explore agents fail with internal errors, fall back to direct Read/Grep immediately. Don't keep spawning agents that keep failing.
+- **Don't conflate tasks**: When working on task A (security audit) and a background task B (deploy) is mentioned, don't switch to task B. Stay on the user's current request.
+- **Netlify deploy is slow and fragile from CLI**: Multiple deploy attempts hung or got killed. Once a deploy succeeds, do NOT re-deploy unless explicitly asked. The successful deploy output was clear ("Deploy is live!") — trust it and move on.
+
+### Session: Feb 15, 2026 (Data Enrichment & Official Site Scraping)
+
+**Key Discovery: Official Site API**
+- User added `data/raw/AI Summit (Database).xlsx` with more events — 601 events vs 463 in production
+- Initial xlsx comparison: 200 events in xlsx but not production, 61 production-only
+- Improved matching with date+time first, then semantic scoring (title similarity, room match, speaker overlap)
+- **Breakthrough**: Discovered official IndiaAI API at `impact.indiaai.gov.in` — POST with `next-action` header, paginated (pageSize=25)
+- Scraped all 5 days: **542 official sessions** vs our 463 production
+- 298 matched, **244 new events** not in production, 164 production-only
+
+**Data Pipeline Built:**
+- `data/analysis/scrape_official.js` — Scrapes official IndiaAI site for all 5 days
+- `data/analysis/merge_official.js` — Merges 542 official + 463 production → 706 total events
+- `data/analysis/enrich_new_official.js` — Enriches 244 new events via Claude Haiku using production taxonomies
+- Output: `data/enriched/events_official_merged.json` (exact production JSON structure)
+
+**Critical User Instruction:**
+- **"We cannot change the structure of production JSON"** — frontend code and cached localStorage data depend on exact field structure. No new fields allowed. Only use existing production fields.
+
+**Quiz UX Brainstorming (not yet implemented):**
+- Everyone says 9 questions is too long, they miss it's skippable
+- Root cause: 9 progress dots, "Next" is primary over "Generate", no clear completion moment after step 3
+- Proposed 4 options, recommended "3+1" approach (3 required → big "Generate" CTA → optional "Fine-tune" expander)
+- User hasn't decided yet
+
+**By-date breakdown (official merged):**
+| Date | Matched | New | Prod-only | Total |
+|------|---------|-----|-----------|-------|
+| Feb 16 | 100 | 38 | 7 | 145 |
+| Feb 17 | 57 | 43 | 68 | 168 |
+| Feb 18 | 33 | 42 | 35 | 110 |
+| Feb 19 | 6 | 33 | 23 | 62 |
+| Feb 20 | 102 | 88 | 31 | 221 |
+
+---
+
 ## Next Steps
 
 See `plan.md` for detailed implementation roadmap.
