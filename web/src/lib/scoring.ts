@@ -44,6 +44,8 @@ const TOP_EXHIBITORS = 5;
 // and still have plenty of alternatives per slot
 const CANDIDATES_PER_DAY = 30;
 const MAX_ALTERNATIVES_PER_SLOT = 10;
+const GAP_THRESHOLD_MINUTES = 60; // Fill gaps longer than 1 hour
+const MAX_GAP_FILLS_PER_DAY = 5;
 
 // --- Goal Relevance Mapping ---
 // Maps quiz mission IDs to event goal_relevance values
@@ -712,12 +714,83 @@ function resolveConflicts(events: ScoredEvent[]): ScoredEvent[] {
 }
 
 /**
+ * Fill time gaps > 1 hour in a day's primaries using the full scored pool.
+ * Returns additional ScoredEvents to add as primaries, marked isTimeSlotFill.
+ */
+function fillTimeGaps(
+  primaries: ScoredEvent[],
+  allDayScored: ScoredEvent[],
+  assignedIds: Set<string>,
+): ScoredEvent[] {
+  const fills: ScoredEvent[] = [];
+  const usedIds = new Set(assignedIds);
+
+  for (let pass = 0; pass < MAX_GAP_FILLS_PER_DAY; pass++) {
+    // Sort current primaries + fills chronologically
+    const all = [...primaries, ...fills].sort((a, b) =>
+      a.event.start_time.localeCompare(b.event.start_time)
+    );
+    if (all.length === 0) break;
+
+    // Build list of gap windows: between consecutive primaries + after last primary
+    const gaps: { startMin: number; endMin: number }[] = [];
+    for (let i = 0; i < all.length - 1; i++) {
+      const endMin = all[i].event.end_time
+        ? timeToMinutes(all[i].event.end_time!)
+        : timeToMinutes(all[i].event.start_time) + 30;
+      const nextStartMin = timeToMinutes(all[i + 1].event.start_time);
+      if (nextStartMin - endMin > GAP_THRESHOLD_MINUTES) {
+        gaps.push({ startMin: endMin, endMin: nextStartMin });
+      }
+    }
+    // Gap after last event (until 18:30)
+    const lastEvent = all[all.length - 1];
+    const lastEndMin = lastEvent.event.end_time
+      ? timeToMinutes(lastEvent.event.end_time!)
+      : timeToMinutes(lastEvent.event.start_time) + 30;
+    const dayEnd = 18 * 60 + 30; // 18:30
+    if (dayEnd - lastEndMin > GAP_THRESHOLD_MINUTES) {
+      gaps.push({ startMin: lastEndMin, endMin: dayEnd });
+    }
+
+    if (gaps.length === 0) break;
+
+    // Try to fill the first gap found
+    let gapFound = false;
+    for (const gap of gaps) {
+      const best = allDayScored
+        .filter((se) => {
+          if (usedIds.has(se.event.event_id)) return false;
+          const startMin = timeToMinutes(se.event.start_time);
+          return startMin >= gap.startMin && startMin < gap.endMin;
+        })
+        .sort((a, b) => b.score - a.score)[0];
+
+      if (best) {
+        best.isFallback = false;
+        best.isTimeSlotFill = true;
+        best.alternatives = [];
+        fills.push(best);
+        usedIds.add(best.event.event_id);
+        gapFound = true;
+        break; // Re-scan gaps with updated list
+      }
+    }
+
+    if (!gapFound) break;
+  }
+
+  return fills;
+}
+
+/**
  * Generate the full recommendation plan.
  *
  * 1. Score all events, filter out zeros
  * 2. Group by date, take top CANDIDATES_PER_DAY per day
  * 3. Greedy non-overlapping scheduling (no per-day cap)
  * 4. Overlapping events become alternatives with fallback (P2)
+ * 4b. Fill time gaps > 1 hour with best available events ("Best at This Time")
  * 5. Assign tiers
  * 6. Score top 5 exhibitors
  * 7. Return full plan
@@ -752,7 +825,18 @@ export function generateRecommendations(
     // Greedy scheduling: picks all non-overlapping primaries,
     // assigns overlapping events as alternatives — no per-day cap
     const resolved = resolveConflicts(dayCandidates);
-    allResolved = [...allResolved, ...resolved];
+
+    // Gap-fill: if primaries have >1hr gaps, fill with best available from full pool
+    const primaries = resolved.filter((se) => !se.isFallback);
+    const assignedIds = new Set(resolved.map((se) => se.event.event_id));
+    // Also include alternative event IDs so we don't double-assign
+    for (const se of resolved) {
+      if (se.alternatives) {
+        for (const alt of se.alternatives) assignedIds.add(alt.event_id);
+      }
+    }
+    const gapFills = fillTimeGaps(primaries, dayEvents, assignedIds);
+    allResolved = [...allResolved, ...resolved, ...gapFills];
   }
 
   // Step 5: Assign tiers

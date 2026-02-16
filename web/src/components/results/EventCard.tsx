@@ -73,6 +73,11 @@ export function EventCard({
               Manually Added
             </span>
           )}
+          {scoredEvent.isTimeSlotFill && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#F0F9FF] text-[#0369A1]">
+              Best at This Time
+            </span>
+          )}
         </div>
 
         {/* Title */}

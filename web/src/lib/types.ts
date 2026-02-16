@@ -124,6 +124,7 @@ export interface ScoredEvent {
   isFallback: boolean;
   fallbackFor?: string; // event_id of the primary event this is a fallback for
   isManual?: boolean; // manually added from Explore page
+  isTimeSlotFill?: boolean; // gap-fill event ("Best at This Time")
   alternatives?: AlternativeEvent[];
 }
 
@@ -142,6 +143,7 @@ export interface SavedPlanEvent {
   is_fallback: boolean;
   fallback_for: number | null; // id of the primary event this is a fallback for
   is_manual?: boolean; // manually added from Explore page
+  is_time_slot_fill?: boolean; // gap-fill event ("Best at This Time")
 }
 
 export interface ScoredExhibitor {

@@ -142,6 +142,7 @@ function hydratePlan(
       isFallback: se.is_fallback,
       fallbackFor: se.fallback_for ? (idToEventId.get(se.fallback_for) || undefined) : undefined,
       isManual: se.is_manual || false,
+      isTimeSlotFill: se.is_time_slot_fill || false,
       breakdown: {
         keywordScore: 0,
         personaScore: 0,
@@ -639,6 +640,7 @@ export default function PlanPage() {
             is_fallback: se.isFallback,
             fallback_for: se.fallbackFor ? (eidToId.get(se.fallbackFor) ?? null) : null,
             is_manual: se.isManual || false,
+            is_time_slot_fill: se.isTimeSlotFill || false,
           }))
         );
         supabase
@@ -784,6 +786,7 @@ export default function PlanPage() {
           is_fallback: se.isFallback,
           fallback_for: se.fallbackFor ? (eidToId.get(se.fallbackFor) ?? null) : null,
           is_manual: se.isManual || false,
+          is_time_slot_fill: se.isTimeSlotFill || false,
         }))
       );
 

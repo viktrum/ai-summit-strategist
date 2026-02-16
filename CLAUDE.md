@@ -530,31 +530,44 @@ This is the persistent record across sessions. Keep entries concise but specific
 | Feb 19 | 6 | 33 | 23 | 62 |
 | Feb 20 | 102 | 88 | 31 | 221 |
 
-### Session: Feb 16, 2026 (Supabase Storage Hot-Reload — Track 2)
+### Session: Feb 16, 2026 (Hot-Reload, Gap-Fill Scoring, Deploy)
 
-**Completed:**
-- Built `DataProvider.tsx` — React Context with three-tier data initialization (static → localStorage → Supabase Storage)
-- Migrated all 5 pages (landing, explore, loading, plan) from static JSON imports to `useData()` hook
-- Created public `event-data` bucket in Supabase Storage, uploaded events.json + exhibitors.json
-- Build passes, all pages compile correctly
+**Big Decision: Hot-Reload Built but Not Activated**
+- Built the full Supabase Storage hot-reload system (DataProvider, ETag-based freshness, three-tier init)
+- Migrated all pages from static imports to `useData()` hook
+- QA tested: cross-page consistency ✅, full quiz→plan flow ✅, tab switch HEAD requests ✅, shared plan links ✅
+- **Decision**: Day 1 of the summit produced only 2 exhibitor update requests. Not worth the operational complexity of maintaining bucket files. The hot-reload code is deployed but harmlessly no-ops when the bucket is empty (HEAD requests return 404 → early return → static bundled data used). Can be activated anytime by uploading JSON files to the `event-data` bucket.
+- **For data updates**: Edit static JSON files locally and redeploy. Simpler, safer, sufficient for the volume.
+
+**Scoring Engine: Gap-Fill ("Best at This Time")**
+- Found bug: for some profiles (student + geopolitics), all top-30 candidates clustered in the morning, leaving the entire afternoon empty
+- Root cause: `CANDIDATES_PER_DAY = 30` cutoff reached before any afternoon events
+- Fix: After greedy scheduling, scan for time gaps > 1 hour. Fill each gap with the best-scoring event from the full scored pool (not just top 30). Tagged with `isTimeSlotFill = true`.
+- UI: Light blue "Best at This Time" badge on EventCard (similar to "Manually Added" badge)
+- Example: Feb 18 went from 4 primaries (ending 2:30 PM) → 7 primaries including Yoshua Bengio keynote and afternoon sessions
+- New files/changes: `scoring.ts` (fillTimeGaps function), `types.ts` (isTimeSlotFill flag on ScoredEvent + SavedPlanEvent), `EventCard.tsx` (badge), `loading/page.tsx` + `plan/[id]/page.tsx` (save/restore flag)
+
+**Bugs Found & Fixed:**
+- localStorage cache downgrade: Old cached data (463 events from previous bucket upload) overwrote static bundle (639 events) during hydration. Fix: Guard `parsed.length >= staticEventsData.length`
+- `plan_data_version` not saved to Supabase: Only saved to localStorage, so shared plans can't detect staleness. Known limitation, not fixed yet.
+- `quiz_answers` column doesn't exist in Supabase yet (Track 3): Insert falls back to retry without new columns — works but quiz answers not persisted.
+
+**Deployed to Production:**
+- T4G Lab exhibitor description updated per user request
+- Gap-fill scoring feature
+- DataProvider hot-reload code (dormant — no bucket files)
+- localStorage cache guard
 
 **Plan Deviation — list() → HEAD/ETag:**
-- Plan called for `supabase.storage.list()` to check file `updated_at` timestamps
-- `list()` returned empty — requires a SELECT policy on `storage.objects` table, which the anon key can't create
-- Adding anon INSERT/UPDATE policies would be a security risk (user correctly flagged this: "anyone can screw up the data with the public key")
-- **Fix**: Switched to HTTP HEAD requests on public URLs → reads `etag` + `last-modified` headers (~200 bytes per request). Same freshness detection, no extra policies needed, completely secure.
+- Plan called for `supabase.storage.list()` but it requires SELECT policy on `storage.objects`
+- Switched to HTTP HEAD requests on public URLs → reads `etag`/`last-modified` headers
+- User instruction: "Always explain plan deviations proactively" — added as rule
 
 **User Instructions:**
-- "Don't make any changes to user_plans table" — Track 2 is data-pipeline only
-- "Always explain plan deviations proactively" — added as CLAUDE.md rule
-- "Why do you need me" — user expects maximum autonomy; do everything possible programmatically before asking
-- Keep all file access within the project folder, not user home directory
-
-**Hot-Reload Workflow (for future reference):**
-1. Edit events.json or exhibitors.json locally
-2. Go to Supabase dashboard → Storage → event-data → upload/replace the file
-3. App detects change via ETag comparison on next visit or tab switch
-4. No redeploy needed
+- "Don't make any changes to user_plans table"
+- Maximum autonomy — do everything programmatically before asking
+- Keep all file access within the project folder
+- Prefers simple solutions over complex ones
 
 ---
 

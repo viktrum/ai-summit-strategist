@@ -218,6 +218,7 @@ export default function LoadingStrategyPage() {
             pinned: false,
             is_fallback: se.isFallback,
             fallback_for: se.fallbackFor ? (eidToId.get(se.fallbackFor) ?? null) : null,
+            is_time_slot_fill: se.isTimeSlotFill || false,
           }))
         );
         const exhibitorIds = plan.exhibitors.map((e) => e.exhibitor.id);
