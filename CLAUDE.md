@@ -431,12 +431,16 @@ Before importing `sessions_enriched.json` to Supabase:
 
 ## Session Log
 
-**IMPORTANT RULE**: At the end of every session (or when context is running low), append a summary to this section. Capture:
-- User corrections ("I said X, not Y")
-- Changed preferences or reversed decisions
-- Key UX/design decisions and the reasoning
-- Bugs reported and how they were fixed
-- Any "don't do this" instructions
+**IMPORTANT RULES**:
+
+1. At the end of every session (or when context is running low), append a summary to this section. Capture:
+   - User corrections ("I said X, not Y")
+   - Changed preferences or reversed decisions
+   - Key UX/design decisions and the reasoning
+   - Bugs reported and how they were fixed
+   - Any "don't do this" instructions
+
+2. **Always explain plan deviations proactively**: Whenever you deviate from the approved plan during implementation — even for good technical reasons — you MUST stop and explain the change and why BEFORE continuing. Do not silently swap approaches. Examples: switching from `list()` API to HEAD/ETag, choosing a different data structure, adding an extra step. The user should never discover a deviation after the fact.
 
 This is the persistent record across sessions. Keep entries concise but specific.
 
@@ -525,6 +529,32 @@ This is the persistent record across sessions. Keep entries concise but specific
 | Feb 18 | 33 | 42 | 35 | 110 |
 | Feb 19 | 6 | 33 | 23 | 62 |
 | Feb 20 | 102 | 88 | 31 | 221 |
+
+### Session: Feb 16, 2026 (Supabase Storage Hot-Reload — Track 2)
+
+**Completed:**
+- Built `DataProvider.tsx` — React Context with three-tier data initialization (static → localStorage → Supabase Storage)
+- Migrated all 5 pages (landing, explore, loading, plan) from static JSON imports to `useData()` hook
+- Created public `event-data` bucket in Supabase Storage, uploaded events.json + exhibitors.json
+- Build passes, all pages compile correctly
+
+**Plan Deviation — list() → HEAD/ETag:**
+- Plan called for `supabase.storage.list()` to check file `updated_at` timestamps
+- `list()` returned empty — requires a SELECT policy on `storage.objects` table, which the anon key can't create
+- Adding anon INSERT/UPDATE policies would be a security risk (user correctly flagged this: "anyone can screw up the data with the public key")
+- **Fix**: Switched to HTTP HEAD requests on public URLs → reads `etag` + `last-modified` headers (~200 bytes per request). Same freshness detection, no extra policies needed, completely secure.
+
+**User Instructions:**
+- "Don't make any changes to user_plans table" — Track 2 is data-pipeline only
+- "Always explain plan deviations proactively" — added as CLAUDE.md rule
+- "Why do you need me" — user expects maximum autonomy; do everything possible programmatically before asking
+- Keep all file access within the project folder, not user home directory
+
+**Hot-Reload Workflow (for future reference):**
+1. Edit events.json or exhibitors.json locally
+2. Go to Supabase dashboard → Storage → event-data → upload/replace the file
+3. App detects change via ETag comparison on next visit or tab switch
+4. No redeploy needed
 
 ---
 

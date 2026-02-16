@@ -1,42 +1,13 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Flame, Calendar, MapPin, Sparkles, Users, Building2, ExternalLink } from 'lucide-react';
-import eventsData from '@/data/events.json';
-import exhibitorsData from '@/data/exhibitors.json';
-import type { Event, Exhibitor } from '@/lib/types';
+import { useData } from '@/lib/DataProvider';
+import type { Event } from '@/lib/types';
 import { formatTime } from '@/lib/format';
 
-// ---------------------------------------------------------------------------
-// Data prep (runs once at module level)
-// ---------------------------------------------------------------------------
-
-const events = eventsData as Event[];
-const exhibitors = exhibitorsData as Exhibitor[];
-
 const SUMMIT_DATES = ['2026-02-16', '2026-02-17', '2026-02-18', '2026-02-19', '2026-02-20'];
-
-// Heavy hitters grouped by date
-const heavyHittersByDate = new Map<string, Event[]>();
-for (const e of events) {
-  if (!e.networking_signals.is_heavy_hitter) continue;
-  if (!heavyHittersByDate.has(e.date)) heavyHittersByDate.set(e.date, []);
-  heavyHittersByDate.get(e.date)!.push(e);
-}
-// Sort each day's events by time
-for (const [, dayEvents] of heavyHittersByDate) {
-  dayEvents.sort((a, b) => (a.start_time || '').localeCompare(b.start_time || ''));
-}
-
-// Top exhibitors with logos (pick ones with real logo URLs, skip ministries for visual variety)
-const featuredExhibitors = exhibitors
-  .filter((e) => e.logo_url && !e.name.startsWith('Ministry'))
-  .slice(0, 12);
-
-// All exhibitor logos for logo wall
-const allLogos = exhibitors
-  .filter((e) => e.logo_url)
-  .slice(0, 24);
 
 // Today or first upcoming summit date
 function getActiveDate(): string {
@@ -58,6 +29,33 @@ function formatDateLabel(dateStr: string): string {
 
 export default function Home() {
   const router = useRouter();
+  const { events, exhibitors } = useData();
+
+  const heavyHittersByDate = useMemo(() => {
+    const map = new Map<string, Event[]>();
+    for (const e of events) {
+      if (!e.networking_signals.is_heavy_hitter) continue;
+      if (!map.has(e.date)) map.set(e.date, []);
+      map.get(e.date)!.push(e);
+    }
+    for (const [, dayEvents] of map) {
+      dayEvents.sort((a, b) => (a.start_time || '').localeCompare(b.start_time || ''));
+    }
+    return map;
+  }, [events]);
+
+  const allLogos = useMemo(
+    () => exhibitors.filter((e) => e.logo_url).slice(0, 24),
+    [exhibitors],
+  );
+
+  const EVENT_COUNT = events.length;
+  const EXHIBITOR_COUNT = exhibitors.length;
+  const VIP_COUNT = useMemo(
+    () => events.filter((e) => e.networking_signals.is_heavy_hitter).length,
+    [events],
+  );
+
   const activeDate = getActiveDate();
   const todayHeavyHitters = heavyHittersByDate.get(activeDate) || [];
 
@@ -89,7 +87,7 @@ export default function Home() {
 
           {/* Headline */}
           <h1 className="mb-5 text-[28px] font-black leading-[1.15] tracking-tight text-[#1A1A19] sm:text-[44px]">
-            463 sessions. 5 days.
+            {EVENT_COUNT} sessions. 5 days.
             <br />
             Up to 15 running at the same time.
           </h1>
@@ -121,9 +119,9 @@ export default function Home() {
           {/* Stats */}
           <div className="mt-10 flex gap-8">
             {[
-              { n: '463', label: 'Events' },
-              { n: '715', label: 'Exhibitions' },
-              { n: '31', label: 'VIP Sessions' },
+              { n: String(EVENT_COUNT), label: 'Events' },
+              { n: String(EXHIBITOR_COUNT), label: 'Exhibitions' },
+              { n: String(VIP_COUNT), label: 'VIP Sessions' },
               { n: '5', label: 'Days' },
             ].map((s) => (
               <div key={s.label}>
@@ -154,7 +152,7 @@ export default function Home() {
             onClick={() => router.push('/explore?tab=vip')}
             className="text-[13px] font-semibold text-[#4338CA] hover:text-[#3730A3] transition-colors"
           >
-            See all 31 →
+            See all {VIP_COUNT} →
           </button>
         </div>
 
@@ -220,7 +218,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {[
             { step: '1', title: 'Take the quiz', desc: '9 quick questions about your role, interests, and goals.', icon: '🎯' },
-            { step: '2', title: 'We crunch 463 events', desc: 'Our scoring engine finds the sessions with highest networking ROI for you.', icon: '⚡' },
+            { step: '2', title: `We crunch ${EVENT_COUNT} events`, desc: 'Our scoring engine finds the sessions with highest networking ROI for you.', icon: '⚡' },
             { step: '3', title: 'Get your schedule', desc: 'A shareable, day-by-day itinerary with icebreakers and strategy tips.', icon: '📋' },
           ].map((s) => (
             <div key={s.step} className="rounded-xl bg-white border border-[#E0DCD6] p-5 text-center">
@@ -242,14 +240,14 @@ export default function Home() {
               Exhibitions
             </h2>
             <p className="mt-1 text-[13px] text-[#A8A29E]">
-              715 organizations at the expo
+              {EXHIBITOR_COUNT} organizations at the expo
             </p>
           </div>
           <button
             onClick={() => router.push('/explore?tab=exhibitions')}
             className="text-[13px] font-semibold text-[#4338CA] hover:text-[#3730A3] transition-colors"
           >
-            See all 715 →
+            See all {EXHIBITOR_COUNT} →
           </button>
         </div>
 
@@ -303,7 +301,7 @@ export default function Home() {
             <Calendar className="mb-3 size-6 text-[#57534E]" />
             <h3 className="mb-1 text-[16px] font-bold text-[#292524]">Explore Events & Exhibitions</h3>
             <p className="mb-4 text-[13px] leading-relaxed text-[#A8A29E]">
-              Browse all 463 events and 715 exhibitions. Filter by date, topic, venue, and more.
+              Browse all {EVENT_COUNT} events and {EXHIBITOR_COUNT} exhibitions. Filter by date, topic, venue, and more.
             </p>
             <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#4338CA]">
               Browse the schedule

@@ -180,6 +180,13 @@
 
 .score-bar-fill { animation: scoreFill 0.6s var(--ease-out) both; }
 
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
 /* Print / PDF styles */
 @media print {
   /* Hide navigation, floating buttons, action buttons, date filter */

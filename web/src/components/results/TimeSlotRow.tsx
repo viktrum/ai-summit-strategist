@@ -31,9 +31,8 @@ export function TimeSlotRow({
 }: TimeSlotRowProps) {
   const dotColor = TIER_DOT_COLOR[primary.tier] || 'border-[#E0DCD6] bg-white';
 
-  // Show "View alternatives" whenever there's a fallback (user can swap P1)
-  // or when there are additional alternatives beyond P2
-  const showViewAll = fallback !== null || alternativesCount > 0;
+  // Show "View alternatives" only when there are actual alternatives to browse
+  const showViewAll = alternativesCount > 0;
 
   return (
     <div

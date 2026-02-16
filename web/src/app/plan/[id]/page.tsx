@@ -1,26 +1,38 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import { Share2, ArrowLeft, CalendarDays, X, Flame, Clock, MapPin, Users, MessageCircle, Lightbulb, ArrowLeftRight, FileDown, RotateCcw, Building2, Link2, Bookmark, Download, Sparkles } from 'lucide-react';
+import { Share2, ArrowLeft, CalendarDays, X, Flame, Clock, MapPin, Users, MessageCircle, Lightbulb, ArrowLeftRight, FileDown, RotateCcw, Building2, Link2, Bookmark, Download, Sparkles, RefreshCw } from 'lucide-react';
 import { TimeSlotRow } from '@/components/results/TimeSlotRow';
 import { ExhibitorCard } from '@/components/results/ExhibitorCard';
 import { TIER_STYLES } from '@/lib/tier-styles';
-import type { RecommendationPlan, Tier, ScoredEvent, PlanEdits, SavedPlanEvent, Event, Exhibitor, AlternativeEvent, DaySchedule } from '@/lib/types';
+import type { RecommendationPlan, Tier, ScoredEvent, PlanEdits, SavedPlanEvent, Event, Exhibitor, AlternativeEvent, DaySchedule, UserRole } from '@/lib/types';
 import { isEventPast, getCurrentDateIST } from '@/lib/time-utils';
 import { formatTime, formatDateLong as formatDate, dayShort, dayNum, parseSpeakers } from '@/lib/format';
 import { supabase } from '@/lib/supabase';
 import { getEnrichedLogos } from '@/lib/logo-lookup';
-import eventsData from '@/data/events.json';
-import exhibitorsData from '@/data/exhibitors.json';
+import { generateRecommendations } from '@/lib/scoring';
+import { buildProfileFromQuiz } from '@/lib/quiz-mapper';
+import { useData } from '@/lib/DataProvider';
+import { trackEvent } from '@/lib/analytics';
+import { EmailCapture } from '@/components/results/EmailCapture';
+import { Copy } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
 // Hydrate a full RecommendationPlan from slim Supabase data + static JSON
 // ---------------------------------------------------------------------------
 
-const ALL_EVENTS = eventsData as Event[];
-const EVENT_MAP = new Map(ALL_EVENTS.map((e) => [e.id, e]));
-const EXHIBITOR_MAP = new Map((exhibitorsData as Exhibitor[]).map((e) => [e.id, e]));
+// Module-level Maps/Sets removed — now computed inside component via useMemo
+
+// Quiz role ID -> scoring engine value (mirrors loading page)
+const ROLE_ID_MAP: Record<string, UserRole> = {
+  'founder-cxo': 'founder',
+  'investor-vc': 'investor',
+  'product-leader': 'product',
+  'engineer-researcher': 'engineer',
+  'policy-government': 'policy',
+  'student-academic': 'student',
+};
 
 // ---------------------------------------------------------------------------
 // Time overlap utility (mirrors scoring.ts logic)
@@ -43,11 +55,25 @@ function timesOverlap(
 }
 
 // ---------------------------------------------------------------------------
+// Refresh event data from static EVENT_MAP so localStorage plans pick up
+// any changes to events.json (e.g. title fixes) without requiring regeneration.
+// ---------------------------------------------------------------------------
+
+function refreshEventData(schedule: DaySchedule[], eventMap: Map<number, Event>): void {
+  for (const day of schedule) {
+    for (const se of day.events) {
+      const fresh = eventMap.get(se.event.id);
+      if (fresh) se.event = fresh;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Enrich plan events with alternatives from static JSON
 // (needed when alternatives weren't preserved, e.g. Supabase-hydrated plans)
 // ---------------------------------------------------------------------------
 
-function enrichWithAlternatives(schedule: DaySchedule[]): void {
+function enrichWithAlternatives(schedule: DaySchedule[], allEvents: Event[]): void {
   for (const day of schedule) {
     const primaries = day.events.filter((e) => !e.isFallback);
 
@@ -56,7 +82,7 @@ function enrichWithAlternatives(schedule: DaySchedule[]): void {
       if (primary.alternatives && primary.alternatives.length > 0) continue;
 
       // Find all events on the same date that overlap with this primary
-      const overlapping = ALL_EVENTS.filter(
+      const overlapping = allEvents.filter(
         (ev) =>
           ev.date === primary.event.date &&
           ev.event_id !== primary.event.event_id &&
@@ -93,18 +119,20 @@ function hydratePlan(
   strategyNote: string,
   savedEvents: SavedPlanEvent[],
   exhibitorIds: number[],
+  eventMap: Map<number, Event>,
+  exhibitorMap: Map<number, Exhibitor>,
 ): RecommendationPlan {
   // Group events by date
   const dateMap = new Map<string, ScoredEvent[]>();
 
   // Build an id→event_id lookup for fallback_for resolution
   const idToEventId = new Map(savedEvents.map((se) => {
-    const ev = EVENT_MAP.get(se.id);
+    const ev = eventMap.get(se.id);
     return [se.id, ev?.event_id || ''] as const;
   }));
 
   for (const se of savedEvents) {
-    const event = EVENT_MAP.get(se.id);
+    const event = eventMap.get(se.id);
     if (!event) continue;
 
     const scored: ScoredEvent = {
@@ -144,7 +172,7 @@ function hydratePlan(
   // Hydrate exhibitors
   const exhibitors = exhibitorIds
     .map((id) => {
-      const exhibitor = EXHIBITOR_MAP.get(id);
+      const exhibitor = exhibitorMap.get(id);
       if (!exhibitor) return null;
       return {
         exhibitor,
@@ -212,6 +240,12 @@ function ScoreBreakdown({ breakdown }: { breakdown: ScoredEvent['breakdown'] }) 
 export default function PlanPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
+  const { events: allEvents, exhibitors: allExhibitors, dataTimestamp } = useData();
+
+  // Derived data maps — recompute when hot-reloaded data changes
+  const eventMap = useMemo(() => new Map(allEvents.map((e) => [e.id, e])), [allEvents]);
+  const exhibitorMap = useMemo(() => new Map(allExhibitors.map((e) => [e.id, e])), [allExhibitors]);
+  const currentEventIds = useMemo(() => new Set(allEvents.map((e) => e.id)), [allEvents]);
   const [plan, setPlan] = useState<RecommendationPlan | null>(null);
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
@@ -224,6 +258,16 @@ export default function PlanPage() {
   const [saveCopied, setSaveCopied] = useState(false);
   const [isNewVisitor, setIsNewVisitor] = useState(false);
   const [stripDismissed, setStripDismissed] = useState(false);
+  const [stalenessBannerVisible, setStalenessBannerVisible] = useState(false);
+  const [hasStaleEvents, setHasStaleEvents] = useState(false);
+  const [staleEventCount, setStaleEventCount] = useState(0);
+  const [totalPlanEventCount, setTotalPlanEventCount] = useState(0);
+  const [hasQuizAnswers, setHasQuizAnswers] = useState(false);
+  const [isRegenerating, setIsRegenerating] = useState(false);
+  const [refreshToastVisible, setRefreshToastVisible] = useState(false);
+  const [regenerationError, setRegenerationError] = useState(false);
+  const stalenessCheckDoneRef = useRef(false);
+  const rawSavedEventIdsRef = useRef<number[]>([]);
   const searchParams = useSearchParams();
   const simulateTime = searchParams.get('simulateTime');
   const hasScrolledRef = useRef(false);
@@ -246,6 +290,8 @@ export default function PlanPage() {
           const stored = localStorage.getItem('planResult');
           if (stored) {
             const loadedPlan = JSON.parse(stored) as RecommendationPlan;
+            refreshEventData(loadedPlan.schedule, eventMap);
+            enrichWithAlternatives(loadedPlan.schedule, allEvents);
             setPlan(loadedPlan);
             // Default to first day
             if (loadedPlan.schedule.length > 0) {
@@ -275,8 +321,10 @@ export default function PlanPage() {
           if (stored) {
             try {
               const loadedPlan = JSON.parse(stored) as RecommendationPlan;
+              // Refresh event data from current events.json (picks up title fixes etc.)
+              refreshEventData(loadedPlan.schedule, eventMap);
               // Ensure alternatives exist (in case localStorage was saved before enrichment)
-              enrichWithAlternatives(loadedPlan.schedule);
+              enrichWithAlternatives(loadedPlan.schedule, allEvents);
               setPlan(loadedPlan);
               if (loadedPlan.schedule.length > 0) {
                 setActiveDay(loadedPlan.schedule[0].date);
@@ -305,13 +353,16 @@ export default function PlanPage() {
                 .single();
 
               if (!error && data) {
+                rawSavedEventIdsRef.current = (data.events as SavedPlanEvent[]).map((e) => e.id);
                 const hydrated = hydratePlan(
                   data.headline,
                   data.strategy_note,
                   data.events as SavedPlanEvent[],
                   data.exhibitor_ids as number[],
+                  eventMap,
+                  exhibitorMap,
                 );
-                enrichWithAlternatives(hydrated.schedule);
+                enrichWithAlternatives(hydrated.schedule, allEvents);
                 setPlan(hydrated);
                 if (hydrated.schedule.length > 0) {
                   setActiveDay(hydrated.schedule[0].date);
@@ -336,13 +387,16 @@ export default function PlanPage() {
               .single();
 
             if (!error && data) {
+              rawSavedEventIdsRef.current = (data.events as SavedPlanEvent[]).map((e) => e.id);
               const hydrated = hydratePlan(
                 data.headline,
                 data.strategy_note,
                 data.events as SavedPlanEvent[],
                 data.exhibitor_ids as number[],
+                eventMap,
+                exhibitorMap,
               );
-              enrichWithAlternatives(hydrated.schedule);
+              enrichWithAlternatives(hydrated.schedule, allEvents);
               setPlan(hydrated);
               if (hydrated.schedule.length > 0) {
                 setActiveDay(hydrated.schedule[0].date);
@@ -363,6 +417,30 @@ export default function PlanPage() {
     loadPlan();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id, router]);
+
+  // Refresh embedded event objects when hot-reloaded data arrives mid-session
+  // Track which allEvents reference loadPlan already used so we don't double-process,
+  // but DO process if DataProvider pushes genuinely new data after loadPlan finished.
+  const loadPlanEventsRef = useRef(allEvents);
+  useEffect(() => {
+    if (loading || !plan) return;
+    if (allEvents === loadPlanEventsRef.current) return; // same reference loadPlan used
+    loadPlanEventsRef.current = allEvents;
+    setPlan((prev) => {
+      if (!prev) return prev;
+      const updated = {
+        ...prev,
+        schedule: prev.schedule.map((day) => ({
+          ...day,
+          events: day.events.map((se) => ({ ...se })),
+        })),
+      };
+      refreshEventData(updated.schedule, eventMap);
+      enrichWithAlternatives(updated.schedule, allEvents);
+      return updated;
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allEvents]);
 
   // Detect new visitor (no cached plan = likely a friend viewing shared link)
   useEffect(() => {
@@ -387,6 +465,199 @@ export default function PlanPage() {
       }
     } catch { /* ignore */ }
   }, [loading, plan]);
+
+  // Analytics: track plan_viewed + visit count (once per page load)
+  const hasTrackedViewRef = useRef(false);
+  useEffect(() => {
+    if (loading || !plan || hasTrackedViewRef.current) return;
+    hasTrackedViewRef.current = true;
+
+    const resolvedPlanId = params.id === 'local'
+      ? localStorage.getItem('lastPlanId')
+      : params.id;
+    const isOwner = params.id === 'local' || localStorage.getItem('lastPlanId') === params.id;
+
+    trackEvent('plan_viewed', resolvedPlanId, {
+      is_owner: isOwner,
+      event_count: plan.schedule.reduce((acc, d) => acc + d.events.filter(e => !e.isFallback).length, 0),
+    });
+
+    // Visit count tracking for plan owners
+    if (isOwner && resolvedPlanId && resolvedPlanId !== 'local') {
+      // Increment local visit count (used by EmailCapture trigger logic)
+      const count = parseInt(localStorage.getItem('planVisitCount') || '0', 10) + 1;
+      localStorage.setItem('planVisitCount', String(count));
+
+      // Increment in Supabase
+      supabase.rpc('increment_visit', { plan_uuid: resolvedPlanId })
+        .then(({ error }) => {
+          if (error) console.warn('Visit increment failed:', error.message);
+        });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, plan]);
+
+  // -----------------------------------------------------------------------
+  // Staleness detection: check if plan events exist in current event data
+  // + prompt shared-plan visitors (no quiz answers) to generate their own
+  // -----------------------------------------------------------------------
+  useEffect(() => {
+    if (loading || !plan || stalenessCheckDoneRef.current) return;
+    stalenessCheckDoneRef.current = true;
+
+    // Use raw saved event IDs (from Supabase) if available, otherwise from hydrated plan.
+    // Raw IDs are needed because hydratePlan silently drops events not in current data.
+    const allPlanEventIds = rawSavedEventIdsRef.current.length > 0
+      ? rawSavedEventIdsRef.current
+      : plan.schedule.flatMap((day) => day.events.map((se) => se.event.id));
+
+    const staleCount = allPlanEventIds.filter((id) => !currentEventIds.has(id)).length;
+
+    // Check if the events data has been updated since this plan was generated.
+    // Only applies to the plan owner — shared plan visitors don't have planDataVersion.
+    const isOwner = params.id === 'local' || localStorage.getItem('lastPlanId') === params.id;
+    const planDataVersion = localStorage.getItem('planDataVersion') || '';
+    const isDataOutdated = isOwner && planDataVersion !== dataTimestamp;
+
+    // Check if quiz answers are available for auto-regeneration
+    try {
+      const quizRaw = localStorage.getItem('quizAnswers');
+
+      if (staleCount === 0 && !isDataOutdated && quizRaw) return; // Plan is current — nothing to do
+
+      if (quizRaw) setHasQuizAnswers(true);
+      if (staleCount > 0 || isDataOutdated) {
+        setHasStaleEvents(true);
+        setStaleEventCount(staleCount);
+        setTotalPlanEventCount(allPlanEventIds.length);
+      }
+      setStalenessBannerVisible(true);
+    } catch (err) {
+      console.warn('Staleness check failed:', err);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, plan]);
+
+  // -----------------------------------------------------------------------
+  // Regenerate plan using saved quiz answers
+  // -----------------------------------------------------------------------
+  const handleRegenerateWithSavedPrefs = () => {
+    try {
+      const quizRaw = localStorage.getItem('quizAnswers');
+      if (!quizRaw) return;
+      const quizAnswers = JSON.parse(quizRaw);
+
+      let selectedDates: string[] = [];
+      if (Array.isArray(quizAnswers.dates) && quizAnswers.dates.length > 0) {
+        selectedDates = quizAnswers.dates;
+      } else {
+        const datesRaw = localStorage.getItem('selectedDates');
+        if (datesRaw) selectedDates = JSON.parse(datesRaw);
+      }
+      if (selectedDates.length === 0) return;
+
+      setIsRegenerating(true);
+      setRegenerationError(false);
+
+      // Preserve manually added events from the old plan (only if they still exist in current data)
+      const manualEvents: ScoredEvent[] = plan
+        ? plan.schedule.flatMap((day) =>
+            day.events.filter((se) => se.isManual && currentEventIds.has(se.event.id))
+          )
+        : [];
+
+      let newPlan: RecommendationPlan;
+      if (quizAnswers.mode === 'profile') {
+        const profile = buildProfileFromQuiz(
+          'founder', ['llms_foundation', 'enterprise_ai'], ['networking'], selectedDates
+        );
+        newPlan = generateRecommendations(allEvents, allExhibitors, profile);
+      } else {
+        const role: UserRole = ROLE_ID_MAP[quizAnswers.role] || 'founder';
+        const profile = buildProfileFromQuiz(
+          role,
+          quizAnswers.interests || [],
+          quizAnswers.missions || [],
+          selectedDates,
+          undefined,
+          quizAnswers.technical_depth || null,
+          quizAnswers.networking_density || null,
+          quizAnswers.org_size || null,
+          quizAnswers.sectors || null,
+          quizAnswers.deal_breakers || null,
+        );
+        newPlan = generateRecommendations(allEvents, allExhibitors, profile);
+      }
+
+      // Re-insert manually added events into the new plan's schedule
+      for (const manualEvent of manualEvents) {
+        const dayEntry = newPlan.schedule.find((d) => d.date === manualEvent.event.date);
+        if (dayEntry) {
+          // Only add if not already in the new plan (avoid duplicates if regen picked the same event)
+          const alreadyExists = dayEntry.events.some((se) => se.event.id === manualEvent.event.id);
+          if (!alreadyExists) {
+            dayEntry.events.push(manualEvent);
+          }
+        }
+        // If the day isn't in the new plan's schedule (user changed dates), skip the manual event
+      }
+
+      // Re-sort each day's events chronologically after manual event insertion
+      if (manualEvents.length > 0) {
+        for (const day of newPlan.schedule) {
+          day.events.sort((a, b) =>
+            (a.event.start_time || '').localeCompare(b.event.start_time || '')
+          );
+        }
+      }
+
+      localStorage.setItem('planResult', JSON.stringify(newPlan));
+      localStorage.setItem('planDataVersion', dataTimestamp);
+      setPlan(newPlan);
+      if (newPlan.schedule.length > 0) setActiveDay(newPlan.schedule[0].date);
+      setStalenessBannerVisible(false);
+      setIsRegenerating(false);
+
+      // Clear stale swap/pin/dismiss edits from old plan (manual events are preserved above)
+      const freshEdits: PlanEdits = { pinned: [], dismissed: [], swapped: {} };
+      setPlanEdits(freshEdits);
+      localStorage.setItem('planEdits', JSON.stringify(freshEdits));
+
+      // Show toast
+      setRefreshToastVisible(true);
+      setTimeout(() => setRefreshToastVisible(false), 4000);
+
+      // Sync to Supabase
+      const planId = params.id !== 'local' ? params.id : localStorage.getItem('lastPlanId');
+      if (planId && planId !== 'local') {
+        const eidToId = new Map(
+          newPlan.schedule.flatMap((d) => d.events.map((se) => [se.event.event_id, se.event.id]))
+        );
+        const slimEvents: SavedPlanEvent[] = newPlan.schedule.flatMap((day) =>
+          day.events.map((se) => ({
+            id: se.event.id, tier: se.tier, score: se.score, pinned: false,
+            is_fallback: se.isFallback,
+            fallback_for: se.fallbackFor ? (eidToId.get(se.fallbackFor) ?? null) : null,
+            is_manual: se.isManual || false,
+          }))
+        );
+        supabase
+          .from('user_plans')
+          .update({
+            headline: newPlan.headline, strategy_note: newPlan.strategyNote,
+            events: slimEvents, exhibitor_ids: newPlan.exhibitors.map((e) => e.exhibitor.id),
+          })
+          .eq('id', planId)
+          .then(({ error }) => {
+            if (error) console.warn('Failed to sync refreshed plan:', error.message);
+          });
+      }
+    } catch (err) {
+      console.warn('Regeneration failed:', err);
+      setIsRegenerating(false);
+      setRegenerationError(true);
+    }
+  };
 
   // Reset scroll state when simulateTime changes (dev testing)
   useEffect(() => {
@@ -470,12 +741,25 @@ export default function PlanPage() {
     await copyToClipboard(window.location.href);
     setSaveCopied(true);
     setTimeout(() => setSaveCopied(false), 2000);
+    const resolvedPlanId = params.id === 'local' ? localStorage.getItem('lastPlanId') : params.id;
+    trackEvent('share_clicked', resolvedPlanId, { channel: 'copy_link' });
   }
 
   function handleWhatsAppShare() {
-    const text = `Check out my personalised AI Summit 2026 strategy: ${window.location.href}`;
+    const planUrl = window.location.href;
+    const text = `I just got my personalized strategy for the India AI Impact Summit 2026. ${plan?.schedule.reduce((acc, d) => acc + d.events.filter(e => !e.isFallback).length, 0) || ''} curated events, networking icebreakers, and a day-by-day plan.\n\nCheck it out: ${planUrl}\n\nGenerate yours free at aisummit26.info`;
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
+    const resolvedPlanId = params.id === 'local' ? localStorage.getItem('lastPlanId') : params.id;
+    trackEvent('share_clicked', resolvedPlanId, { channel: 'whatsapp' });
+  }
+
+  function handleLinkedInShare() {
+    const planUrl = window.location.href;
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(planUrl)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    const resolvedPlanId = params.id === 'local' ? localStorage.getItem('lastPlanId') : params.id;
+    trackEvent('share_clicked', resolvedPlanId, { channel: 'linkedin' });
   }
 
   // -----------------------------------------------------------------------
@@ -499,6 +783,7 @@ export default function PlanPage() {
           pinned: false,
           is_fallback: se.isFallback,
           fallback_for: se.fallbackFor ? (eidToId.get(se.fallbackFor) ?? null) : null,
+          is_manual: se.isManual || false,
         }))
       );
 
@@ -751,6 +1036,96 @@ export default function PlanPage() {
         </div>
       )}
 
+      {/* ── STALENESS / SHARED PLAN MODAL ───────────────────── */}
+      {stalenessBannerVisible && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
+            onClick={() => setStalenessBannerVisible(false)}
+          />
+          <div className="relative w-full max-w-[420px] bg-white rounded-t-2xl sm:rounded-2xl shadow-xl animate-slide-up overflow-hidden">
+            {/* Accent bar */}
+            <div className={`h-1 ${hasStaleEvents ? 'bg-gradient-to-r from-[#D97706] to-[#F59E0B]' : 'bg-gradient-to-r from-[#4338CA] via-[#6366F1] to-[#818CF8]'}`} />
+
+            {/* Handle bar (mobile) */}
+            <div className="flex justify-center py-2 sm:hidden">
+              <div className="h-1 w-10 rounded-full bg-[#D5D0C8]" />
+            </div>
+
+            <div className="px-6 pb-6 pt-4 sm:pt-5">
+              {/* Header */}
+              <div className="mb-3 flex items-center gap-3">
+                <div className={`flex size-10 items-center justify-center rounded-full ${hasStaleEvents ? 'bg-[#FFF7ED]' : 'bg-[#EEF2FF]'}`}>
+                  {hasStaleEvents
+                    ? <RefreshCw className="size-5 text-[#D97706]" />
+                    : <Sparkles className="size-5 text-[#4338CA]" />
+                  }
+                </div>
+                <div>
+                  <h3 className="text-[17px] font-bold text-[#292524]">
+                    {hasStaleEvents ? 'This plan needs a refresh' : 'This plan was made for someone else'}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="mb-5 text-[14px] leading-relaxed text-[#57534E]">
+                {hasStaleEvents
+                  ? staleEventCount > 0
+                    ? <><span className="font-semibold text-[#292524]">{staleEventCount} of {totalPlanEventCount}</span> events in this plan have been updated or removed from the official schedule.</>
+                    : <>We&apos;ve added <span className="font-semibold text-[#292524]">new sessions</span> to the summit schedule. Refresh to get the best plan with all available events.</>
+                  : <>This is someone else&apos;s personalised strategy. Get one tailored to <span className="font-semibold text-[#292524]">your role, interests, and goals</span> in 30 seconds.</>
+                }
+              </p>
+
+              {/* Actions — varies based on quiz answers + staleness */}
+              {hasQuizAnswers && hasStaleEvents ? (
+                <>
+                  <button
+                    onClick={handleRegenerateWithSavedPrefs}
+                    disabled={isRegenerating}
+                    className="mb-2.5 w-full rounded-xl bg-[#4338CA] py-3 text-[14px] font-bold text-white transition-all hover:bg-[#3730A3] disabled:opacity-60"
+                  >
+                    {isRegenerating ? 'Refreshing...' : regenerationError ? 'Try again' : 'Refresh with my preferences'}
+                  </button>
+                  {regenerationError && (
+                    <p className="mb-2 text-center text-[12px] text-[#DC2626]">
+                      Something went wrong. Try again or start fresh.
+                    </p>
+                  )}
+                  <button
+                    onClick={() => router.push('/')}
+                    className="mb-2.5 w-full rounded-xl border border-[#E0DCD6] bg-[#FAF9F7] py-2.5 text-[13px] font-semibold text-[#292524] transition-colors hover:bg-[#EDEAE5]"
+                  >
+                    Start fresh with new preferences
+                  </button>
+                  <button
+                    onClick={() => setStalenessBannerVisible(false)}
+                    className="w-full py-2 text-[13px] font-medium text-[#A8A29E] transition-colors hover:text-[#57534E]"
+                  >
+                    Continue with this plan
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => router.push('/')}
+                    className="mb-3 w-full rounded-xl bg-[#4338CA] py-3 text-[14px] font-bold text-white transition-all hover:bg-[#3730A3]"
+                  >
+                    Generate My Strategy →
+                  </button>
+                  <button
+                    onClick={() => setStalenessBannerVisible(false)}
+                    className="w-full rounded-xl border border-[#E0DCD6] bg-[#FAF9F7] py-2.5 text-[13px] font-medium text-[#57534E] transition-colors hover:bg-[#EDEAE5]"
+                  >
+                    {hasStaleEvents ? 'Continue with this plan' : 'Just browsing, thanks'}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       <main className="mx-auto max-w-[780px] px-4 py-8 sm:px-6 sm:py-12">
 
         {/* Header Section */}
@@ -797,7 +1172,7 @@ export default function PlanPage() {
 
         {/* ── DATE FILTER TABS ─────────────────────────────────── */}
         {plan.schedule.length > 1 && (
-          <div className="date-filter-bar sticky top-[49px] z-20 -mx-4 mb-6 overflow-x-auto bg-[#EEEBE6]/95 px-4 py-3 backdrop-blur-sm sm:-mx-6 sm:px-6">
+          <div className="date-filter-bar sticky top-[49px] z-20 -mx-4 mb-6 overflow-x-auto scrollbar-hide bg-[#EEEBE6]/95 px-4 py-3 backdrop-blur-sm sm:-mx-6 sm:px-6">
             <div className="flex items-center gap-2">
               {plan.schedule.map((day) => {
                 const isActive = activeDay === day.date;
@@ -859,6 +1234,13 @@ export default function PlanPage() {
           </div>
         )}
 
+        {/* Email Capture — plan owner only */}
+        {!isNewVisitor && (
+          <EmailCapture
+            planId={params.id === 'local' ? (typeof window !== 'undefined' ? localStorage.getItem('lastPlanId') : null) : params.id}
+          />
+        )}
+
         {/* Timeline Section */}
         <section className="mb-16">
           {visibleSchedule.map((daySchedule, dayIndex) => {
@@ -882,8 +1264,8 @@ export default function PlanPage() {
               originalEventIds.push(se.event.event_id);
               if (!swappedEventId) return se;
 
-              // Find the swapped event in ALL_EVENTS
-              const swappedEvent = ALL_EVENTS.find((e) => e.event_id === swappedEventId);
+              // Find the swapped event in allEvents
+              const swappedEvent = allEvents.find((e) => e.event_id === swappedEventId);
               if (!swappedEvent) return se;
 
               // Create a new ScoredEvent for the swapped-in event, preserving alternatives from original
@@ -934,11 +1316,11 @@ export default function PlanPage() {
                     const isLast = eventIndex === visibleEvents.length - 1;
                     const isPast = isEventPast(scoredEvent.event.date, scoredEvent.event.start_time, scoredEvent.event.end_time);
 
-                    // Alternatives count: total alternatives minus the fallback (P2) already shown
-                    const totalAlternatives = scoredEvent.alternatives?.length ?? 0;
-                    const alternativesCount = fallback
-                      ? Math.max(0, totalAlternatives - 1)
-                      : totalAlternatives;
+                    // Alternatives count: compute actual visible alternatives (excluding fallback)
+                    const fallbackEid = fallback?.event.event_id;
+                    const alternativesCount = (scoredEvent.alternatives ?? []).filter(
+                      (a) => a.event_id !== fallbackEid
+                    ).length;
 
                     return (
                       <TimeSlotRow
@@ -997,7 +1379,7 @@ export default function PlanPage() {
             onClick={() => router.push('/explore')}
             className="inline-flex items-center gap-2 rounded-lg border border-[#4338CA]/30 bg-[#EEF2FF] px-4 py-2.5 text-[13px] font-semibold text-[#4338CA] transition-colors hover:bg-[#4338CA] hover:text-white hover:border-[#4338CA]"
           >
-            Browse all 463 events
+            Browse all {allEvents.length} events
           </button>
         </div>
 
@@ -1111,7 +1493,6 @@ export default function PlanPage() {
               <p className="text-[13px] font-medium text-[#57534E]">
                 {swapTarget.event.title}
               </p>
-              <p className="text-[12px] text-[#A8A29E]">Score: {swapTarget.score}</p>
             </div>
 
             {/* Alternatives list — filter out the fallback (P2) to avoid duplicate */}
@@ -1133,34 +1514,57 @@ export default function PlanPage() {
                 );
 
                 return filteredAlts.length > 0 ? (
-                  filteredAlts.map((alt) => (
+                  <>
+                  {filteredAlts.map((alt) => {
+                    const fullEvent = allEvents.find((e) => e.event_id === alt.event_id);
+                    return (
                     <div
                       key={alt.event_id}
                       className="rounded-xl border border-[rgba(0,0,0,0.06)] p-4 hover:shadow-sm transition-shadow"
                     >
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-semibold px-2 py-[3px] rounded-md bg-[#EDEAE5] text-[#57534E]">
-                          {alt.tier}
+                      {/* Time + badges row */}
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#57534E]">
+                          <Clock className="size-3" />
+                          {formatTime(alt.start_time)}{alt.end_time ? ` – ${formatTime(alt.end_time)}` : ''}
                         </span>
                         {alt.is_heavy_hitter && (
                           <span className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-[3px] rounded-md bg-[#FFF1F2] text-[#BE123C]">
                             <Flame className="size-3" />
-                            Heavy Hitter
-                          </span>
-                        )}
-                        {alt.score > 0 && (
-                          <span className="ml-auto text-[11px] font-mono text-[#A8A29E]">
-                            Score: {alt.score}
+                            VIP
                           </span>
                         )}
                       </div>
-                      <h4 className="text-[14px] font-semibold text-[#292524] mb-1">
+                      {/* Title — clickable to open detail */}
+                      <h4
+                        className="text-[14px] font-semibold text-[#292524] mb-1 cursor-pointer hover:text-[#4338CA] transition-colors"
+                        onClick={() => {
+                          if (fullEvent) {
+                            setSwapTarget(null);
+                            setDetailEvent({
+                              event: fullEvent,
+                              score: 0,
+                              tier: 'Nice to Have',
+                              isFallback: false,
+                              breakdown: { keywordScore: 0, personaScore: 0, depthScore: 0, heavyHitterBonus: 0, goalRelevanceScore: 0, networkingSignalScore: 0, sectorScore: 0, dealBreakerPenalty: 0 },
+                            });
+                          }
+                        }}
+                      >
                         {alt.title}
                       </h4>
-                      <p className="text-xs text-[#A8A29E] mb-2">
-                        {alt.venue}
-                        {alt.room ? `, ${alt.room}` : ''}
+                      {/* Location */}
+                      <p className="text-xs text-[#A8A29E] mb-1">
+                        <MapPin className="inline size-3 mr-0.5" />
+                        {alt.venue}{alt.room ? `, ${alt.room}` : ''}
                       </p>
+                      {/* Speakers */}
+                      {alt.speakers && (
+                        <p className="text-xs text-[#78716C] mb-1 line-clamp-1">
+                          <Users className="inline size-3 mr-0.5" />
+                          {alt.speakers.split(';').slice(0, 3).map(s => s.split(',')[0].trim()).join(', ')}
+                        </p>
+                      )}
                       {alt.one_liner && (
                         <p className="text-[13px] text-[#57534E] mb-3">{alt.one_liner}</p>
                       )}
@@ -1168,10 +1572,12 @@ export default function PlanPage() {
                         onClick={() => handleSwapSelect(alt.event_id)}
                         className="w-full rounded-lg border border-[#4338CA] bg-white px-3 py-2 text-[13px] font-semibold text-[#4338CA] transition-colors hover:bg-[#EEF2FF]"
                       >
-                        Select this
+                        Select this instead
                       </button>
                     </div>
-                  ))
+                    );
+                  })}
+                  </>
                 ) : (
                   <div className="text-center py-8">
                     <p className="text-[13px] text-[#A8A29E]">
@@ -1310,9 +1716,26 @@ export default function PlanPage() {
               {/* Icebreaker */}
               {detailEvent.event.icebreaker && (
                 <div className="rounded-lg bg-[#FAF9F7] p-3 border-l-[3px] border-l-[#4338CA] mb-3">
-                  <div className="mb-1 flex items-center gap-1.5">
-                    <MessageCircle className="size-3 text-[#4338CA]" />
-                    <span className="text-[10px] font-semibold uppercase tracking-wide text-[#A8A29E]">Icebreaker</span>
+                  <div className="mb-1 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <MessageCircle className="size-3 text-[#4338CA]" />
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-[#A8A29E]">Icebreaker</span>
+                    </div>
+                    <button
+                      onClick={async () => {
+                        await copyToClipboard(detailEvent.event.icebreaker!);
+                        const resolvedPlanId = params.id === 'local' ? localStorage.getItem('lastPlanId') : params.id;
+                        trackEvent('icebreaker_copied', resolvedPlanId, { event_id: detailEvent.event.event_id });
+                        // Brief visual feedback
+                        const btn = document.getElementById('icebreaker-copy-btn');
+                        if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy'; }, 1500); }
+                      }}
+                      id="icebreaker-copy-btn"
+                      className="flex items-center gap-1 text-[11px] font-medium text-[#4338CA] hover:text-[#3730A3] transition-colors"
+                    >
+                      <Copy className="size-3" />
+                      Copy
+                    </button>
                   </div>
                   <p className="text-[13px] leading-relaxed text-[#57534E]">{detailEvent.event.icebreaker}</p>
                 </div>
@@ -1437,6 +1860,22 @@ export default function PlanPage() {
                   </div>
                 </button>
 
+                {/* LinkedIn */}
+                <button
+                  onClick={handleLinkedInShare}
+                  className="flex items-center gap-3 rounded-xl border border-[#E0DCD6] px-4 py-3.5 text-left transition-all hover:border-[#0A66C2]/30 hover:bg-[#F0F7FF]"
+                >
+                  <div className="flex size-9 items-center justify-center rounded-lg bg-[#0A66C2]">
+                    <svg viewBox="0 0 24 24" className="size-4 text-white" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="block text-[14px] font-semibold text-[#292524]">Share on LinkedIn</span>
+                    <span className="text-[11px] text-[#A8A29E]">Show off your summit prep</span>
+                  </div>
+                </button>
+
                 {/* Download PDF */}
                 <button
                   onClick={() => { setShowSaveModal(false); setTimeout(() => window.print(), 300); }}
@@ -1474,6 +1913,16 @@ export default function PlanPage() {
       {copied && (
         <div className="fixed bottom-20 left-1/2 z-50 -translate-x-1/2 animate-slide-up rounded-xl bg-[#1A1A19] px-4 py-2 shadow-lg">
           <p className="text-sm font-medium text-white">Link copied to clipboard</p>
+        </div>
+      )}
+
+      {/* Toast notification for plan refresh (staleness auto-regeneration) */}
+      {refreshToastVisible && (
+        <div className="fixed bottom-20 left-1/2 z-50 -translate-x-1/2 animate-slide-up rounded-xl bg-[#1A1A19] px-4 py-2.5 shadow-lg">
+          <p className="flex items-center gap-2 text-sm font-medium text-white">
+            <RefreshCw className="size-3.5 text-[#818CF8]" />
+            Plan refreshed with latest events
+          </p>
         </div>
       )}
     </div>

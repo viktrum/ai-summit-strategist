@@ -2,8 +2,7 @@
 
 import { useState, useMemo, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import eventsData from '@/data/events.json';
-import exhibitorsData from '@/data/exhibitors.json';
+import { useData } from '@/lib/DataProvider';
 import type { Event, Exhibitor } from '@/lib/types';
 import { formatTime, parseSpeakers, formatDateShort, dayShort, dayNum } from '@/lib/format';
 import { getEnrichedLogos } from '@/lib/logo-lookup';
@@ -23,13 +22,6 @@ import {
   Sparkles,
   CalendarDays,
 } from 'lucide-react';
-
-// ---------------------------------------------------------------------------
-// Data
-// ---------------------------------------------------------------------------
-
-const allEvents = eventsData as Event[];
-const allExhibitors = exhibitorsData as Exhibitor[];
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -589,6 +581,7 @@ export default function ExplorePageWrapper() {
 function ExplorePage() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { events: allEvents, exhibitors: allExhibitors } = useData();
   const initialTab: MainTab = searchParams.get('tab') === 'exhibitions' ? 'exhibitions' : 'events';
 
   // ── State ──────────────────────────────────────────────────────
@@ -632,7 +625,7 @@ function ExplorePage() {
       counts.set(d, allEvents.filter((ev) => ev.date === d).length);
     }
     return counts;
-  }, []);
+  }, [allEvents]);
 
   // ── Sector counts for event dropdown (respects day + VIP) ─────
   const sectorCounts = useMemo(() => {
@@ -651,7 +644,7 @@ function ExplorePage() {
       }
     }
     return counts;
-  }, [selectedDay, vipFilter]);
+  }, [allEvents, selectedDay, vipFilter]);
 
   const sectorOptions = useMemo(
     () =>
@@ -677,7 +670,7 @@ function ExplorePage() {
       }
     }
     return counts;
-  }, []);
+  }, [allExhibitors]);
 
   const exSectorOptions = useMemo(
     () =>
@@ -721,7 +714,7 @@ function ExplorePage() {
 
     result.sort((a, b) => (a.start_time || '').localeCompare(b.start_time || ''));
     return result;
-  }, [isSearchActive, searchQuery, selectedDay, vipFilter, selectedSectors]);
+  }, [allEvents, isSearchActive, searchQuery, selectedDay, vipFilter, selectedSectors]);
 
   // ── Time blocks (single-day, used in normal mode) ─────────────
   const timeBlocks = useMemo(() => {
@@ -778,13 +771,16 @@ function ExplorePage() {
     }
 
     return result;
-  }, [isSearchActive, searchQuery, mainTab, exCategory, exSelectedSectors]);
+  }, [allExhibitors, isSearchActive, searchQuery, mainTab, exCategory, exSelectedSectors]);
 
   // ── Stats ─────────────────────────────────────────────────────
-  const totalDayEvents = allEvents.filter((ev) => ev.date === selectedDay).length;
+  const totalDayEvents = useMemo(
+    () => allEvents.filter((ev) => ev.date === selectedDay).length,
+    [allEvents, selectedDay],
+  );
   const dayVipCount = useMemo(
     () => allEvents.filter((ev) => ev.date === selectedDay && ev.networking_signals?.is_heavy_hitter).length,
-    [selectedDay],
+    [allEvents, selectedDay],
   );
   const hasActiveEventFilters = vipFilter !== 'all' || selectedSectors.size > 0;
   const hasActiveExFilters = exSelectedSectors.size > 0 || exCategory !== 'all';
@@ -1068,7 +1064,7 @@ function ExplorePage() {
           <div>
             {/* Category pills (hidden during search) */}
             {!isSearchActive && (
-              <div className="mb-3 flex gap-1.5 overflow-x-auto">
+              <div className="mb-3 flex gap-1.5 overflow-x-auto scrollbar-hide">
                 {[
                   { value: 'all', label: 'All' },
                   { value: 'Startup', label: 'Startup' },

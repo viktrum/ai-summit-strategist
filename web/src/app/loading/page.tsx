@@ -4,11 +4,11 @@ import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { generateRecommendations } from '@/lib/scoring';
 import { buildProfileFromQuiz } from '@/lib/quiz-mapper';
-import eventsData from '@/data/events.json';
-import exhibitorsData from '@/data/exhibitors.json';
+import { useData } from '@/lib/DataProvider';
 import type { Event, Exhibitor, UserRole } from '@/lib/types';
 import { ROLE_LABEL_MAP, DENSITY_LABEL_MAP, INTEREST_LABEL_MAP, MISSION_LABEL_MAP } from '@/lib/constants';
 import { supabase } from '@/lib/supabase';
+import { trackEvent } from '@/lib/analytics';
 
 // ---------------------------------------------------------------------------
 // Terminal animation line type
@@ -43,7 +43,7 @@ const ROLE_ID_MAP: Record<string, UserRole> = {
 // Dynamic terminal line generator
 // ---------------------------------------------------------------------------
 
-function buildTerminalLines(quizAnswers: Record<string, unknown> | null): TerminalLine[] {
+function buildTerminalLines(quizAnswers: Record<string, unknown> | null, eventCount: number): TerminalLine[] {
   // Line 1: always static
   const lines: TerminalLine[] = [
     { text: '> Initializing AI Impact Summit Planner...', isSuccess: false },
@@ -64,8 +64,8 @@ function buildTerminalLines(quizAnswers: Record<string, unknown> | null): Termin
   const dayCount = dates.length;
   lines.push({
     text: dayCount > 0
-      ? `> Filtering 463 events across ${dayCount} day${dayCount === 1 ? '' : 's'}...`
-      : '> Scanning 463 events across 5 days...',
+      ? `> Filtering ${eventCount} events across ${dayCount} day${dayCount === 1 ? '' : 's'}...`
+      : `> Scanning ${eventCount} events across 5 days...`,
     isSuccess: false,
   });
 
@@ -109,6 +109,7 @@ function buildTerminalLines(quizAnswers: Record<string, unknown> | null): Termin
 
 export default function LoadingStrategyPage() {
   const router = useRouter();
+  const { events, exhibitors, dataTimestamp } = useData();
   const [visibleLines, setVisibleLines] = useState(0);
   const [scoringDone, setScoringDone] = useState(false);
   const [animationDone, setAnimationDone] = useState(false);
@@ -118,14 +119,14 @@ export default function LoadingStrategyPage() {
 
   // Read quizAnswers once for building dynamic terminal lines
   const terminalLines = useMemo<TerminalLine[]>(() => {
-    if (typeof window === 'undefined') return buildTerminalLines(null);
+    if (typeof window === 'undefined') return buildTerminalLines(null, events.length);
     try {
       const raw = localStorage.getItem('quizAnswers');
-      return buildTerminalLines(raw ? JSON.parse(raw) : null);
+      return buildTerminalLines(raw ? JSON.parse(raw) : null, events.length);
     } catch {
-      return buildTerminalLines(null);
+      return buildTerminalLines(null, events.length);
     }
-  }, []);
+  }, [events.length]);
 
   // Run the scoring engine once on mount
   const runScoring = useCallback(async () => {
@@ -169,8 +170,8 @@ export default function LoadingStrategyPage() {
           selectedDates
         );
         plan = generateRecommendations(
-          eventsData as Event[],
-          exhibitorsData as Exhibitor[],
+          events as Event[],
+          exhibitors as Exhibitor[],
           profile
         );
       } else {
@@ -192,14 +193,15 @@ export default function LoadingStrategyPage() {
         );
 
         plan = generateRecommendations(
-          eventsData as Event[],
-          exhibitorsData as Exhibitor[],
+          events as Event[],
+          exhibitors as Exhibitor[],
           profile
         );
       }
 
       // Always keep localStorage as fallback (full plan for local use)
       localStorage.setItem('planResult', JSON.stringify(plan));
+      localStorage.setItem('planDataVersion', dataTimestamp);
 
       // Save slim version to Supabase (just IDs + tiers + scores)
       try {
@@ -220,6 +222,10 @@ export default function LoadingStrategyPage() {
         );
         const exhibitorIds = plan.exhibitors.map((e) => e.exhibitor.id);
 
+        // Read previous plan ID and saved email for plan linking
+        const previousPlanId = localStorage.getItem('lastPlanId') || null;
+        const savedEmail = localStorage.getItem('userEmail') || null;
+
         let saved = false;
 
         // Try with user_name first
@@ -231,6 +237,9 @@ export default function LoadingStrategyPage() {
             events: slimEvents,
             exhibitor_ids: exhibitorIds,
             user_name: quizAnswers.user_name || '',
+            quiz_answers: quizAnswers,
+            previous_plan_id: previousPlanId,
+            email: savedEmail,
           })
           .select('id')
           .single();
@@ -238,12 +247,20 @@ export default function LoadingStrategyPage() {
         if (!error && data?.id) {
           planIdRef.current = data.id;
           localStorage.setItem('lastPlanId', data.id);
+          localStorage.setItem('planCreatedDate', new Date().toISOString().slice(0, 10));
           saved = true;
+
+          trackEvent('plan_created', data.id, {
+            event_count: slimEvents.length,
+            exhibitor_count: exhibitorIds.length,
+            role: quizAnswers.role || 'unknown',
+            has_previous_plan: !!previousPlanId,
+          });
         }
 
-        // Retry without user_name if the column doesn't exist yet
+        // Retry without newer columns if the migration hasn't been applied yet
         if (!saved && error) {
-          console.warn('Supabase insert failed, retrying without user_name:', error.message);
+          console.warn('Supabase insert failed, retrying without new columns:', error.message);
           const { data: d2, error: e2 } = await supabase
             .from('user_plans')
             .insert({
@@ -258,6 +275,14 @@ export default function LoadingStrategyPage() {
           if (!e2 && d2?.id) {
             planIdRef.current = d2.id;
             localStorage.setItem('lastPlanId', d2.id);
+            localStorage.setItem('planCreatedDate', new Date().toISOString().slice(0, 10));
+
+            trackEvent('plan_created', d2.id, {
+              event_count: slimEvents.length,
+              exhibitor_count: exhibitorIds.length,
+              role: quizAnswers.role || 'unknown',
+              fallback_insert: true,
+            });
           } else {
             console.warn('Supabase fallback also failed:', e2?.message);
           }
@@ -271,7 +296,7 @@ export default function LoadingStrategyPage() {
       console.error('Scoring engine error:', err);
       setScoringDone(true);
     }
-  }, [router]);
+  }, [router, events, exhibitors, dataTimestamp]);
 
   // Start scoring on mount
   useEffect(() => {
