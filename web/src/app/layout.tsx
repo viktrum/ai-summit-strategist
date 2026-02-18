@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { NavBar } from "@/components/NavBar";
+import { EmailOrchestrator } from "@/components/EmailOrchestrator";
 import { DataProvider } from "@/lib/DataProvider";
 import eventsData from "@/data/events.json";
 import "./globals.css";
@@ -36,11 +37,12 @@ export default function RootLayout({
       >
         <DataProvider>
           <NavBar />
+          <EmailOrchestrator />
           {children}
           <footer className="no-print py-3 text-center text-[12px] text-[#A8A29E]">
             Built by{' '}
             <a
-              href="https://www.linkedin.com/in/piyushmayank/"
+              href="https://www.linkedin.com/in/piyushmayank?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-[#4338CA] hover:text-[#3730A3]"

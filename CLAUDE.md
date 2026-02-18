@@ -568,6 +568,48 @@ This is the persistent record across sessions. Keep entries concise but specific
 - Maximum autonomy — do everything programmatically before asking
 - Keep all file access within the project folder
 - Prefers simple solutions over complex ones
+- **"I have not compromised with experience till now, I will not start now"** — always build the full quality solution, never cut corners on UX
+
+### Session: Feb 17, 2026 (Email Collection Rework + PDF Email)
+
+**Major Feature: Email Collection System Rework**
+
+Completely replaced the old inline `EmailCapture.tsx` banner with a global modal-based system:
+
+**New Architecture (4 new files):**
+- `lib/email-state.ts` — centralized localStorage/sessionStorage helpers for all email state (email, firstVisitDate, dismissCount, neverShow, sessionDismissed)
+- `components/EmailModal.tsx` — 3 variants: 'save' (post-generation PDF email), 'brief' (returning visitors), 'create-plan' (returning no-plan users with CTA)
+- `components/EmailStickyBar.tsx` — thin persistent bar below navbar for opted-out users (no X, clickable, opens modal)
+- `components/EmailOrchestrator.tsx` — layout-level decision maker, wired into `layout.tsx` after NavBar
+
+**UX Decisions (confirmed with user):**
+- Save modal: email-only, sends PDF via email. Share actions (Copy Link, WhatsApp, LinkedIn, PDF) moved to inline buttons on plan page header.
+- Quiz Step 1: Name field → Email field (prominent, with helper text "For your personalised summit brief")
+- Modal scope: any page (Home, Plan, Explore) for returning visitors
+- 5 session dismissals → "never show again" → sticky bar fallback
+- Sticky bar: Home + Plan pages only, no X, very thin, persists indefinitely, disappears on email submit
+- Returning user detection via `firstVisitDate` in localStorage
+
+**Modified Files:**
+- `quiz/page.tsx` — `userName` → `userEmail`, `user_name` → `user_email` in quizAnswers, imports email-state
+- `loading/page.tsx` — reads `user_email` from quizAnswers, persists to localStorage via email-state
+- `plan/[id]/page.tsx` — removed old save modal (120+ lines), removed EmailCapture usage, added inline share buttons (Copy Link, WhatsApp, LinkedIn, PDF), floating bar "Save" → "Share" (copies link)
+- `layout.tsx` — added EmailOrchestrator after NavBar
+
+**Deleted:** `components/results/EmailCapture.tsx`
+
+**PDF Email Feature:**
+- User insisted on actual PDF delivery: "I have not compromised with experience till now"
+- Server-side PDF generation using `jsPDF` in a Netlify Function
+- `netlify/functions/send-plan-pdf.mts` — receives plan data from client, generates A4 PDF with event cards, sends via Resend with PDF attachment + HTML email
+- Resend API key configured: `.env.local` (local) + Netlify env var (production)
+- `RESEND_FROM_EMAIL` env var for custom sender (optional, defaults to `onboarding@resend.dev`)
+- PDF template: indigo accent bar, plan headline, strategy note, day headers, event cards with tier badges, venue, speakers, one-liners, footer with plan URL
+- User chose server-side over client-side (`html2canvas`/`html2pdf.js`) for consistency and quality
+
+**Packages Added:** `jspdf`, `resend`, `@netlify/functions`
+
+**Not Yet Deployed:** All changes are local, build passes. Needs deploy + testing.
 
 ---
 

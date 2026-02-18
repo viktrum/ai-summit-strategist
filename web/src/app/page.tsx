@@ -330,7 +330,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-3">
             <a
-              href="https://www.linkedin.com/in/piyushmayank/"
+              href="https://www.linkedin.com/in/piyushmayank?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg border border-[#E0DCD6] px-3 py-1.5 text-[12px] font-semibold text-[#4338CA] transition-all hover:bg-[#EEF2FF] hover:border-[#C7D2FE]"

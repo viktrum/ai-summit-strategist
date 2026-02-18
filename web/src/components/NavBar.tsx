@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ArrowRight, Menu, X, Sparkles, Link2, Download, AlertTriangle, CalendarDays, ExternalLink } from 'lucide-react';
 
-const LINKEDIN_URL = 'https://www.linkedin.com/in/piyushmayank/';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/piyushmayank?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app';
 
 export function NavBar() {
   const router = useRouter();

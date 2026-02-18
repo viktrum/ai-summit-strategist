@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Sparkles, Check } from 'lucide-react';
+import { setEmail as persistEmail } from '@/lib/email-state';
 
 // ---------------------------------------------------------------------------
 // Types & Data
@@ -162,7 +163,7 @@ export default function QuizPage() {
   const router = useRouter();
 
   const [step, setStep] = useState(1);
-  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [dates, setDates] = useState<string[]>([]);
   const [role, setRole] = useState<string | null>(null);
   const [interests, setInterests] = useState<string[]>([]);
@@ -212,9 +213,14 @@ export default function QuizPage() {
   const canGenerate = step >= 3;
 
   function handleSubmit() {
+    // Persist email to localStorage if provided
+    if (userEmail.trim()) {
+      persistEmail(userEmail.trim());
+    }
+
     const quizAnswers = {
       mode: 'quiz' as const,
-      user_name: userName.trim() || null,
+      user_email: userEmail.trim() || null,
       dates,
       role,
       interests,
@@ -251,15 +257,37 @@ export default function QuizPage() {
             subtitle="Select the days you'll attend"
             badge="Required"
           >
-            {/* Name input */}
-            <div className="mb-6 flex justify-center">
-              <input
-                type="text"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-                placeholder="Your name (optional)"
-                className="w-full max-w-[280px] rounded-xl border border-[#E0DCD6] bg-white px-4 py-2.5 text-center text-[14px] text-[#292524] placeholder:text-[#D5D0C8] focus:border-[#4338CA] focus:outline-none focus:ring-2 focus:ring-[#4338CA]/20 transition-all"
-              />
+            {/* Email input — prominent card */}
+            <div className="mb-8 mx-auto max-w-[340px]">
+              <div className="rounded-2xl border border-[#E0DCD6] bg-white p-4 shadow-sm">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4338CA] to-[#6366F1]">
+                    <svg className="size-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[13px] font-bold text-[#292524] leading-snug">
+                      Get your PDF schedule + post-summit brief
+                    </p>
+                    <p className="text-[11px] text-[#78716C] mt-0.5">
+                      Printable itinerary & key takeaways from your sessions
+                    </p>
+                  </div>
+                </div>
+                <div className="relative">
+                  <input
+                    type="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full rounded-xl border-[1.5px] border-[#E0DCD6] bg-white px-4 py-3 pr-16 text-[14px] text-[#292524] placeholder:text-[#A8A29E] focus:border-[#4338CA] focus:outline-none focus:ring-2 focus:ring-[#4338CA]/20 transition-all"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-medium text-[#A8A29E]">
+                    optional
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="flex justify-center gap-2.5 sm:gap-3">

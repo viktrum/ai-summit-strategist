@@ -9,6 +9,7 @@ import type { Event, Exhibitor, UserRole } from '@/lib/types';
 import { ROLE_LABEL_MAP, DENSITY_LABEL_MAP, INTEREST_LABEL_MAP, MISSION_LABEL_MAP } from '@/lib/constants';
 import { supabase } from '@/lib/supabase';
 import { trackEvent } from '@/lib/analytics';
+import { setEmail as persistEmail, getEmail as getSavedEmail } from '@/lib/email-state';
 
 // ---------------------------------------------------------------------------
 // Terminal animation line type
@@ -225,11 +226,15 @@ export default function LoadingStrategyPage() {
 
         // Read previous plan ID and saved email for plan linking
         const previousPlanId = localStorage.getItem('lastPlanId') || null;
-        const savedEmail = localStorage.getItem('userEmail') || null;
+        const quizEmail = quizAnswers.user_email || null;
+        const savedEmail = quizEmail || getSavedEmail();
+
+        // Persist quiz email to localStorage if provided
+        if (quizEmail) persistEmail(quizEmail);
 
         let saved = false;
 
-        // Try with user_name first
+        // Try with all columns first
         const { data, error } = await supabase
           .from('user_plans')
           .insert({
@@ -237,7 +242,7 @@ export default function LoadingStrategyPage() {
             strategy_note: plan.strategyNote,
             events: slimEvents,
             exhibitor_ids: exhibitorIds,
-            user_name: quizAnswers.user_name || '',
+            user_name: '',
             quiz_answers: quizAnswers,
             previous_plan_id: previousPlanId,
             email: savedEmail,
