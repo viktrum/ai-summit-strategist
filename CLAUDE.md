@@ -614,7 +614,45 @@ Completely replaced the old inline `EmailCapture.tsx` banner with a global modal
 
 **Packages Added:** `jspdf`, `resend`, `@netlify/functions`
 
-**Not Yet Deployed:** All changes are local, build passes. Needs deploy + testing.
+### Session: Feb 18, 2026 (Email UX Polish + Production Deploy)
+
+**Resend Domain Setup:**
+- Connected `persists.dev` domain to Resend (DNS records: SPF, DKIM, MX)
+- `RESEND_FROM_EMAIL` = `AI Summit Planner <summit@persists.dev>`
+- `RESEND_REPLY_TO` = `piyush@persists.dev`
+- Added reply-to support in `send-plan-pdf.mts`
+
+**Email Modal UX Improvements:**
+- **Brief modal redesigned**: Blue gradient header with Sparkles icon, "Your Post-Summit Intelligence Brief" headline, numbered list of benefits (1. Key insights, 2. Who to follow up with, 3. Action items), removed "Work email preferred", cleaner white card below header
+- **Sent-confirmation modal**: New variant shown after auto-send, displays "Your schedule is on its way!" with the email address
+- **Quiz email card**: Prominent card design with icon, headline "Get your PDF schedule + post-summit brief", white input with subtle "optional" label inside
+
+**Auto-send PDF Feature:**
+- If email provided in quiz → auto-send PDF after plan generation (in `loading/page.tsx`)
+- Sets `sessionStorage.emailSentTo` flag → triggers confirmation modal on plan page
+- No need to ask for email again
+
+**Sticky Bar Changes:**
+- Appears immediately after modal dismiss (not just after 5 dismissals)
+- More prominent: indigo gradient background, white text, larger padding
+- Updated copy: "Get your PDF schedule + post-summit brief"
+
+**Modal Trigger Logic:**
+- Shows on first visit (removed `isReturningUser()` requirement)
+- `sent-confirmation` variant takes priority on plan page when `emailSentTo` flag exists
+
+**LinkedIn UTM Tracking:**
+- All LinkedIn links updated with UTM params: `?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app`
+- Files: NavBar, EmailModal, page.tsx, layout.tsx, send-plan-pdf.mts
+
+**Deployment Workflow Established:**
+- Dev preview: `npx netlify deploy --alias dev` → https://dev--ai-summit-strategist.netlify.app
+- Production: `npx netlify deploy --prod` → https://aisummit26.info
+- Always test on dev first
+
+**Deployed to Production:** All changes live on https://aisummit26.info
+
+**Git:** All changes committed and pushed to `main` branch
 
 ---
 
