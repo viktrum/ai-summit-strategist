@@ -297,6 +297,52 @@ export default function LoadingStrategyPage() {
         console.warn('Supabase save failed, using local fallback:', e);
       }
 
+      // If email was provided in quiz, auto-send PDF email
+      const emailToUse = quizAnswers.user_email || getSavedEmail();
+      if (emailToUse && plan) {
+        try {
+          const planDataForPdf = {
+            headline: plan.headline,
+            strategy_note: plan.strategyNote,
+            schedule: plan.schedule.map((day: { date: string; events: Array<{ event: { title: string; start_time: string; end_time: string | null; venue: string; room: string; speakers: string; summary_one_liner: string }; tier: string; score: number; isFallback?: boolean; isTimeSlotFill?: boolean }> }) => ({
+              date: day.date,
+              events: day.events
+                .filter((e: { isFallback?: boolean }) => !e.isFallback)
+                .map((e: { event: { title: string; start_time: string; end_time: string | null; venue: string; room: string; speakers: string; summary_one_liner: string }; tier: string; score: number; isTimeSlotFill?: boolean }) => ({
+                  title: e.event.title,
+                  start_time: e.event.start_time,
+                  end_time: e.event.end_time,
+                  venue: e.event.venue || '',
+                  room: e.event.room || '',
+                  speakers: e.event.speakers || '',
+                  summary_one_liner: e.event.summary_one_liner || '',
+                  tier: e.tier,
+                  score: e.score,
+                  is_time_slot_fill: e.isTimeSlotFill || false,
+                })),
+            })),
+            exhibitor_count: plan.exhibitors?.length || 0,
+          };
+
+          const planUrl = `${window.location.origin}/plan/${planIdRef.current}`;
+
+          fetch('/api/send-plan-pdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: emailToUse,
+              plan: planDataForPdf,
+              plan_url: planUrl,
+            }),
+          }).catch((err) => console.warn('PDF email failed:', err));
+
+          // Set flag to show confirmation modal instead of save modal
+          sessionStorage.setItem('emailSentTo', emailToUse);
+        } catch (err) {
+          console.warn('PDF email prep failed:', err);
+        }
+      }
+
       setScoringDone(true);
     } catch (err) {
       console.error('Scoring engine error:', err);

@@ -570,6 +570,11 @@ This is the persistent record across sessions. Keep entries concise but specific
 - Prefers simple solutions over complex ones
 - **"I have not compromised with experience till now, I will not start now"** — always build the full quality solution, never cut corners on UX
 
+**Deployment:**
+- **Dev preview**: `npx netlify deploy --alias dev` → stable URL: https://dev--ai-summit-strategist.netlify.app
+- **Production**: `npx netlify deploy --prod` → https://aisummit26.info
+- Always test on dev preview first before deploying to production
+
 ### Session: Feb 17, 2026 (Email Collection Rework + PDF Email)
 
 **Major Feature: Email Collection System Rework**

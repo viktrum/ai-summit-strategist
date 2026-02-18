@@ -19,6 +19,7 @@ export function EmailOrchestrator() {
   const [modalVariant, setModalVariant] = useState<EmailModalVariant | null>(null);
   const [showBar, setShowBar] = useState(false);
   const [emailCollected, setEmailCollected] = useState(false);
+  const [sentToEmail, setSentToEmail] = useState<string | null>(null);
 
   const isPlanPage = pathname.startsWith('/plan/');
   const isHomePage = pathname === '/';
@@ -31,6 +32,19 @@ export function EmailOrchestrator() {
     if (isLoadingPage || isQuizPage) return; // Never show on loading or quiz
 
     ensureFirstVisitDate();
+
+    // Check for sent-confirmation trigger (email was auto-sent from quiz)
+    if (isPlanPage) {
+      try {
+        const emailSent = sessionStorage.getItem('emailSentTo');
+        if (emailSent) {
+          sessionStorage.removeItem('emailSentTo');
+          setSentToEmail(emailSent);
+          setTimeout(() => setModalVariant('sent-confirmation'), 800);
+          return;
+        }
+      } catch { /* ignore */ }
+    }
 
     // If email already collected, nothing to show
     if (hasEmail()) {
@@ -66,24 +80,17 @@ export function EmailOrchestrator() {
       } catch { /* ignore */ }
     }
 
-    // Returning user checks
-    if (isReturningUser()) {
-      try {
-        const lastPlanId = localStorage.getItem('lastPlanId');
-        if (lastPlanId) {
-          setModalVariant('brief');
-        } else {
-          setModalVariant('create-plan');
-        }
-      } catch {
+    // Show modal for all visitors (first-time or returning)
+    try {
+      const lastPlanId = localStorage.getItem('lastPlanId');
+      if (lastPlanId) {
+        setModalVariant('brief');
+      } else {
         setModalVariant('create-plan');
       }
-      return;
+    } catch {
+      setModalVariant('create-plan');
     }
-
-    // First-time visitor — don't show anything
-    setModalVariant(null);
-    setShowBar(false);
   }, [isPlanPage, isHomePage, isLoadingPage, isQuizPage]);
 
   // Evaluate on mount and route change
@@ -91,15 +98,13 @@ export function EmailOrchestrator() {
     evaluate();
   }, [evaluate, pathname]);
 
-  // After modal dismiss — re-check if sticky bar should appear
+  // After modal dismiss — show sticky bar immediately (on Home/Plan pages)
   const handleModalClose = useCallback(() => {
     setModalVariant(null);
-    // Re-evaluate after a tick (dismiss state needs to settle)
-    setTimeout(() => {
-      if (shouldShowStickyBar() && (isPlanPage || isHomePage)) {
-        setShowBar(true);
-      }
-    }, 50);
+    // Show sticky bar right after dismissing modal
+    if (isPlanPage || isHomePage) {
+      setShowBar(true);
+    }
   }, [isPlanPage, isHomePage]);
 
   // Email submitted — hide everything
@@ -176,6 +181,7 @@ export function EmailOrchestrator() {
           variant={modalVariant}
           planId={getPlanId()}
           planData={modalVariant === 'save' ? getPlanData() : null}
+          sentToEmail={sentToEmail}
           onClose={handleModalClose}
           onEmailSubmitted={handleEmailSubmitted}
         />

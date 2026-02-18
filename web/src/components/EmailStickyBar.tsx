@@ -10,10 +10,10 @@ export function EmailStickyBar({ onClick }: EmailStickyBarProps) {
   return (
     <button
       onClick={onClick}
-      className="sticky top-[49px] z-30 flex w-full items-center justify-center gap-1.5 bg-gradient-to-r from-[#EEF2FF] to-[#F5F3FF] py-1.5 text-[12px] font-semibold text-[#4338CA] transition-colors hover:from-[#E0E7FF] hover:to-[#EDE9FE] cursor-pointer border-b border-[#4338CA]/10"
+      className="sticky top-[49px] z-30 flex w-full items-center justify-center gap-2 bg-gradient-to-r from-[#4338CA] to-[#6366F1] py-2 text-[12px] font-semibold text-white transition-all hover:from-[#3730A3] hover:to-[#4F46E5] cursor-pointer shadow-sm"
     >
-      <Mail className="size-3" />
-      Get your personalised summit brief &rarr;
+      <Mail className="size-3.5" />
+      Get your PDF schedule + post-summit brief &rarr;
     </button>
   );
 }

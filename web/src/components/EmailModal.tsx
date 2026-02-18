@@ -17,7 +17,7 @@ import {
 // Types
 // ---------------------------------------------------------------------------
 
-export type EmailModalVariant = 'save' | 'brief' | 'create-plan';
+export type EmailModalVariant = 'save' | 'brief' | 'create-plan' | 'sent-confirmation';
 
 /** Slim plan data passed to the PDF email function */
 export interface PlanDataForPDF {
@@ -45,6 +45,7 @@ interface EmailModalProps {
   variant: EmailModalVariant;
   planId?: string | null;
   planData?: PlanDataForPDF | null;
+  sentToEmail?: string | null;
   onClose: () => void;
   onEmailSubmitted?: (email: string) => void;
 }
@@ -93,7 +94,7 @@ const VARIANT_CONTENT = {
 // Component
 // ---------------------------------------------------------------------------
 
-export function EmailModal({ variant, planId, planData, onClose, onEmailSubmitted }: EmailModalProps) {
+export function EmailModal({ variant, planId, planData, sentToEmail, onClose, onEmailSubmitted }: EmailModalProps) {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
@@ -101,7 +102,9 @@ export function EmailModal({ variant, planId, planData, onClose, onEmailSubmitte
   const [submitting, setSubmitting] = useState(false);
   const [neverShowChecked, setNeverShowChecked] = useState(false);
 
-  const content = VARIANT_CONTENT[variant];
+  const content = variant !== 'sent-confirmation' && variant !== 'brief'
+    ? VARIANT_CONTENT[variant]
+    : VARIANT_CONTENT.save; // fallback, not used for these variants
   const isCreatePlan = variant === 'create-plan';
 
   function handleDismiss() {
@@ -172,6 +175,38 @@ export function EmailModal({ variant, planId, planData, onClose, onEmailSubmitte
   function handleCreatePlan() {
     handleDismiss();
     router.push('/quiz');
+  }
+
+  // ── Sent confirmation variant (auto-sent from quiz email) ─────────
+  if (variant === 'sent-confirmation' && sentToEmail) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" onClick={onClose} />
+        <div className="relative w-full max-w-[420px] bg-white rounded-t-2xl sm:rounded-2xl shadow-xl animate-slide-up overflow-hidden">
+          <div className="h-1 bg-gradient-to-r from-[#059669] via-[#10B981] to-[#34D399]" />
+          <div className="px-6 py-8 text-center">
+            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-[#ECFDF5]">
+              <Mail className="size-6 text-[#059669]" />
+            </div>
+            <h3 className="text-[17px] font-bold text-[#292524] mb-1">
+              Your schedule is on its way!
+            </h3>
+            <p className="text-[13px] text-[#57534E]">
+              We&apos;ve sent your personalised PDF schedule to
+            </p>
+            <p className="text-[14px] font-semibold text-[#4338CA] mt-1">
+              {sentToEmail}
+            </p>
+            <button
+              onClick={onClose}
+              className="mt-5 w-full rounded-xl bg-[#4338CA] py-3 text-[14px] font-bold text-white transition-all hover:bg-[#3730A3]"
+            >
+              View My Schedule
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // ── Success state ──────────────────────────────────────────────
@@ -250,7 +285,87 @@ export function EmailModal({ variant, planId, planData, onClose, onEmailSubmitte
     );
   }
 
-  // ── Email collection variant (save / brief) ────────────────────
+  // ── Brief variant (custom design) ────────────────────────────────
+  if (variant === 'brief') {
+    return (
+      <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[3px]" onClick={handleDismiss} />
+        <div className="relative w-full max-w-[420px] bg-gradient-to-b from-[#EEF2FF] to-white rounded-t-2xl sm:rounded-2xl shadow-2xl animate-slide-up overflow-hidden">
+          {/* Header with gradient */}
+          <div className="bg-gradient-to-r from-[#4338CA] to-[#6366F1] px-6 pt-6 pb-8">
+            {/* Dismiss */}
+            <button
+              onClick={handleDismiss}
+              className="absolute right-4 top-4 rounded-md p-1 text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              <X className="size-4" />
+            </button>
+
+            {/* AI Icon */}
+            <div className="mb-3 flex size-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+              <Sparkles className="size-6 text-white" />
+            </div>
+
+            <h3 className="text-[20px] font-bold text-white leading-tight">
+              Your Post-Summit<br />Intelligence Brief
+            </h3>
+            <p className="mt-1 text-[13px] text-white/70">
+              AI-powered insights from your sessions
+            </p>
+          </div>
+
+          {/* Content */}
+          <div className="px-6 pb-6 -mt-4">
+            {/* Benefits card */}
+            <div className="rounded-xl bg-white border border-[#E0DCD6] shadow-sm p-4 mb-4">
+              <p className="text-[12px] font-semibold text-[#4338CA] uppercase tracking-wide mb-3">
+                What you&apos;ll get after the summit
+              </p>
+              <div className="space-y-2.5">
+                <div className="flex items-start gap-3">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#4338CA] text-[10px] font-bold text-white">1</span>
+                  <p className="text-[13px] text-[#292524]">Key insights from sessions you attended</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#4338CA] text-[10px] font-bold text-white">2</span>
+                  <p className="text-[13px] text-[#292524]">Who to follow up with and how</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#4338CA] text-[10px] font-bold text-white">3</span>
+                  <p className="text-[13px] text-[#292524]">Action items to maximise your ROI</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Email form */}
+            <form onSubmit={handleSubmit} className="space-y-2.5">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full rounded-xl border-2 border-[#E0DCD6] bg-white px-4 py-3 text-[14px] text-[#292524] placeholder:text-[#A8A29E] focus:border-[#4338CA] focus:outline-none transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full rounded-xl bg-gradient-to-r from-[#4338CA] to-[#6366F1] py-3 text-[14px] font-bold text-white shadow-lg shadow-[#4338CA]/25 transition-all hover:shadow-xl hover:shadow-[#4338CA]/30 active:scale-[0.98] disabled:opacity-60"
+              >
+                {submitting ? 'Sending...' : 'Send My Brief'}
+              </button>
+            </form>
+
+            <p className="mt-3 text-center text-[11px] text-[#A8A29E]">
+              100% free, no spam. Delivered after the summit ends.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Email collection variant (save) ────────────────────────────────
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" onClick={handleDismiss} />
