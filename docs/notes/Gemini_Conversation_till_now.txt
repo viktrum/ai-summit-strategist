@@ -1,0 +1,1673 @@
+Gemini
+Structuring India AI Summit Events
+Conversation with Gemini
+You said
+Lets do this. so I am attending India AI summit. https://impact.indiaai.gov.in/
+
+The list of events has been published but it is not in a structural manner or in a way that it is consummable. So,if I want to understand which event i should go, it is going to be difficult. So, I decided to make it easy. How. I have downloaded the list of 480 events with the following parameters.:
+
+"title": "AI Literacy: Building Skills, Inclusion, and Global Leadership",
+
+    "description": "This session addresses the critical AI literacy gap limiting equitable access to AI knowledge across sectors and geographies. It will explore strategies to embed AI education across formal learning, workforce upskilling, and lifelong learning through training multipliers like teachers, government officials, and workforce development leaders. It will introduce the concept of the Universal AI Literacy Stack, and examine how multi-stakeholder collaboration among governments, industry, academia, and global partners can position countries as AI literacy leaders.",
+
+    "date": "2026-02-16",
+
+    "start_time": "10:30:00.000",
+
+    "end_time": null,
+
+    "venue": "Bharat Mandapam",
+
+    "room": "L1 Meeting Room No. 14",
+
+    "speakers": "Lakshmi Misra; Prabhat Kumar; Sourabh Choudhary",
+
+    "knowledge_partners": "AIforAll Global",
+
+    "session_type": "Main Summit Session",
+
+    "event_id": "6915a78b5d05f4811c974dc9",
+
+    "add_to_calendar": true,
+
+    "notes": null
+
+
+
+
+
+First, tell me you understood this. and then we will go further.
+
+Gemini said
+I am fully with you! It makes total sense to take control of a massive list of 480 events so you can actually figure out what is worth your time.
+
+I understand exactly what you've done. You have extracted the event schedule into a structured data format (JSON-style) containing all the crucial parameters:
+
+Event Details: Title, description, and session type.
+
+Scheduling: Date, start time, and end time.
+
+Location: Venue and specific room.
+
+People/Organizations: Speakers and knowledge partners.
+
+Metadata: Event ID, calendar functionality, and notes.
+
+I am ready. What is the next step? Would you like me to help you write a script to filter these, categorize them by themes, or match them against your specific interests?
+
+You said
+So, i am going to not just do it for me but create a website which helps othrs as well.
+
+You become my thinking partner in thinking about this. we are going to time box this as this product needs to be built in 4 hours. so thinking and brainstorming can only be 1 hour.
+
+
+
+I am thinking of two modes for the webapp: Find the event and "I'm feeling lucky"
+
+I'm feeling lucky is the AI mode.
+
+
+
+For the AI mode, this is the prompt I am thinking.
+
+Your job: Lets review the AI mode first and then we will discuss the manual mode.
+
+
+
+RISEN Prompt: AI Impact Summit Event Recommender
+
+R — Role
+
+You are an elite networking strategist and conference concierge for the India AI Impact Summit. You have deep expertise in reading professional profiles, understanding career trajectories, and identifying high-value networking opportunities at large-scale events. You think like a seasoned executive assistant who knows that the right 15-minute conversation can be more valuable than hours of keynotes. Your recommendations are sharp, opinionated, and optimized for maximizing the relationship ROI of every hour the attendee spends at the summit.
+
+I — Instructions
+
+You will be given two inputs:
+
+
+
+A person's professional profile — this could be a LinkedIn profile, resume, or a memory summary from a chat agent.
+
+A JSON array of 480 summit events across 5 days (Feb 14–18, 2026) at the India AI Impact Summit.
+
+Your job is to recommend a personalized, prioritized event schedule that maximizes networking ROI — the probability of the attendee meeting people who can meaningfully impact their career, business, or strategic goals.
+
+Follow this process:
+
+
+
+Step 0: Ask Availability
+
+Before generating any recommendations, ask the attendee:
+
+
+
+Which days (of the 5) are they planning to attend?
+
+Any hard commitments or time blocks already booked?
+
+Only proceed after receiving this information. If this information is already provided alongside the profile, skip to Step 1.
+
+
+
+Step 1: Profile Extraction (Hybrid)
+
+Extract the following structured attributes from the profile:
+
+
+
+Current role & company (or "on break / exploring")
+
+Target roles / companies (if discernible)
+
+Core domains (e.g., AI/ML, product management, enterprise SaaS, LLMOps)
+
+Skills & technical depth (e.g., NLP, evaluation frameworks, voice AI)
+
+Industry vertical (e.g., e-commerce, developer tools, fintech)
+
+Seniority level (IC, senior IC, manager, director, VP, CXO, founder)
+
+Networking goals (inferred — e.g., job search, fundraising, partnerships, hiring, knowledge)
+
+Angel investing / advisory interests (if any)
+
+Geographic context
+
+After structured extraction, do a second pass over the raw profile looking for non-obvious connections — shared alma maters with speakers, overlapping portfolio companies with knowledge partners, adjacent domain expertise that could spark unexpected conversations, etc. Flag these explicitly.
+
+If the profile is thin or ambiguous, proceed with best-effort recommendations but flag low-confidence picks with a confidence: low marker and a brief explanation of what assumption you made.
+
+
+
+Step 2: Event Scoring
+
+For each event, compute a Networking ROI Score based on a weighted mix of:
+
+SignalWeightDescriptionSpeaker-company match25%Do any speakers work at companies the attendee is targeting (for jobs, partnerships, investment, or sales)?Speaker-domain match25%Do any speakers operate in the same domain or adjacent domain as the attendee?Speaker seniority & influence20%Are the speakers senior leaders, well-known founders, or VPs+ who are high-value connectors?Topic relevance15%Does the event topic align with the attendee's current work, target role, or strategic interests?Knowledge partner alignment10%Does the knowledge partner connect to the attendee's specific goals (e.g., a VC firm for a founder, a research lab for a researcher)?Non-obvious connection bonus5%Any serendipitous links discovered in Step 1's second pass?
+
+Venue adjustment: Apply a penalty to events at Sushma Swaraj Bhavan — only include them if they score in the top 10% overall. Strongly prefer Bharat Mandapam and Bharat Mandapam Expo Area.
+
+Ignore session_type as a scoring factor.
+
+
+
+Step 3: Schedule Construction
+
+Distribute recommended events evenly across the attendee's available days.
+
+For each time slot with parallel sessions, pick the highest-scoring event as Primary and the second-highest as Fallback (in case the primary session is full).
+
+Build in buffer time — do not pack every hour. Leave at least 1–1.5 hours per day unscheduled for visiting expo stalls, impromptu conversations, and rest.
+
+If schedule slack remains after filling all priority tiers, include 1–2 Wildcard events — sessions outside the attendee's obvious profile that could spark unexpected, high-value connections. Explain the non-obvious rationale for each wildcard.
+
+Step 4: Output Generation
+
+Organize the final output into tiered buckets:
+
+Tier 1: Must Attend — Top networking ROI; missing these would be a significant lost opportunity.Tier 2: Should Attend — Strong relevance; attend if Tier 1 in the same slot is full.Tier 3: Nice to Have — Moderate relevance; good if energy and time permit.Tier 4: Wildcards — Outside the obvious profile, but with a compelling serendipity angle. Only included if schedule has room.
+
+For each event in any tier, produce a detailed card:
+
+
+
+
+
+Event: [Title]Date: [Date] | Time: [Start–End] | Venue: [Venue, Room]Tier: [1/2/3/4]Confidence: [high / medium / low]Networking ROI Score: [X/100]Why this matters for you:[2-3 sentences on why this event is relevant to the attendee's profile and networking goals]Who to target:[Specific speaker(s) to approach and why — role, company, connection angle]Suggested icebreaker:[A concrete, non-generic conversation starter tailored to the attendee's background and the speaker's work]Networking strategy:[Brief tactical advice — e.g., "Arrive early, sit in the front row, approach during Q&A" or "This is a small room — introduce yourself before the session starts"]Fallback: [If applicable — the runner-up event in the same time slot, with a one-line reason]
+
+Finally, produce a day-by-day summary schedule showing the recommended flow, including stall-visit buffer blocks.
+
+S — Steps (Processing Strategy for 480 Events)
+
+Given the large event volume, process in this order:
+
+
+
+Filter — Remove events on days the attendee is not available.
+
+Quick score — Do a fast pass assigning approximate scores to all remaining events. Discard the bottom 60% (score too low to consider).
+
+Deep score — Apply the full scoring rubric to the remaining ~40% of events.
+
+Rank & de-conflict — Sort by score, resolve time-slot conflicts (primary + fallback), apply venue preferences.
+
+Schedule & distribute — Build the day-by-day plan with even distribution and buffer time.
+
+Wildcards — If slack exists, scan discarded events for serendipity opportunities.
+
+Generate output — Produce tiered cards and daily summary.
+
+E — Expectation
+
+The output should feel like a personalized briefing document — something an executive assistant would hand to a CXO before a conference.
+
+Prioritize actionable specificity over generic advice. "Attend this AI session" is useless. "Approach Mohit Jain after his talk on contextual norms — your experience building personalization for 50M users at Flipkart gives you a unique angle on cultural context in AI" is valuable.
+
+Be honest about confidence levels. If a recommendation is based on a thin signal, say so.
+
+The tone should be direct, strategic, and slightly opinionated — like a trusted advisor who isn't afraid to say "skip this one."
+
+Recommend no more than 4–5 events per day to keep the schedule realistic and leave room for serendipity and expo time.
+
+N — Narrowing (Constraints)
+
+Networking ROI is the sole optimization function. Learning value is secondary — "knowledge is cheap as long as you know what to learn."
+
+Never recommend overlapping events as co-primaries. Always pick one primary, one fallback per slot.
+
+Sushma Swaraj Bhavan events only if top 10% overall score.
+
+Do not use session_type as a scoring factor.
+
+Knowledge partners matter only if they connect to the person's specific goals — don't weight them generically.
+
+Always ask for available days before generating recommendations.
+
+Even distribution across days. No front-loading or back-loading unless the attendee specifies different availability per day.
+
+Buffer time is mandatory — minimum 1–1.5 hours of unscheduled time per day for stall visits and organic networking.
+
+Wildcards only if schedule slack exists after filling Tiers 1–3.
+
+If the profile is thin, generate best-effort recommendations with explicit confidence: low flags — do not ask clarifying questions or refuse to generate output.
+
+Inputs will follow: [PERSON'S PROFILE] and [EVENT JSON]
+
+Gemini said
+Love the energy, and I am completely on board for this 4-hour sprint. Let's make every minute of this brainstorming hour count.
+
+First off, your RISEN prompt is excellent. The persona you’ve defined ("elite networking strategist," optimizing for relationship ROI over just "learning") is a massive differentiator. Most event apps just match keywords; this matches intent and opportunity.
+
+However, since we are building this in a 4-hour window, we need to be incredibly pragmatic about what the LLM can reliably execute versus what the UI should handle. Here is my candid feedback and a few "gotchas" you need to adjust before we lock this in.
+
+🛠️ The "Gotchas" to Fix for Web App Mode
+1. The "Step 0" UX Trap (Availability)
+
+The Issue: "I'm feeling lucky" usually implies a magic, one-click instant result. If the prompt tells the AI to stop and ask the user about their schedule, it turns into a chatbot experience, which breaks the one-click magic and complicates your frontend logic (handling conversational state).
+
+The Fix: Move "Availability" to the UI. Before they click "I'm feeling lucky," have them select their days (e.g., checkboxes for Feb 14-18) and paste their profile/resume into a text box. Pass those selected dates directly into the prompt as a hard constraint: "The attendee is ONLY attending on [Dates]. Ignore all other days."
+
+2. LLMs and Time Math (Step 3 & Narrowing)
+
+The Issue: LLMs are notoriously bad at chronological math and de-conflicting overlapping times. If you ask it to ensure no events overlap, it will confidently give you a schedule where a 10:30 AM event overlaps with a 10:45 AM event.
+
+The Fix: Don't rely on the LLM to do flawless chronological math. Have the LLM output the recommendations in a strict JSON format instead of just Markdown text. Your web app frontend can then render the schedule, and if there's an overlap, the UI can visually flag it for the user (or your code can handle the fallback logic).
+
+3. Context Window & Latency (S - Steps)
+
+The Issue: Passing 480 complex JSON objects in every single prompt will consume a lot of tokens. This will make the "I'm feeling lucky" button slow to load (potentially 15-30+ seconds).
+
+The Fix: Since we only have 4 hours, we can't build a complex vector database for pre-filtering. You will have to pass the JSON. To speed it up: Minify your JSON. Drop keys that aren't used for scoring (like add_to_calendar, notes, event_id if you don't need it for the UI mapping).
+
+💡 Suggested Prompt Tweaks
+If we apply those changes, here is how you should tweak the prompt to make it web-app ready:
+
+Remove Step 0: Change it to: "Input 3: The user's available days provided by the system. Only recommend events on these days."
+
+Change Step 4 (Output): Force a structured JSON output so your frontend can render beautiful cards effortlessly.
+
+Example addition to prompt: "Output your final response EXCLUSIVELY as a JSON object with a schedule array containing objects with keys: event_id, tier, confidence, networking_roi_score, why_this_matters, who_to_target, icebreaker, networking_strategy."
+
+🚀 Next Step
+The AI mode logic is solid, provided we shift the scheduling constraints to the UI and force a JSON output.
+
+Tick-tock! Do you want to quickly refine this AI prompt together to include the JSON output structure, or are you ready to jump straight into designing the Manual Mode?
+
+You said
+I am going to use lovable and supabase so why not, we can use embeddings. But also we have to make sure that we are filtering on deterministic things also, otherwise the prompt which is today very big will consume a lot of cost. So, we have to break down this prompt into deterministic and non-deterministic outcome flows. Lets deconstruct the prompt first.
+
+Gemini said
+This is a massive architectural upgrade. Using Lovable and Supabase (specifically pgvector for embeddings) is exactly how you build a scalable, cost-efficient app.
+
+You are effectively designing a lightweight agentic workflow here. Dumping a massive payload into a single prompt is a classic anti-pattern that burns tokens and increases latency. By splitting the logic, we let the database handle the math and the LLM handle the reasoning.
+
+Let’s deconstruct your original RISEN prompt into Deterministic (Code/DB) and Non-Deterministic (LLM) flows.
+
+⚙️ 1. The Deterministic Flow (Supabase / Code UI)
+This is everything we strip OUT of the prompt and handle via standard software logic.
+
+Availability & Time Constraints:
+
+Action: The UI captures the days attending. Supabase filters out any events WHERE date NOT IN (user_dates).
+
+Vector Search (The Pre-Filter):
+
+Action: Instead of sending 480 events to the LLM, we use Supabase to run a cosine similarity search. We embed the user's profile and query it against the embedded event descriptions/titles.
+
+Outcome: We return only the Top 20 candidate events to the LLM.
+
+Venue Rules:
+
+Action: Hardcode a penalty in your Supabase RPC function for "Sushma Swaraj Bhavan" so those events rank lower in the initial semantic search unless the vector match is exceptionally high (>0.9 similarity).
+
+Schedule Construction (De-conflicting):
+
+Action: Do not ask the LLM to do time math. Your frontend code (Lovable) or a Supabase Edge Function loops through the LLM's chosen events, slots the highest-scored ones into available time blocks, drops overlapping ones to 'Fallback' status, and enforces the 1.5-hour buffer rule.
+
+🧠 2. The Non-Deterministic Flow (LLM Prompts)
+Since we offloaded the heavy lifting, we break the remaining AI work into two highly focused, cheap prompts.
+
+Prompt A: The Profile Extractor (Runs Once on Input)
+
+Input: The raw LinkedIn profile/resume text.
+
+Job: Extract a clean, structured JSON object.
+
+Output: {"current_role": "...", "target_domains": ["...", "..."], "networking_goals": ["..."], "seniority": "..."}
+
+Why: We use this structured output to generate the embedding for the Supabase vector search, and we pass it as context to Prompt B.
+
+Prompt B: The "Elite Concierge" (The Magic)
+
+Input: The structured JSON from Prompt A + The Top 20 filtered events from Supabase.
+
+Job: This is where your excellent RISEN persona shines. It looks at the 20 highly-relevant events and generates the relational ROI.
+
+Output (Strict JSON):
+
+networking_roi_score
+
+why_this_matters
+
+who_to_target (Speaker specific)
+
+icebreaker (Tailored connection)
+
+networking_strategy
+
+wildcard_flag (True/False)
+
+🏗️ The New Architecture
+Here is how your product actually flows when a user clicks "I'm feeling lucky":
+
+User Input: Pastes profile + selects dates in the UI.
+
+LLM Call 1: Quickly extracts profile into structured JSON parameters.
+
+Supabase Query: Embeds the profile parameters, filters by selected dates, and retrieves the Top 20 events.
+
+LLM Call 2: Analyzes the Top 20 events against the structured profile, generates the icebreakers, and scores them.
+
+UI Code: Sorts the returned JSON by score, resolves time overlaps, adds buffer blocks, and renders the beautiful day-by-day UI.
+
+By doing this, you've cut your prompt size by 95%, made the output mathematically reliable, and focused the AI strictly on high-value synthesis.
+
+We have about 45 minutes of brainstorming left. What should we tackle next: Drafting Prompt A (The Extractor), or designing the Manual Mode flow?
+
+You said
+Also, I am thinking the outcome of the prompt should improve. IN the events list there are some heavy hitters, google, openai, microsoft., meta etc People will go to these events even if the interests dont align according to their profile
+
+Gemini said
+You are absolutely right. You already know firsthand the gravitational pull of big tech—when companies like Meta, Microsoft, OpenAI, or Google are on stage, the room is packed regardless of the specific topic. The networking density in those rooms is just too high to ignore.
+
+If we don't account for this "Halo Effect," the app will miss the reality of how people actually behave at these summits.
+
+Here is how we weave that reality into our architecture without breaking the token bank:
+
+⚙️ 1. The Deterministic Fix (Supabase / Data Ingestion)
+We shouldn't rely on the LLM to "discover" who the heavy hitters are on the fly. We hardcode it during your data ingestion phase.
+
+The "Halo" Flag: When you parse your JSON of 480 events to upload to Supabase, run a simple regex or array check. If speakers or knowledge_partners contain terms like ['Google', 'Meta', 'Microsoft', 'OpenAI', 'NVIDIA', 'Anthropic'], flag a new boolean column: is_heavy_hitter: true.
+
+The Vector Boost: When your Supabase Edge Function runs the semantic search to get the Top 20 events, don't just order by pure cosine similarity. Do a weighted sort. For example: similarity_score * (CASE WHEN is_heavy_hitter THEN 1.3 ELSE 1.0 END).
+
+Why this works: This guarantees that a moderately relevant Microsoft event will outrank a perfectly relevant no-name event in the Top 20 payload you send to the LLM.
+
+🧠 2. The Non-Deterministic Fix (Prompt B Update)
+Now that the Top 20 list contains these heavy hitters, we need the LLM to score them correctly and, more importantly, explain to the user why it's recommending them even if the domain match is low.
+
+We update the Event Scoring section of your prompt to look like this:
+
+Event Scoring Rubric (Calculate Networking ROI):
+
+Speaker-company match (20%)
+
+Speaker-domain match (20%)
+
+The Halo Effect (20%): Is this event hosted by or featuring a Tier 1 AI company (e.g., OpenAI, Meta, Google, Microsoft, NVIDIA, Anthropic)? High-leverage networking happens here regardless of exact domain match.
+
+Speaker seniority (15%)
+
+Topic relevance (15%)
+
+Knowledge partner alignment (10%)
+
+And we update the Output Expectation for the why_this_matters JSON key:
+
+If an event scores high primarily due to the "Halo Effect" but has low domain overlap with the attendee, explicitly call this out in the why_this_matters field. Example: "While sustainable compute isn't your core focus, this is a rare chance to be in the same room as Google DeepMind's leadership—the networking density makes this a Tier 1 priority."
+
+By doing this, the UI feels magical. It understands that a user might be laser-focused on niche developer tools, but still smart enough to say, "Hey, Sam Altman is in Room 14, you should probably go."
+
+We have about 35 minutes left on the clock. Shall we draft the exact JSON schema for the LLM output, or do you want to pivot to designing the Manual Mode search experience?
+
+You said
+event date is 16-20 feb
+
+Gemini said
+Got it, tracking the updated dates: February 16–20. That is a quick configuration update for the deterministic UI layer—we just adjust the date picker constraints and the Supabase filter.
+
+Thinking about the product logic from a principal product management perspective, we actually need one critical exception to that "Halo Effect" rule we just designed. If the person using the app already works at one of those heavy hitters—say, Meta or Google—the system shouldn't boost their own company's events just for the networking density. The app would look a bit silly telling a Meta PM to prioritize a Meta booth for serendipitous networking when they can just ping those speakers internally. We can easily add a condition in the deterministic flow to check the user's extracted current_company against the event's knowledge_partners or speakers, and strip the Halo multiplier if there is a match.
+
+This whole setup with Lovable and Supabase pgvector is shaping up to be a textbook agentic AI architecture. It is lightweight, scalable, and keeps the LLM costs highly predictable.
+
+We are down to about 30 minutes in our time box. What is the next move?
+
+Option 1: Hammer out the exact JSON schemas for Prompt A (Extractor) and Prompt B (Concierge).
+
+Option 2: Pivot to mapping out the Manual Mode search flow.
+
+Where should we focus our remaining time?
+
+You said
+Option 1
+
+So, the plan is the output should be a an individual plan generated for the user themselves which they can use as a personalised link for them.
+
+We can create a parametrised url where the parameter is a key against a database which stores key ids to which events the person should attend.
+
+Gemini said
+This is a brilliant architectural decision. By generating a persistent plan_id (UUID) and storing the result in Supabase, you solve three problems at once:
+
+Virality: Users can share "My AI Summit Strategy" on LinkedIn/Twitter.
+
+Cost Control: You only run the expensive LLM chain once per user. If they refresh the page, you just fetch the JSON from the DB.
+
+Latency: The second time they visit, the load time is instant (milliseconds).
+
+Here is the exact JSON Schema Strategy to make this work with Lovable + Supabase.
+
+🗄️ The Database Schema (Supabase)
+To support your parametrized URL (e.g., indiaai.gov.in/plan/b8a9-4f2d...), you need a simple table in Supabase:
+
+Table: user_plans
+
+id (UUID, Primary Key) -> This is the parameter in your URL.
+
+created_at (Timestamp)
+
+user_profile_snapshot (JSONB) -> Stores what we extracted about them.
+
+recommended_schedule (JSONB) -> The final output from the AI.
+
+🤖 Step 1: Prompt A (The Extractor)
+Goal: Turn messy user text (LinkedIn PDF, bio, resume) into structured data we can use for the Vector Search and Logic.
+
+System Instruction: "You are a strict JSON extractor. Extract the following from the user's text. If a field is missing, use null."
+
+Output JSON Schema:
+
+JSON
+{
+  "profile": {
+    "name": "String (or 'Attendee' if missing)",
+    "current_role": "String",
+    "current_company": "String",
+    "seniority_level": "String (e.g., CXO, VP, Manager, IC, Student)",
+    "core_domains": ["Array", "of", "Strings"],
+    "target_goals": ["Array", "of", "Strings (e.g., Hiring, Fundraising, Sales)"],
+    "is_technical": "Boolean"
+  }
+}
+Why this matters: Your deterministic code needs current_company to prevent recommending their own booth, and core_domains to weigh the vector search.
+
+🧠 Step 2: Prompt B (The Concierge)
+Goal: The inputs are the User Profile (from Step 1) and the Top 20 Candidate Events (from Supabase Vector Search). The output is the final JSON that gets saved to the user_plans table.
+
+System Instruction: "You are the Elite Networking Strategist. You have received a User Profile and a list of 20 Candidate Events. Select the best events to fill the schedule. Output ONLY valid JSON."
+
+Refined Logic for Prompt:
+
+The Halo Rule: If an event has is_heavy_hitter: true (Google, OpenAI, etc.), boost its score UNLESS user.current_company matches the event organizer.
+
+No Overlaps: Pick the highest ROI event for a time slot. Move the second best to "fallback".
+
+Output JSON Schema (The Payload):
+
+JSON
+{
+  "plan_summary": {
+    "headline": "String (e.g., 'The Founder Track' or 'The GenAI Deep Dive')",
+    "strategy_note": "String (2 sentences on the overall approach for this person)"
+  },
+  "schedule": [
+    {
+      "event_id": "String (Matches your DB ID)",
+      "date": "YYYY-MM-DD",
+      "start_time": "HH:MM",
+      "tier": "String ('Must Attend' | 'Should Attend' | 'Wildcard')",
+      "networking_roi_score": "Number (0-100)",
+      "match_reasoning": {
+        "why": "String (Why this specific event fits their profile)",
+        "halo_effect": "Boolean (True if recommended due to speaker fame/company size)"
+      },
+      "networking_tactics": {
+        "target_speaker": "String (Name of specific person to target)",
+        "icebreaker": "String (A specific question to ask based on user's background)",
+        "strategy": "String (e.g., 'Sit front left', 'Ask about X')"
+      },
+      "conflict_fallback": {
+        "has_conflict": "Boolean",
+        "fallback_event_id": "String (Optional ID of the runner-up event)"
+      }
+    }
+  ]
+}
+🚀 How the Frontend Uses This
+When the user visits yoursite.com/plan?id=123:
+
+Lovable/React grabs the UUID from the URL.
+
+Supabase fetches the row from user_plans.
+
+Frontend parses recommended_schedule.
+
+It loops through schedule.
+
+It renders the "Must Attend" cards big and bold.
+
+It displays the icebreaker in a distinct "Pro Tip" box.
+
+It uses match_reasoning.halo_effect to add a "🔥 Heavy Hitter" badge if true.
+
+This schema gives you everything you need to build the UI without ever asking the AI another question.
+
+We have ~20 minutes left. Should we map out the Manual Mode search flow now (since not everyone will trust the AI), or do you want to write the Supabase Edge Function logic that connects these pieces?
+
+You said
+I am wondering if we should even build the manual mode flow, Let me see if I can do it separately. But I definitely want to create a flow where if the linkedin profile is not accessible, the user should be able to answer few (max 3) multiple choice questions(multi select) and still create a lecture strategy for them.
+
+Gemini said
+This is a fantastic scope cut. Dropping the complex "Manual Search" UI saves you at least 60–90 minutes of frontend work (filtering logic, pagination, search bars).
+
+Replacing it with a "3-Question Quiz" is brilliant because it standardizes your data pipeline. Whether the user pastes a LinkedIn URL or answers the quiz, your backend receives the exact same JSON structure.
+
+Here is the "No-LinkedIn Fallback" Flow designed to fit your 4-hour timeline.
+
+📋 The 3-Question Strategy
+Goal: Gather just enough signal to mimic the "Profile Extractor" output so we can reuse the exact same Supabase Vector Search & LLM Scoring logic.
+
+Question 1: The "Identity" (Single Select)
+"Which label best describes your professional role today?"
+
+[ ] Founder / CXO (Maps to: Seniority: High, Strategy: Peer Networking)
+
+[ ] Investor / VC (Maps to: Seniority: High, Strategy: Deal Flow)
+
+[ ] Product Leader (Maps to: Seniority: Mid/High, Strategy: Use Cases)
+
+[ ] Engineer / Researcher (Maps to: Seniority: Mid, Is_Technical: True)
+
+[ ] Policy / Government (Maps to: Domain: Governance)
+
+[ ] Student / Academic (Maps to: Seniority: Entry, Goal: Learning)
+
+Question 2: The "Focus" (Multi-Select, Max 3)
+"What are your top interests in AI right now?"
+
+[ ] LLMs & GenAI (The hype cycle)
+
+[ ] Compute, Cloud & Infra (The builders)
+
+[ ] Ethics, Safety & Governance (The regulators)
+
+[ ] Startups & Venture Capital (The money)
+
+[ ] Enterprise Adoption (The practical application)
+
+[ ] Social Impact (Agri, Health, Edu) (The "India" context)
+
+Question 3: The "Mission" (Multi-Select, Max 2)
+"What is your #1 goal for this summit?"
+
+[ ] Finding Talent / Hiring (Prompt trigger: "Find speakers looking for roles")
+
+[ ] Fundraising / Meeting VCs (Prompt trigger: "Prioritize Investor panels")
+
+[ ] Finding Customers / Sales (Prompt trigger: "Target heavy hitter enterprises")
+
+[ ] Deep Learning / Up-skilling (Prompt trigger: "Prioritize technical workshops")
+
+[ ] Networking / Serendipity (Prompt trigger: "Wildcards enabled")
+
+🔧 The "Fake Profile" Trick (Backend Logic)
+When a user submits this form, you don't need a new AI prompt. You just construct a synthetic profile JSON in your Typescript/Javascript code and pass it to the existing pipeline.
+
+The Code Mapping:
+
+JavaScript
+// User picks: "Founder", ["LLMs", "Startups"], ["Fundraising"]
+
+const syntheticProfile = {
+  profile: {
+    current_role: "Founder",  // Mapped from Q1
+    seniority_level: "CXO",   // Inferred from Q1
+    is_technical: false,      // Inferred from Q1
+    core_domains: ["Generative AI", "Venture Capital"], // Mapped from Q2
+    target_goals: ["Fundraising", "Investor Networking"], // Mapped from Q3
+    current_company: "Stealth Startup" // Placeholder to avoid "Halo" conflicts
+  }
+}
+Why this wins:
+
+Zero New Prompts: You reuse the exact same "Concierge" prompt (Prompt B) you built for the LinkedIn flow.
+
+Speed: No "Profile Extractor" LLM call needed. This flow is actually faster than the LinkedIn one.
+
+UI Simplicity: Standard radio buttons and checkboxes are native to Lovable/shadcn.
+
+⏱️ The Final 4-Hour Build Plan
+We have about 10 minutes left in our brainstorming hour. Here is your roadmap for the next 3 hours of execution:
+
+Hour 1: The Skeleton (Supabase & Lovable)
+
+Database: Create events table (with embedding col) and user_plans table.
+
+Ingestion: Script to upload your 480 events JSON to Supabase + generate embeddings (using an open model like gte-small or OpenAI's text-embedding-3-small).
+
+UI Shell: Set up the Lovable project with a landing page + "Date Picker" + "LinkedIn/Quiz Toggle".
+
+Hour 2: The Brain (Edge Functions)
+
+Vector Search: Write the Postgres function match_events (cosine similarity).
+
+Logic: Write the Supabase Edge Function that:
+
+Takes Profile JSON.
+
+Calls match_events (Deterministic).
+
+Calls LLM "Concierge" Prompt (Non-Deterministic).
+
+Returns the Schedule JSON.
+
+Hour 3: The Polish (Frontend)
+
+Result Page: Build the component that renders the JSON schedule into nice cards.
+
+"Magic" Touches: Add the "Heavy Hitter" badge and the "Icebreaker" box.
+
+Deploy.
+
+Ready to break? You have a solid, simplified architecture. Go build it!
+
+You said
+Also, just wondering should we even implement AI in determining the event structure. Is it possible to create a list of Permutation and combinations of events based on the attributes we can get from the linkedin profiles and use that to pre-filter instead of using AI on the go. AI will only be used to generate the metadata which would be used to select the sequence of events.
+
+
+
+This way we reduce inconsistency but at the same time I am worried about the work needed for this
+
+Gemini said
+It is a tempting idea because it promises zero latency and perfect consistency. However, for a 4-hour hackathon build, I strongly advise against pre-computing the schedules.
+
+Here is why that path is a trap, and a smarter "Middle Way" that gives you the consistency you want without the math nightmare.
+
+1. The Math is Against You (The Combinatorial Explosion)
+You have 480 events over 5 days. Even if we simplify a "Schedule" to just 4 slots a day (20 slots total):
+
+The Attributes: A user isn't just one thing. They are a [Seniority] + [Domain] + [Goal].
+
+5 Seniority Levels × 8 Domains × 4 Goals = 160 Unique Personas.
+
+The Schedules: Even if you only make one perfect schedule per persona, you have to manually (or via script) validate 160 different 5-day itineraries.
+
+The Reality: Users have different availability. One user attends Mon-Tue, another Wed-Fri. Now your 160 personas multiply by every possible date combination (31 combinations).
+
+160×31=4,960 pre-computed schedules.
+
+Verdict: You will spend your entire 4 hours just generating and debugging these JSON files.
+
+2. The "Pre-Filter" Middle Way (Recommended)
+Instead of pre-computing the entire schedule, pre-compute the Event Tags. This moves the "AI thinking" to the data ingestion phase (now) so the runtime (later) is dumb, fast, and deterministic.
+
+Do this right now (Hour 1 task): Don't just upload the raw event JSON to Supabase. Run a script once that adds "Target Persona Tags" to every single event.
+
+Script Logic (The "Tagging" AI): Ask an LLM to review each of the 480 events and append a target_audience array:
+
+"event_id_1" -> ["technical_deep_dive", "senior_engineers", "generative_ai"]
+
+"event_id_2" -> ["founder_strategy", "venture_capital", "networking_heavy"]
+
+"event_id_3" -> ["policy_makers", "governance", "non_technical"]
+
+How this fixes your Runtime: When the user clicks "I'm feeling lucky":
+
+User Input: "I am a [Technical] [Founder] interested in [GenAI]."
+
+Deterministic Filter (Supabase):
+
+SELECT * FROM events WHERE tags CONTAINS 'founder_strategy' OR 'technical_deep_dive'
+
+Result: You get 50 perfect candidates instantly. No vector math needed, just fast keyword matching.
+
+Lightweight AI (Runtime):
+
+The AI doesn't need to "search" or "judge" 480 events. It just takes the 50 perfect matches and picks the best 10 for the time slots.
+
+3. Why this is safer for a 4-Hour Build
+Debugging is Easier: If an event isn't showing up, you can look at the database and see it's missing the "Founder" tag. You can fix it manually. You can't "fix" a vector embedding easily.
+
+Consistency: The tags are hardcoded. A "Founder" will always see "Founder" events.
+
+Speed: Postgres array filtering is faster than vector search.
+
+Decision: Stick to the Just-in-Time AI flow but power it with Pre-Computed Tags.
+
+Don't: Try to generate 5,000 schedules.
+
+Do: Spend 30 minutes ensuring your 480 events have excellent, structured tags (seniority, topic, industry).
+
+Ready to switch to coding mode? Your first step is that Tagging Script.
+
+You said
+You have looked at my prompt which was extensive, I think we would not be doing justice if we generate only three metadata, we may miss the nuance
+
+Gemini said
+You are absolutely right. If we reduce a complex event like "AI in Healthcare Policy" to just ["Healthcare", "Policy"], we lose the nuance that "The Secretary of Health is speaking, so this is a must-attend for Founders needing regulatory clarity."
+
+That specific insight—the implication of the event—is exactly what your "Elite Strategist" persona is supposed to find. We cannot flatten that into simple keywords.
+
+Here is the "Middle Path" that preserves the nuance without exploding your costs or latency.
+
+The Strategy: "Rich Event DNA" (Pre-Computation)
+Instead of pre-computing schedules (which is impossible) or just adding simple tags (which is too dumb), we will pre-compute the "Networking Intelligence" for every event.
+
+We run your "Elite Strategist" logic ONCE during data ingestion (offline) to generate a Rich DNA JSON for each of the 480 events. This JSON captures the hidden value of the event.
+
+Step 1: The "DNA Extraction" (Offline / One-Time)
+You run a script that feeds each event into an LLM with this prompt: "Analyze this event. Don't just tell me what it is; tell me who it is valuable for and why. Identify hidden signals like VIP speakers, investor presence, or technical depth."
+
+The Output (Stored in Supabase event_dna column):
+
+JSON
+// Event: "AI Literacy for All" (The one you shared)
+{
+  "event_id": "6915...",
+  "networking_signals": {
+    "speaker_power_level": "High (Gov Officials)",
+    "investor_presence": "Low",
+    "technical_depth": "Level 1 (Non-Technical)",
+    "decision_maker_density": "High (Policy)"
+  },
+  "perfect_for": [
+    {
+      "persona": "EdTech Founder",
+      "reason": "Direct access to government procurement leaders for AI skilling."
+    },
+    {
+      "persona": "Policy Researcher",
+      "reason": "Understanding the 'Universal AI Literacy Stack' framework."
+    }
+  ],
+  "anti_patterns": ["Hardcore ML Engineers", "Hedge Fund Managers"],
+  "halo_effect_score": 0.4, // Not a "Big Tech" event, but decent gov signal
+  "keywords_for_matching": ["education", "skilling", "government contracts", "policy"]
+}
+Step 2: The Runtime Flow (User Click)
+Now, when the user clicks "I'm feeling lucky," we don't send the raw description. We send this Rich DNA.
+
+Why this preserves Nuance:
+
+The "Why" is pre-baked: The LLM at runtime doesn't have to guess that "AI Literacy" is good for EdTech founders. The DNA explicitly says so.
+
+Efficient Filtering: Your Supabase query can now be incredibly smart:
+
+User: "I'm a Python Engineer."
+
+Filter: WHERE event_dna->'technical_depth' != 'Level 1'. (Instantly drops the literacy session).
+
+User: "I'm selling to Government."
+
+Filter: WHERE event_dna->'networking_signals'->>'decision_maker_density' = 'High'. (Instantly finds the literacy session).
+
+Step 3: The 4-Hour Implementation Plan
+1. Update Ingestion Script (Hour 1): Modify your upload script to pass every event through a cheap, smart model (like gemini-1.5-flash or gpt-4o-mini) to generate that JSON blob above.
+
+Prompt: "Analyze this event for networking ROI. Output JSON with keys: speaker_power, tech_depth (1-5), target_personas (array of objects with reason), keywords."
+
+2. Update Supabase Schema: Add a jsonb column named event_intelligence to your events table. Index it for faster querying if you can (GIN index), but for 480 rows, a full scan is instantaneous anyway.
+
+3. The Runtime Prompt (Hour 2): Now your runtime prompt becomes much simpler and more effective: "User is an EdTech Founder. Look at these 30 candidate events (Candidate = matching perfect_for persona). Select the best 5 based on the reason field in their DNA."
+
+Verdict: This approach gives you the "Elite Strategist" intelligence (because you used an LLM to generate the metadata) but with Database speed (because you are querying JSON fields, not inferring text on the fly).
+
+Does this structure feel robust enough to capture the "Heavy Hitter" and "Hidden Gem" nuances you care about?
+
+You said
+is there a cheap claude model I can use for the ingestionscript
+
+Analyzing Claude's Pricing
+
+I'm currently looking into Claude's pricing structure, specifically focusing on the most cost-effective models. My primary focus is understanding if Haiku or Sonnet could be suitable for handling a script processing 480 events. Legacy models are being considered as a possible, but less preferred, option. I need to get definitive pricing information.
+
+Confirming Haiku's Suitability
+
+I've zeroed in on Haiku. My focus is now solidifying it as the best low-cost option. I'm actively researching Anthropic's API pricing for Haiku and whether a Claude 3.5 Haiku is available. My priority is context window and cost per million tokens, so I can give the user a precise estimate for 480 events. I'm simulating the user's request and my response to streamline the model ID recommendation. The goal is a concrete, implementable answer.
+
+Calculating Token Costs
+
+I've crunched the numbers: 480 events at roughly 500 tokens each equals approximately 240,000 tokens. Considering Haiku's likely cost of around $0.25 per million input tokens, the total expense is minimal, just cents. While I can make a case for gemini-1.5-flash, I'm prioritizing the user's specific Claude inquiry and Lovable's likely tech stack. I'm focusing on those models. My next step involves solidifying Haiku pricing.
+
+Analyzing Pricing Tiers
+
+I've been examining the pricing models for Claude 3 Haiku versions. The initial search shows Claude 3 Haiku at $0.25/$1.25 per million tokens, input/output respectively. Then, 3.5 Haiku is a little unclear, with mixed reports ranging from $0.80-$1 input and $4-$5 output per million tokens. The initial pricing information is in place.
+
+Confirming Cost Efficiency
+
+I've determined that Claude 3 Haiku is the clear winner for cost-effectiveness, especially for JSON extraction. My calculations show a total cost of approximately $0.06 for the given task. I'll provide the user with a direct recommendation of claude-3-haiku-20240307 and this precise cost estimate, including a brief note on Claude 3.5.
+
+Gemini said
+Yes, for a simple ingestion script that processes just 480 events, you don't need the heavy hitters.
+
+The "Cheapest Claude" is Claude 3 Haiku.
+
+Here are the details you need for your script:
+
+1. The Model to Use
+Model Name: Claude 3 Haiku
+
+API ID: claude-3-haiku-20240307
+
+Cost: ~$0.25 per million input tokens / $1.25 per million output tokens.
+
+2. The Cost Math (It is negligible)
+For 480 events, assuming ~500 tokens per event (prompt + event text):
+
+Total Volume: ~240,000 tokens.
+
+Total Cost: ~$0.06 (6 cents).
+
+You could run this script 100 times and still not buy a coffee. Even the "expensive" models (Claude 3.5 Sonnet) would only cost you about $1.50 for this one-time batch.
+
+3. Implementation Tip
+Since you are using Lovable (which likely wraps Anthropic's SDK), just ensure you specifically pass the model param.
+
+Example JS/TS Snippet for your Ingestion Script:
+
+JavaScript
+import Anthropic from '@anthropic-ai/sdk';
+
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+async function getEventDNA(eventText) {
+  const msg = await anthropic.messages.create({
+    model: "claude-3-haiku-20240307", // <--- THE CHEAP ONE
+    max_tokens: 1024,
+    system: "You are an expert networking strategist. Analyze this event...",
+    messages: [
+      { role: "user", content: eventText }
+    ],
+  });
+  return JSON.parse(msg.content[0].text);
+}
+💡 Strategy Note
+If you find that Claude 3 Haiku is missing the "subtle" signals (e.g., failing to realize that a "Director of AI" is a VIP), you can bump up to Claude 3.5 Haiku (claude-3-5-haiku-latest). It is about 4x the price (~25 cents total), but significantly smarter at reasoning.
+
+You said
+Actually I was thinking of running this script in cursor separately and generate the data. I dont want to put the heavy work on lovable
+
+Considering Local Execution
+
+I'm now focusing on the user's preference for local script execution, which I've realized is a smart move for enhanced reliability and better separation of concerns. I'm also delving into the user's query about a "cheap Claude model" as a potential resource.
+
+Refining Script Generation
+
+Now, I'm leaning heavily towards generating a Node.js script. Given their use of "Cursor" and the mention of "Lovable," a JavaScript/TypeScript environment seems highly probable. I'll provide a script ready for immediate execution within Cursor, assuming a standard local development setup. The script will handle JSON loading, event iteration, the Claude API call, and saving the enriched data. I'm focusing on providing a clean, batch-processing approach for efficiency.
+
+Gemini said
+That is the pro move. Running the data ingestion pipeline in Cursor (locally) is way better than trying to make a frontend app handle batch processing. It keeps your Lovable project clean and lets you debug the data before it ever hits your database.
+
+Here is the exact Node.js script to run in Cursor. It uses Claude 3.5 Haiku (which is smarter than 3.0 Haiku but still dirt cheap) to turn your 480 raw events into "Rich DNA."
+
+1. Setup in Cursor
+Create a folder (e.g., data-scripts) and add your files:
+
+events.json (Your raw list of 480 events).
+
+enrich.js (The script below).
+
+.env (Put your ANTHROPIC_API_KEY=sk-... here).
+
+Run npm install @anthropic-ai/sdk dotenv in the terminal.
+
+2. The Script (enrich.js)
+Copy this into Cursor. I've added a concurrency limit (processing 5 events at a time) so you don't hit rate limits, and error handling so one failed event doesn't crash the whole script.
+
+JavaScript
+require('dotenv').config();
+const fs = require('fs');
+const Anthropic = require('@anthropic-ai/sdk');
+
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY, 
+});
+
+// Load your raw events
+const rawEvents = JSON.parse(fs.readFileSync('events.json', 'utf8'));
+console.log(`Loaded ${rawEvents.length} events.`);
+
+// The "Elite Strategist" Prompt
+const SYSTEM_PROMPT = `
+You are an expert AI conference strategist. Analyze the provided event JSON.
+Identify the "hidden value" for networking.
+Output ONLY a valid JSON object with this schema:
+{
+  "summary_one_liner": "A punchy 10-word summary of why this matters",
+  "technical_depth": "Integer 1-5 (1=General/Policy, 5=Deep Research/Code)",
+  "target_personas": ["Array of specific roles, e.g., 'Series A Founders', 'NLP Researchers', 'Gov Officials'"],
+  "networking_signals": {
+    "is_heavy_hitter": boolean, // True if Google, Meta, OpenAI, Gov Ministers etc are speaking
+    "decision_maker_density": "High/Medium/Low",
+    "investor_presence": "Likely/Unlikely"
+  },
+  "keywords": ["Array of 5 search tags, e.g., 'GenAI', 'Policy', 'Funding'"]
+}
+`;
+
+async function enrichEvent(event) {
+  try {
+    // Construct a focused input to save tokens
+    const eventContext = `
+      Title: ${event.title}
+      Description: ${event.description}
+      Speakers: ${event.speakers}
+      Partners: ${event.knowledge_partners}
+    `;
+
+    const message = await anthropic.messages.create({
+      model: "claude-3-5-haiku-20241022", // The "Smart & Cheap" Model
+      max_tokens: 400,
+      system: SYSTEM_PROMPT,
+      messages: [{ role: "user", content: eventContext }],
+    });
+
+    // Parse the JSON response safely
+    const dna = JSON.parse(message.content[0].text);
+    
+    // Merge DNA into the original event object
+    return { ...event, ...dna };
+
+  } catch (error) {
+    console.error(`Error processing "${event.title}":`, error.message);
+    // Return original event with a "failed" flag so you don't lose data
+    return { ...event, enrichment_failed: true };
+  }
+}
+
+async function main() {
+  const enrichedEvents = [];
+  const batchSize = 5; // Process 5 at a time to respect rate limits
+
+  for (let i = 0; i < rawEvents.length; i += batchSize) {
+    const batch = rawEvents.slice(i, i + batchSize);
+    console.log(`Processing batch ${i / batchSize + 1} of ${Math.ceil(rawEvents.length / batchSize)}...`);
+
+    const promises = batch.map(event => enrichEvent(event));
+    const results = await Promise.all(promises);
+    enrichedEvents.push(...results);
+  }
+
+  // Save the gold
+  fs.writeFileSync('events_enriched.json', JSON.stringify(enrichedEvents, null, 2));
+  console.log('Done! Saved to events_enriched.json');
+}
+
+main();
+3. Why this setup wins
+Model: Uses claude-3-5-haiku-20241022. It is significantly better at following JSON schemas than the older Haiku, but practically the same price.
+
+Safety: It merges the new "DNA" fields directly into your existing object.
+
+Output: You get a clean events_enriched.json ready to drag-and-drop into Supabase.
+
+Once you run this, you just upload the JSON to Supabase, and your "AI" is effectively pre-cached!
+
+You said
+enrichment is running in my cursor, it may take 15 mins, what other steps were there
+
+Gemini said
+This is the perfect time to prep your "landing zone" in Supabase. You have about 15 minutes, which is exactly how long it takes to set up the database schema and the matching logic.
+
+Since we are skipping the complex vector embeddings in favor of the "Rich DNA" JSON strategy, your database setup is much simpler.
+
+Open your Supabase SQL Editor and run these two blocks.
+
+Step 1: Create the Tables
+We need a place to dump that events_enriched.json and a place to store the generated schedules.
+
+SQL
+-- 1. The Events Table (The Library)
+create table public.events (
+  id text primary key,                    -- Map this to the 'event_id' from your JSON
+  title text not null,
+  description text,
+  date date,                              -- 2026-02-16
+  start_time time,                        -- 10:30:00
+  end_time time,
+  venue text,
+  room text,
+  speakers text,                          -- Keep it simple (text or array)
+  knowledge_partners text,
+  
+  -- The Gold Mine: This is where your enrichment script output goes
+  dna jsonb,                              
+  
+  created_at timestamp with time zone default now()
+);
+
+-- 2. The User Plans Table (The Results)
+create table public.user_plans (
+  id uuid default gen_random_uuid() primary key,
+  user_profile jsonb,                     -- Stores the user's quiz answers/profile
+  recommended_schedule jsonb,             -- Stores the final AI-generated plan
+  created_at timestamp with time zone default now()
+);
+
+-- 3. Enable RLS (Security Best Practice)
+alter table public.events enable row level security;
+alter table public.user_plans enable row level security;
+
+-- 4. Create Policies (Open Read for Hackathon Speed)
+create policy "Allow public read on events" on public.events for select using (true);
+create policy "Allow public insert on plans" on public.user_plans for insert with check (true);
+create policy "Allow public read on plans" on public.user_plans for select using (true);
+Step 2: The "Matcher" Logic (The Secret Sauce)
+Instead of writing complex code in your frontend to filter the events, let's create a Database Function (RPC). This runs on the server and is incredibly fast.
+
+This function takes the user's profile tags and finds the events that match their "DNA."
+
+SQL
+create or replace function get_candidate_events(
+  technical_level int,       -- User's technical depth (1-5)
+  target_keywords text[],    -- ["GenAI", "Policy", "Investing"]
+  match_heavy_hitters boolean -- true/false
+)
+returns setof public.events
+language sql
+as $$
+  select *
+  from public.events
+  where 
+    -- 1. Technical Fit: Don't show deep code to policy folks (and vice versa)
+    -- We allow a buffer of +/- 1 level so it's not too strict
+    (dna->>'technical_depth')::int between (technical_level - 1) and (technical_level + 1)
+    
+    AND (
+      -- 2. Keyword Match: check if any event keyword overlaps with user tags
+      exists (
+        select 1
+        from jsonb_array_elements_text(dna->'keywords') as event_tag
+        where event_tag = any(target_keywords)
+      )
+      
+      OR
+      
+      -- 3. The "Heavy Hitter" Override: If user wants Big Tech, show it regardless of keywords
+      (match_heavy_hitters = true AND (dna->'networking_signals'->>'is_heavy_hitter')::boolean = true)
+    )
+  order by date, start_time;
+$$;
+Step 3: What to do when the script finishes
+Once your Cursor script says Done! Saved to events_enriched.json:
+
+Go to the Supabase Table Editor.
+
+Select the events table.
+
+Click "Insert" -> "Import Data from CSV/JSON".
+
+Upload your events_enriched.json.
+
+Crucial: Ensure the column mapping is correct (Map summary_one_liner, technical_depth, etc., into the dna column if your JSON structure isn't perfectly flat, or flatten it in the JSON file first).
+
+Tip: Since your enrich.js creates a nested object (e.g., event.dna), make sure your import maps that nested object to the dna column, OR just modify the script to flatten the keys before saving. (Mapping is usually easier).
+
+You are set! By the time the script finishes, your infrastructure will be waiting for the data.
+
+You said
+Example of json thats getting created:
+
+"id": 5391,
+
+"title": "Women in AI: A South Asia Outlook on Representation, Equity and Empowerment",
+
+"description": "This session will advance a regional dialogue on women in artificial intelligence across South Asia, focusing on representation, equity, and empowerment. The session will examine implications for women's education, skills development, and work, including risks of bias and exclusion. The discussion will outline actionable pathways for gender-inclusive, people-centered AI",
+
+"date": "2026-02-16",
+
+"start_time": "12:30:00.000",
+
+"end_time": null,
+
+"venue": "Bharat Mandapam",
+
+"room": "L1 Meeting Room No. 9",
+
+"speakers": "Aditi Jha; Aditi Namdeo; Anita Gurumurthy; Aparajita Bharti; Emad Karim; Eunsong Kim; Kanta Singh; Leki Choden; Tim Curtis; Vivek Menon",
+
+"knowledge_partners": "UN Women India Country Office",
+
+"session_type": "Main Summit Session",
+
+"event_id": "692c155be97fb3203c1ae97a",
+
+"add_to_calendar": true,
+
+"notes": null,
+
+"summary_one_liner": "South Asia's roadmap for gender-inclusive AI equity and empowerment",
+
+"technical_depth": 2,
+
+"target_personas": ["Gender Policy Advocates", "DEI Leaders", "Gov Officials", "International Development Professionals", "Women in Tech Leaders"],
+
+"networking_signals": {
+
+"is_heavy_hitter": true,
+
+"decision_maker_density": "High",
+
+"investor_presence": "Unlikely"
+
+},
+
+"keywords": ["gender equity", "women in AI", "South Asia", "inclusive AI", "empowerment"]
+
+
+Gemini said
+This JSON output is perfect. It is exactly what we needed.
+
+You have successfully captured the high-value "hidden signals" that a simple keyword search would miss.
+
+Nuance: It correctly identified "Gov Officials" and "DEI Leaders" as target personas.
+
+Signal: It flagged decision_maker_density: "High"—this is the kind of data that makes the "Elite Strategist" persona real.
+
+⚠️ Critical Adjustment: The Table Schema
+Since your script is generating a flat JSON structure (where technical_depth, networking_signals, etc., are siblings to title, not nested inside a dna object), we need to adjust the Supabase table schema I gave you earlier.
+
+If you use the old schema (with just a dna column), the automatic import will fail to map these new fields.
+
+Run this Updated SQL in Supabase to create a table that matches your exact JSON structure for a seamless 1:1 import.
+
+1. The Updated Table Schema
+Run this in the SQL Editor to create the correct table.
+
+SQL
+drop table if exists public.events; -- Clear the old one if you made it
+
+create table public.events (
+  -- Core Event Data
+  event_id text primary key,          -- Map this to "event_id" (the string)
+  id int,                             -- Map this to "id" (the number)
+  title text,
+  description text,
+  date date,
+  start_time time,
+  end_time time,
+  venue text,
+  room text,
+  speakers text,
+  knowledge_partners text,
+  session_type text,
+
+  -- The Rich Enriched Data (Matching your Flat JSON)
+  summary_one_liner text,
+  technical_depth int,                -- Matches "technical_depth": 2
+  target_personas text[],             -- Matches ["Persona A", "Persona B"]
+  networking_signals jsonb,           -- Matches {"is_heavy_hitter": true...}
+  keywords text[],                    -- Matches ["keyword1", "keyword2"]
+  
+  created_at timestamp with time zone default now()
+);
+
+-- Enable Security
+alter table public.events enable row level security;
+create policy "Allow public read" on public.events for select using (true);
+2. The Updated "Matcher" Function
+Since the columns are now flat (top-level) instead of nested in dna, we need to tweak the search logic slightly.
+
+SQL
+create or replace function get_candidate_events(
+  user_tech_level int,       -- User's technical depth (1-5)
+  user_keywords text[],      -- ["GenAI", "Policy"]
+  require_heavy_hitter boolean -- true/false
+)
+returns setof public.events
+language sql
+as $$
+  select *
+  from public.events
+  where 
+    -- 1. Technical Fit (Buffer of +/- 1 level)
+    (technical_depth between (user_tech_level - 1) and (user_tech_level + 1))
+    
+    AND (
+      -- 2. Keyword Match (Arrays overlap)
+      (keywords && user_keywords) 
+      
+      OR
+      
+      -- 3. The "Heavy Hitter" Override
+      (require_heavy_hitter = true AND (networking_signals->>'is_heavy_hitter')::boolean = true)
+    )
+  order by date, start_time;
+You stopped this response
+You said
+Example of json thats getting created:
+
+"id": 5391,
+
+"title": "Women in AI: A South Asia Outlook on Representation, Equity and Empowerment",
+
+"description": "This session will advance a regional dialogue on women in artificial intelligence across South Asia, focusing on representation, equity, and empowerment. The session will examine implications for women's education, skills development, and work, including risks of bias and exclusion. The discussion will outline actionable pathways for gender-inclusive, people-centered AI",
+
+"date": "2026-02-16",
+
+"start_time": "12:30:00.000",
+
+"end_time": null,
+
+"venue": "Bharat Mandapam",
+
+"room": "L1 Meeting Room No. 9",
+
+"speakers": "Aditi Jha; Aditi Namdeo; Anita Gurumurthy; Aparajita Bharti; Emad Karim; Eunsong Kim; Kanta Singh; Leki Choden; Tim Curtis; Vivek Menon",
+
+"knowledge_partners": "UN Women India Country Office",
+
+"session_type": "Main Summit Session",
+
+"event_id": "692c155be97fb3203c1ae97a",
+
+"add_to_calendar": true,
+
+"notes": null,
+
+"summary_one_liner": "South Asia's roadmap for gender-inclusive AI equity and empowerment",
+
+"technical_depth": 2,
+
+"target_personas": ["Gender Policy Advocates", "DEI Leaders", "Gov Officials", "International Development Professionals", "Women in Tech Leaders"],
+
+"networking_signals": {
+
+"is_heavy_hitter": true,
+
+"decision_maker_density": "High",
+
+"investor_presence": "Unlikely"
+
+},
+
+"keywords": ["gender equity", "women in AI", "South Asia", "inclusive AI", "empowerment"]
+
+
+Gemini said
+This JSON output is perfect. It is exactly what we needed.
+
+You have successfully captured the high-value "hidden signals" that a simple keyword search would miss.
+
+Nuance: It correctly identified "Gov Officials" and "DEI Leaders" as target personas.
+
+Signal: It flagged decision_maker_density: "High"—this is the kind of data that makes the "Elite Strategist" persona real.
+
+⚠️ Critical Adjustment: The Table Schema
+Since your script is generating a flat JSON structure (where technical_depth is a sibling to title, not nested inside a dna object), we need to adjust the Supabase table schema I gave you earlier.
+
+If you use the old schema (with just a dna column), the automatic import will fail to map these new fields.
+
+Run this Updated SQL in Supabase to create a table that matches your exact JSON structure for a seamless 1:1 import.
+
+1. The Updated Table Schema
+Run this in the SQL Editor to create the correct table.
+
+SQL
+drop table if exists public.events; -- Clear the old one if you made it
+
+create table public.events (
+  -- Core Event Data
+  event_id text primary key,          -- Map this to "event_id" (the string)
+  id int,                             -- Map this to "id" (the number)
+  title text,
+  description text,
+  date date,
+  start_time time,
+  end_time time,
+  venue text,
+  room text,
+  speakers text,
+  knowledge_partners text,
+  session_type text,
+
+  -- The Rich Enriched Data (Matching your Flat JSON)
+  summary_one_liner text,
+  technical_depth int,                -- Matches "technical_depth": 2
+  target_personas text[],             -- Matches ["Persona A", "Persona B"]
+  networking_signals jsonb,           -- Matches {"is_heavy_hitter": true...}
+  keywords text[],                    -- Matches ["keyword1", "keyword2"]
+  
+  created_at timestamp with time zone default now()
+);
+
+-- Enable Security
+alter table public.events enable row level security;
+create policy "Allow public read" on public.events for select using (true);
+2. The Updated "Matcher" Function
+Since the columns are now flat (top-level) instead of nested in dna, we need to tweak the search logic slightly.
+
+SQL
+create or replace function get_candidate_events(
+  user_tech_level int,       -- User's technical depth (1-5)
+  user_keywords text[],      -- ["GenAI", "Policy"]
+  require_heavy_hitter boolean -- true/false
+)
+returns setof public.events
+language sql
+as $$
+  select *
+  from public.events
+  where 
+    -- 1. Technical Fit (Buffer of +/- 1 level)
+    (technical_depth between (user_tech_level - 1) and (user_tech_level + 1))
+    
+    AND (
+      -- 2. Keyword Match (Arrays overlap)
+      (keywords && user_keywords) 
+      
+      OR
+      
+      -- 3. The "Heavy Hitter" Override
+      (require_heavy_hitter = true AND (networking_signals->>'is_heavy_hitter')::boolean = true)
+    )
+  order by date, start_time;
+$$;
+⏭️ Next Step (When Script Finishes)
+Download the events_enriched.json from Cursor.
+
+Go to Supabase -> Table Editor -> events.
+
+Click "Insert" -> "Import Data from CSV/JSON".
+
+Upload the file. Supabase should now automatically detect the columns (technical_depth, target_personas) and map them perfectly.
+
+You are set! The infrastructure is ready for the data.
+
+You said
+Actually, lets build the table in lovable's native supabase integrations.
+
+
+
+Lets list down the structure of the application we want to build before we finalise the lovable prompt.
+
+Prioritizing Structure & AI
+
+I'm focused on finalizing the application's core structure. The "India AI Summit Event Recommender" concept is shaping up, concentrating first on the "I'm feeling lucky" AI mode. The manual fallback is deprioritized, and my current efforts revolve around quiz-based AI for robust event recommendations.
+
+Defining Lovable Architecture
+
+I'm now zeroing in on defining the frontend and backend structure for Lovable, keeping in mind the need for Lovable's native Supabase integration. I've outlined the necessary database schema, app flow, key components, and edge functions, which includes a generate-plan function and considers the "Rich DNA" data ingestion. The goal is to build a structure to support a landing page, quiz input, processing, and a results page with timeline, event cards, and share functionality.
+
+Refining UX & Prompting
+
+I'm solidifying the application flow and the data model within Supabase. I'm focusing on a comprehensive "Mega Prompt" for Lovable to facilitate a quick implementation, ensuring the user gets a full skeleton in one go. My constraint checklist confirms the prompt's integrity, and I've simulated the user's interaction in my mental sandbox.
+
+Gemini said
+This is the right move. Defining the "Product Blueprint" first ensures Lovable builds exactly what you want, rather than guessing the UI flow.
+
+Here is the India AI Summit Recommender application structure.
+
+1. The Database (Supabase)
+We assume the tables are created using the SQL script we discussed.
+
+events: The read-only library of 480 events with your "Rich DNA" columns (technical_depth, target_personas, networking_signals).
+
+user_plans: The persistent storage for sharing.
+
+id (UUID): The shareable key.
+
+user_profile (JSON): The inputs/quiz answers.
+
+schedule (JSON): The final AI-generated itinerary.
+
+2. The Application Flow (UX)
+Page 1: The Hook (Landing Page)
+Hero Section: "Don't Waste Your Time at the India AI Summit."
+
+Value Prop: "Get a personalized, high-ROI schedule in 30 seconds. Powered by an Elite Networking AI."
+
+Action:
+
+Date Selector: "I am attending on: [Feb 16] [Feb 17] [Feb 18]..." (Toggle buttons).
+
+CTA Button: "Build My Strategy" -> leads to the Input Modal.
+
+Page 2: The Input (The "I'm Feeling Lucky" Logic)
+Tab 1: The "Lazy" Mode (Default)
+
+Paste LinkedIn/Bio: A large text area.
+
+Helper Text: "Paste your headline, about section, or a link to your PDF resume."
+
+Tab 2: The "Quiz" Mode (Fallback)
+
+Q1 Role: Dropdown/Radio (Founder, Investor, Engineer, Policy).
+
+Q2 Interests: Multi-select chips (GenAI, Hardware, Regulations, Startups).
+
+Q3 Goal: Single-select (Hiring, Fundraising, Learning, Sales).
+
+Submit Action: Triggers the generate-plan Edge Function.
+
+Page 3: The Loading State (Crucial for AI Apps)
+Visual: A terminal-style or sleek loader showing steps:
+
+"Analyzing Profile..."
+
+"Scanning 480 Events for High-Value Signals..."
+
+"Calculating Networking ROI..."
+
+"Identifying Heavy Hitters..."
+
+"Finalizing Strategy..."
+
+Page 4: The Result (The Agenda)
+Header:
+
+Persona Badge: e.g., "Strategy: The Technical Founder Track"
+
+Share Button: "Copy Link" (uses the UUID).
+
+The Timeline (Vertical Scroll):
+
+Grouped by Date (Feb 16, Feb 17...).
+
+Time Slots: Ordered chronologically.
+
+The Event Card:
+
+Visual Hierarchy: Title is bold. Venue is subtle.
+
+The "Why" Badge: A pill showing the AI's reasoning (e.g., "🎯 Direct Investor Match").
+
+"Heavy Hitter" Flag: A fire icon or gold border if is_heavy_hitter is true.
+
+Expandable Section: "Networking Intel" (Hidden by default or tooltip).
+
+Shows: "Who to target" and "Icebreaker."
+
+3. The Backend Logic (Edge Functions)
+You will need one main Supabase Edge Function: generate-plan.
+
+Inputs: user_profile (JSON), dates (Array).
+
+Step 1 (Deterministic): Query Supabase events table using the technical_depth and keywords logic we wrote. Fetch top ~30 candidates.
+
+Step 2 (AI Reasoning): Send those 30 candidates + User Profile to the LLM (Anthropic/OpenAI) to pick the final 10-12 slots, resolve conflicts, and write the "Icebreakers."
+
+Step 3 (Save): Write the result to user_plans table.
+
+Output: The plan_id and the schedule JSON.
+
+📝 The Lovable Prompt
+If you agree with this structure, here is the prompt to paste into Lovable to generate the entire UI skeleton in one shot.
+
+Copy & Paste this into Lovable:
+
+Project: India AI Summit Event Recommender Tech Stack: React, Tailwind, Supabase, Shadcn UI.
+
+Core Goal: Build a mobile-first web app that helps attendees of the India AI Summit filter 480 events into a personalized itinerary based on their professional profile.
+
+Database Structure (Already exists in Supabase): I have an events table with columns: id, title, date, start_time, venue, technical_depth (1-5), target_personas (array), and networking_signals (JSONB). I have a user_plans table to store generated schedules.
+
+Page Structure:
+
+Landing Page:
+
+Hero text: "Maximize your Networking ROI at India AI Summit."
+
+Date Selection Component: Multi-select toggle buttons for Feb 16–20.
+
+Primary CTA: "Generate My Agenda".
+
+Onboarding Modal (Triggered by CTA):
+
+Two tabs: "Paste Profile" and "Take Quiz".
+
+Paste Profile: A text area for LinkedIn bio/resume.
+
+Take Quiz:
+
+Select Role (Founder, Investor, Product, Engineer, Policy).
+
+Select Interests (GenAI, Ethics, Infra, SaaS, etc. - Multi-select chips).
+
+Select Primary Goal (Hiring, Funding, Sales, Learning).
+
+"Analyze" button triggers the loading state.
+
+Loading Screen:
+
+Show a sleek animation of "Scanning 480 events..." and "Matching with [User Role]...".
+
+Results Page (The Schedule):
+
+Fetch data from user_plans using a URL parameter ?id=....
+
+Header: Display a dynamic title like "The [Role] Strategy".
+
+Timeline: Display events grouped by Date.
+
+Event Cards:
+
+Show Title, Time, Venue.
+
+Badges: Display technical_depth and a "Heavy Hitter" badge if networking_signals.is_heavy_hitter is true.
+
+AI Insight: A highlighted box showing "Why this event?" and a "Suggested Icebreaker" (these come from the JSON data).
+
+Share: A button to copy the current URL.
+
+Design Style: Clean, professional, "Tech Summit" aesthetic. Use deep blues, whites, and subtle gradients. Mobile-responsive is critical.
+
+Integration: Use the supabase-js client for data fetching. For the "Analyze" button, mock the API call for now with a setTimeout, but set up the data structure to receive a JSON object containing the schedule.
+
+Does this prompt look ready to you, or do you want to adjust the "Quiz" fields?
+
+You said
+the prompt assumes i have the database ready in supabase which I dont
+
+Refining The Prompt
+
+I'm now focused on having Lovable generate the database schema and TypeScript interfaces directly, eliminating the assumption of an existing database. The prompt will be rewritten to specifically instruct Lovable to create SQL for the schema and the corresponding TypeScript types. My aim is to have a comprehensive prompt that handles both the UI and the data structure in one go.
+
+Defining Backend Structure
+
+I've revised the Lovable prompt to explicitly request both the TypeScript interfaces mirroring the database schema and a db_schema.sql file. My plan includes incorporating "mock" data, specifically a mock_events.ts file with sample events. This should ensure the UI functions immediately. The prompt will now also include step-by-step instructions for generating the SQL required to create the database tables in Supabase, making it easier for the user to implement.
+
+Gemini said
+You are absolutely right. If we tell Lovable "the database exists" when it doesn't, you'll get a UI that crashes immediately because it's trying to fetch from a ghost table.
+
+We need to flip the script: Ask Lovable to build the UI using "Mock Data" first, while simultaneously generating the SQL you need to create the real database.
+
+Here is the Corrected Lovable Prompt. Copy this exactly. It forces Lovable to build a working prototype without Supabase being ready, but gives you the code to connect it later.
+
+📋 The Master Prompt for Lovable
+Copy and paste this entire block:
+
+Project: India AI Summit Event Recommender ("The Elite Strategist") Tech Stack: React, Tailwind CSS, Shadcn UI, Supabase (Client & Auth), Lucide Icons.
+
+Goal: Build a mobile-first web app that generates a high-ROI networking itinerary for attendees of the India AI Summit (Feb 16–20).
+
+Phase 1: Database & Data Structure Since the database is not set up yet, I need you to:
+
+Define the TypeScript Interfaces for the application data, specifically an Event interface that includes "Rich DNA" metadata.
+
+Create a mockData.ts file containing 10 diverse sample events (e.g., a Keynote, a Technical Workshop, a Policy Panel, and a VC Mixer) using this structure.
+
+Generate a supabase_schema.sql file (or display the SQL in a code block) that I can copy-paste into the Supabase SQL Editor later to create the tables.
+
+The Data Structure (Events Table):
+
+id (number)
+
+event_id (string, unique)
+
+title (string)
+
+start_time (time string)
+
+date (date string, e.g., "2026-02-16")
+
+venue (string)
+
+description (text)
+
+speakers (text)
+
+Rich DNA Fields (Critical):
+
+technical_depth (number, 1-5 scale)
+
+target_personas (string array, e.g., ["Founders", "Investors"])
+
+networking_signals (JSON object: { is_heavy_hitter: boolean, decision_maker_density: "High"|"Medium"|"Low" })
+
+summary_one_liner (string)
+
+The Application Flow:
+
+1. Landing Page (Hero):
+
+Headline: "Don't Waste Your Time. Get Your High-ROI Strategy for India AI Summit."
+
+Sub-headline: "Our AI scans 480+ events to find the rooms where your opportunities are."
+
+Input: A "Date Selector" (Toggle buttons for Feb 16–20).
+
+CTA: "Build My Strategy" (Opens the Input Modal).
+
+2. The "Strategist" Modal (Input):
+
+Tab A: "I'm Feeling Lucky" (Quiz Mode - Default):
+
+Role: Select one (Founder, Investor, Product Leader, Engineer, Policy).
+
+Interests: Multi-select chips (GenAI, Ethics, Infra, SaaS, Startups).
+
+Goal: Select one (Hiring, Fundraising, Sales, Learning).
+
+Tab B: "Paste Profile" (Advanced):
+
+Text area for LinkedIn bio/resume.
+
+Action: "Generate Agenda" button (Simulate a 3-second loading state).
+
+3. The Loading State:
+
+Show a terminal-style or sleek loader with steps: "Scanning 480 events...", "Analyzing Speaker Density...", "Calculating Networking ROI...", "Finalizing Agenda".
+
+4. The Results Page (The Itinerary):
+
+Header: "The [Role] Track" (Dynamic based on user input).
+
+Schedule: Group events by Date -> Time.
+
+Event Cards:
+
+Display Title, Venue, Time.
+
+Badges: Show "🔥 Heavy Hitter" (if networking_signals.is_heavy_hitter is true) and "Technical Level: [1-5]".
+
+AI Insight Box: A distinct section in the card showing "Why You Should Go" (Use summary_one_liner from mock data).
+
+Action: "Copy Link to Share" button.
+
+Design Aesthetic:
+
+Deep tech vibes. Dark mode or high-contrast "Summit" theme (Deep Blue/Black/White).
+
+Use Lucide-react for icons (Calendar, Users, Zap, MapPin).
+
+Ensure cards are mobile-responsive and legible.
+
+🛠️ What to do after Lovable builds this:
+Test the Mock UI: Click around. Ensure the "Quiz" feels right and the "Results" look good with the mock data.
+
+Get the SQL: Ask Lovable (or check the generated files) for the supabase_schema.sql.
+
+Create the DB: Go to your Supabase project -> SQL Editor -> Paste & Run that SQL.
+
+Import Data: Import your events_enriched.json (from Cursor) into the events table.
+
+Connect: Update the Lovable code to fetch from Supabase instead of mockData.ts.
+
+
+
+
+Gemini is AI and can make mistakes.
+

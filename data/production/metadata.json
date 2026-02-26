@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-02-12T17:42:41.820Z",
+  "taxonomies": {
+    "keywords": {
+      "categories": 12,
+      "consolidated_keywords": 137,
+      "original_keywords": 1596,
+      "coverage": "98.3"
+    },
+    "personas": {
+      "categories": 22,
+      "original_personas": 1221,
+      "coverage": "100.0"
+    }
+  },
+  "data": {
+    "events": {
+      "total": 463,
+      "avg_keywords_per_event": "4.1",
+      "avg_personas_per_event": "3.9"
+    },
+    "exhibitors": {
+      "total": 715,
+      "avg_keywords_per_exhibitor": "3.2",
+      "avg_personas_per_exhibitor": "3.1"
+    }
+  },
+  "stats": {
+    "events": {
+      "total": 463,
+      "keywords_transformed": 1906,
+      "personas_transformed": 2315,
+      "keywords_unmapped": 106,
+      "personas_unmapped": 0
+    },
+    "exhibitors": {
+      "total": 715,
+      "keywords_transformed": 2320,
+      "personas_transformed": 2317,
+      "keywords_unmapped": 11,
+      "personas_unmapped": 0
+    }
+  }
+}

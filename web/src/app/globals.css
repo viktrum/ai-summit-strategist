@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #FFFFFF;
+  --foreground: #1A1A19;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A19;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A19;
+  --primary: #4338CA;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F8F8F7;
+  --secondary-foreground: #1A1A19;
+  --muted: #F0EFED;
+  --muted-foreground: #8A8A87;
+  --accent: #EEF2FF;
+  --accent-foreground: #4338CA;
+  --destructive: #DC2626;
+  --border: #E8E6E3;
+  --input: #E8E6E3;
+  --ring: #4338CA;
+  --chart-1: #4338CA;
+  --chart-2: #059669;
+  --chart-3: #D97706;
+  --chart-4: #BE123C;
+  --chart-5: #6D28D9;
+  --sidebar: #F8F8F7;
+  --sidebar-foreground: #1A1A19;
+  --sidebar-primary: #4338CA;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EEF2FF;
+  --sidebar-accent-foreground: #4338CA;
+  --sidebar-border: #E8E6E3;
+  --sidebar-ring: #4338CA;
+
+  /* Design system tokens */
+  --surface-0: #FFFFFF;
+  --surface-1: #F8F8F7;
+  --surface-2: #F0EFED;
+  --surface-3: #E8E6E3;
+  --text-primary: #1A1A19;
+  --text-secondary: #5C5C5A;
+  --text-tertiary: #8A8A87;
+  --text-inverse: #FFFFFF;
+  --accent-primary: #4338CA;
+  --accent-primary-hover: #3730A3;
+  --accent-primary-subtle: #EEF2FF;
+  --accent-primary-muted: #C7D2FE;
+  --accent-secondary: #D97706;
+  --accent-secondary-subtle: #FFFBEB;
+  --tier-must: #1E40AF;
+  --tier-must-bg: #DBEAFE;
+  --tier-should: #6D28D9;
+  --tier-should-bg: #EDE9FE;
+  --tier-nice: #047857;
+  --tier-nice-bg: #ECFDF5;
+  --tier-wildcard: #B45309;
+  --tier-wildcard-bg: #FFFBEB;
+  --tier-heavy: #BE123C;
+  --tier-heavy-bg: #FFF1F2;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-24px); }
+}
+
+@keyframes scoreFill {
+  from { width: 0%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Animation utility classes */
+.animate-fade-in-up { animation: fadeInUp 0.5s var(--ease-out) both; }
+.animate-fade-in { animation: fadeInUp 0.5s var(--ease-out) both; }
+.animate-slide-up { animation: fadeInUp 0.6s var(--ease-out) both; }
+.animate-stagger { animation: staggerIn 0.4s var(--ease-out) both; }
+.animate-slide-in-right { animation: slideInRight 0.35s var(--ease-out) both; }
+.animate-fade-out-left { animation: fadeOutLeft 0.25s var(--ease-out) both; }
+
+.stagger-fade-in > * { opacity: 0; animation: staggerIn 0.4s var(--ease-out) both; }
+.stagger-fade-in > *:nth-child(1) { animation-delay: 50ms; }
+.stagger-fade-in > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-fade-in > *:nth-child(3) { animation-delay: 150ms; }
+.stagger-fade-in > *:nth-child(4) { animation-delay: 200ms; }
+.stagger-fade-in > *:nth-child(5) { animation-delay: 250ms; }
+.stagger-fade-in > *:nth-child(6) { animation-delay: 300ms; }
+
+.terminal-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent-primary);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+.score-bar-fill { animation: scoreFill 0.6s var(--ease-out) both; }
+
+/* Print / PDF styles */
+@media print {
+  /* Hide navigation, floating buttons, action buttons, date filter */
+  nav, .no-print,
+  button[class*="fixed"],
+  .date-filter-bar { display: none !important; }
+
+  /* Show all day sections in print */
+  [data-day-section] { display: block !important; }
+
+  /* Reset backgrounds for clean printing */
+  body, .min-h-screen { background: white !important; }
+
+  /* Expand all event cards */
+  [data-expanded] { max-height: none !important; }
+
+  /* Remove shadows and borders for cleaner look */
+  * { box-shadow: none !important; }
+
+  /* Page margins */
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
